@@ -21,7 +21,7 @@ class ContactFormMail extends Mailable implements ShouldQueue
     public function build()
     {
         return $this->to(setting('contact_form_send_to_email'))
-            ->subject(setting('contact_form_email_subject') . ' - ' . $this->data['subject'])
+            ->subject($this->data['subject'])
             ->markdown('emails.contact')
             ->with(['data' => $this->data]);
     }
