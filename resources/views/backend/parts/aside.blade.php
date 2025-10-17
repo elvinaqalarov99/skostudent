@@ -45,6 +45,11 @@
                         class="nav-label">Qalereya</span></a>
             </li>
 
+            <li class="{{ url()->current() == route('admin.scholarships.index') ? "active" : '' }}">
+                <a href="{{ route('admin.scholarships.index') }}"><i class="fa fa-list-alt"></i>  <span
+                        class="nav-label">Təqaüdlər</span></a>
+            </li>
+
             <li class="{{ url()->current() == route('admin.about.edit') ? "active" : '' }}">
                 <a href="{{ route('admin.about.edit') }}"><i class="fa fa-list-alt"></i>  <span
                         class="nav-label">About Us</span></a>

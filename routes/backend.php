@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\AboutUsController;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\ScholarshipController;
 use App\Http\Controllers\Backend\SettingsController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\ProductController;
@@ -80,6 +81,18 @@ Route::group([
             Route::get('/edit/{id}', [TeamController::class, 'edit'])->name('edit');
             Route::put('/update/{id}', [TeamController::class, 'update'])->name('update');
             Route::get('/delete/{id}', [TeamController::class, 'delete'])->name('delete');
+        });
+
+        Route::group([
+            'prefix' => 'scholarships',
+            'as'  => 'scholarships.'
+        ], function () {
+            Route::get('/', [ScholarshipController::class, 'index'])->name('index');
+            Route::get('/create', [ScholarshipController::class, 'create'])->name('create');
+            Route::post('/store', [ScholarshipController::class, 'store'])->name('store');
+            Route::get('/edit/{id}', [ScholarshipController::class, 'edit'])->name('edit');
+            Route::put('/update/{id}', [ScholarshipController::class, 'update'])->name('update');
+            Route::get('/delete/{id}', [ScholarshipController::class, 'delete'])->name('delete');
         });
 
         Route::group([
