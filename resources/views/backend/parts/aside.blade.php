@@ -57,12 +57,12 @@
 
             <li class="{{ url()->current() == route('admin.teams.index') ? "active" : '' }}">
                 <a href="{{ route('admin.teams.index') }}"><i class="fa fa-list-alt"></i>  <span
-                        class="nav-label">Teams (Home Page)</span></a>
+                        class="nav-label">Teams</span></a>
             </li>
 
             <li class="{{ url()->current() == route('admin.faqs.index') ? "active" : '' }}">
                 <a href="{{ route('admin.faqs.index') }}"><i class="fa fa-list-alt"></i>  <span
-                        class="nav-label">FAQ (Home Page)</span></a>
+                        class="nav-label">FAQ</span></a>
             </li>
 
             <li class="{{ url()->current() == route('admin.features.index') ? "active" : '' }}">

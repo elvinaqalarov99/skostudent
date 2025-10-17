@@ -9,13 +9,13 @@
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>FAQ (Home Page)</h2>
+            <h2>FAQ</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <strong>FAQ (Home Page)</strong>
+                    <strong>FAQ</strong>
                 </li>
             </ol>
         </div>

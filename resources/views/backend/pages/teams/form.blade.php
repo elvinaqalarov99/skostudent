@@ -6,13 +6,13 @@
 @section('content')
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>Teams (Home Page)</h2>
+            <h2>Teams</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{{ route('admin.teams.index') }}">Teams (Home Page)</a>
+                    <a href="{{ route('admin.teams.index') }}">Teams</a>
                 </li>
                 <li class="breadcrumb-item active">
                     <strong>{{ isset($team) ? 'Redaktə et' : 'Yeni' }}</strong>
