@@ -8,13 +8,13 @@
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>Portfolio types</h2>
+            <h2>Qalereya tipləri</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{{ route('admin.portfolio_types.index') }}">Portfolio types</a>
+                    <a href="{{ route('admin.portfolio_types.index') }}">Qalereya tipləri</a>
                 </li>
                 <li class="breadcrumb-item active">
                     <strong>Redaktə et</strong>

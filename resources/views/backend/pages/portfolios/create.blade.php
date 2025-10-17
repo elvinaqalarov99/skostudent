@@ -8,13 +8,13 @@
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>Portfolios</h2>
+            <h2>Qalereya</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{{ route('admin.portfolios.index') }}">Portfolios</a>
+                    <a href="{{ route('admin.portfolios.index') }}">Qalereya</a>
                 </li>
                 <li class="breadcrumb-item active">
                     <strong>Yeni</strong>
@@ -65,7 +65,7 @@
                                 @endforeach
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="">Portfolio Type</label>
+                                        <label for="">Qalereya Tipləri</label>
                                         <select name="portfolio_type" class="form-control {{ $errors->first('portfolio_type') ? 'is-invalid' : '' }}">
                                             <option value="" disabled selected>-- Seçim edin --</option>
                                             @foreach(\App\Models\PortfolioType::all() as $type)

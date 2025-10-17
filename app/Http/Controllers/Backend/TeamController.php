@@ -15,12 +15,13 @@ class TeamController extends Controller
         return view('backend.pages.teams.index', compact('teams'));
     }
 
-    public function create () {
-
-        return view('backend.pages.teams.create');
+    public function create()
+    {
+        return view('backend.pages.teams.form');
     }
 
-    public function store (Request $request) {
+    public function store(Request $request)
+    {
         $rules = [
             'position' => ['required', 'array'],
             'position.' . config('app.default_locale') => ['required', 'string', 'max:255'],
@@ -28,34 +29,36 @@ class TeamController extends Controller
             'name' => ['required', 'array'],
             'name.' . config('app.default_locale') => ['required', 'string', 'max:255'],
             'name.*' => ['nullable', 'string', 'max:255'],
+            'linkedin' => ['required', 'string', 'max:255', 'regex:/^https:\/\/(www\.)?linkedin\.com(\/.*)?$/i'],
             'image' => [
-                'file',
                 'required',
+                'file',
                 'mimetypes:' . implode(',', Team::ALLOWED_FILE_MIMES),
-                'max:' . Team::ALLOWED_FILE_SIZE_KB
+                'max:' . Team::ALLOWED_FILE_SIZE_KB,
             ],
         ];
 
-        $request->validate($rules);
+        $validated = $request->validate($rules);
 
-        $model = new Team();
+        $team = new Team();
+        $team->name = collect($validated['name'])->map(fn ($v) => strip_tags($v));
+        $team->position = collect($validated['position'])->map(fn ($v) => strip_tags($v));
+        $team->linkedin = $validated['linkedin'];
+        $team->save();
 
-        $model->name = collect($request->input('name'))->map(fn ($value) => preg_replace(['#<script(.*?)>(.*?)</script>#is', '/\bon\w+=\S+(?=.*>)/'], '', $value));
-        $model->position = collect($request->input('position'))->map(fn ($value) => preg_replace(['#<script(.*?)>(.*?)</script>#is', '/\bon\w+=\S+(?=.*>)/'], '', $value));
-        $model->save();
+        $team->addMedia($request->file('image'))->toMediaCollection('file');
 
-        $model->addMedia($request->image)->toMediaCollection("file");
-
-        return redirect()->route('admin.teams.index')->with(['success' => 'Kaydedildi']);
+        return redirect()->route('admin.teams.index')->with('success', 'Kaydedildi');
     }
 
-    public function edit ($id) {
-
+    public function edit($id)
+    {
         $team = Team::findOrFail($id);
-        return view('backend.pages.teams.edit', compact('team'));
+        return view('backend.pages.teams.form', compact('team'));
     }
 
-    public function update (Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         $rules = [
             'position' => ['required', 'array'],
             'position.' . config('app.default_locale') => ['required', 'string', 'max:255'],
@@ -63,27 +66,24 @@ class TeamController extends Controller
             'name' => ['required', 'array'],
             'name.' . config('app.default_locale') => ['required', 'string', 'max:255'],
             'name.*' => ['nullable', 'string', 'max:255'],
-            'image' => ['file', 'sometimes', 'mimetypes:' . implode(',', Team::ALLOWED_FILE_MIMES)],
+            'linkedin' => ['required', 'string', 'max:255', 'regex:/^https:\/\/(www\.)?linkedin\.com(\/.*)?$/i'],
+            'image' => ['sometimes', 'file', 'mimetypes:' . implode(',', Team::ALLOWED_FILE_MIMES)],
         ];
 
-        $request->validate($rules);
+        $validated = $request->validate($rules);
 
-        $model = Team::findOrFail($id);
-
-        $model->name = collect($request->input('name'))->map(fn ($value) => preg_replace(['#<script(.*?)>(.*?)</script>#is', '/\bon\w+=\S+(?=.*>)/'], '', $value));
-        $model->position = collect($request->input('position'))->map(fn ($value) => preg_replace(['#<script(.*?)>(.*?)</script>#is', '/\bon\w+=\S+(?=.*>)/'], '', $value));
-        $model->save();
+        $team = Team::findOrFail($id);
+        $team->name = collect($validated['name'])->map(fn ($v) => strip_tags($v));
+        $team->position = collect($validated['position'])->map(fn ($v) => strip_tags($v));
+        $team->linkedin = $validated['linkedin'];
+        $team->save();
 
         if ($request->hasFile('image')) {
-            $oldImage = $model->getMedia('file')->first();
-            if ($oldImage) {
-                $oldImage->delete();
-            }
-
-            $model->addMedia($request->image)->toMediaCollection("file");
+            $team->clearMediaCollection('file');
+            $team->addMedia($request->file('image'))->toMediaCollection('file');
         }
 
-        return redirect()->route('admin.teams.index')->with(['success' => 'Yenilendi']);
+        return redirect()->route('admin.teams.index')->with('success', 'Yenilendi');
     }
 
     public function delete ($id) {

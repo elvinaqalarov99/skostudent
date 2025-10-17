@@ -57,6 +57,8 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Position</th>
+                                <th>Linkedin</th>
+                                <th>Image</th>
                                 <th></th>
                             </tr>
                             </thead>
@@ -66,6 +68,20 @@
 
                                     <td>{{ localized($data->name) }}</td>
                                     <td>{{ localized($data->position) }}</td>
+                                    <td>{{ $data->linkedin }}</td>
+                                    <td>
+                                        @php
+                                            $media = $data->getFirstMedia('file');
+                                        @endphp
+
+                                        @if($media)
+                                            <a href="{{ $media->getUrl() }}" target="_blank">
+                                                {{ $media->getUrl() }}
+                                            </a>
+                                        @else
+                                            N/A
+                                        @endif
+                                    </td>
 
                                     <td class="text-right">
                                         <a href="{{ route('admin.teams.edit', $data->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-pencil-square-o"></i></a>

@@ -20,11 +20,11 @@
                 <div class="ibox ">
                     <div class="ibox-title">
                         <span class="label label-info float-right"><i class="fa fa-list-alt"></i></span>
-                        <h5>Portfolio</h5>
+                        <h5>Qalereya</h5>
                     </div>
                     <div class="ibox-content">
                         <h1 class="no-margins">{{ \App\Models\Portfolio::query()->count() }}</h1>
-                        <small>Ümumi portfolio sayı</small>
+                        <small>Ümumi qalereya sayı</small>
                     </div>
                 </div>
             </div>

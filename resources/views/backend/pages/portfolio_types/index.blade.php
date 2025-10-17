@@ -9,13 +9,13 @@
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>Portfolio types</h2>
+            <h2>Qalereya tipləri</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <strong>Portfolio types</strong>
+                    <strong>Qalereya tipləri</strong>
                 </li>
             </ol>
         </div>
@@ -42,7 +42,7 @@
 
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <h5>Portfolio types</h5>
+                                <h5>Qalereya tipləri</h5>
                             </div>
                             <div class="col-6 text-right">
                                 <a href="{{ route('admin.portfolio_types.create') }}" class="btn btn-w-m btn-primary">Yeni</a>

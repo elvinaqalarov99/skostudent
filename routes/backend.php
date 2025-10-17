@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Backend\AboutHistoryController;
+use App\Http\Controllers\Backend\AboutUsController;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\DashboardController;
@@ -78,6 +80,26 @@ Route::group([
             Route::get('/edit/{id}', [TeamController::class, 'edit'])->name('edit');
             Route::put('/update/{id}', [TeamController::class, 'update'])->name('update');
             Route::get('/delete/{id}', [TeamController::class, 'delete'])->name('delete');
+        });
+
+        Route::group([
+            'prefix' => 'about',
+            'as'  => 'about.'
+        ], function () {
+            Route::get('/edit', [AboutUsController::class, 'edit'])->name('edit');
+            Route::put('/update', [AboutUsController::class, 'update'])->name('update');
+        });
+
+        Route::group([
+            'prefix' => 'about.histories',
+            'as'  => 'about.histories.'
+        ], function () {
+            Route::get('/', [AboutHistoryController::class, 'index'])->name('index');
+            Route::get('/create', [AboutHistoryController::class, 'create'])->name('create');
+            Route::post('/store', [AboutHistoryController::class, 'store'])->name('store');
+            Route::get('/edit/{history}', [AboutHistoryController::class, 'edit'])->name('edit');
+            Route::put('/update/{history}', [AboutHistoryController::class, 'update'])->name('update');
+            Route::get('/delete/{history}', [AboutHistoryController::class, 'delete'])->name('delete');
         });
 
         Route::group([

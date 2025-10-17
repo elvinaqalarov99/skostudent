@@ -37,12 +37,22 @@
 
             <li class="{{ url()->current() == route('admin.portfolio_types.index') ? "active" : '' }}">
                 <a href="{{ route('admin.portfolio_types.index') }}"><i class="fa fa-list-alt"></i>  <span
-                        class="nav-label">Portfolio types</span></a>
+                        class="nav-label">Qalereya tipləri</span></a>
             </li>
 
             <li class="{{ url()->current() == route('admin.portfolios.index') ? "active" : '' }}">
                 <a href="{{ route('admin.portfolios.index') }}"><i class="fa fa-list-alt"></i>  <span
-                        class="nav-label">Portfolios</span></a>
+                        class="nav-label">Qalereya</span></a>
+            </li>
+
+            <li class="{{ url()->current() == route('admin.about.edit') ? "active" : '' }}">
+                <a href="{{ route('admin.about.edit') }}"><i class="fa fa-list-alt"></i>  <span
+                        class="nav-label">About Us</span></a>
+            </li>
+
+            <li class="{{ url()->current() == route('admin.about.histories.index') ? "active" : '' }}">
+                <a href="{{ route('admin.about.histories.index') }}"><i class="fa fa-list-alt"></i>  <span
+                        class="nav-label">Histories</span></a>
             </li>
 
             <li class="{{ url()->current() == route('admin.teams.index') ? "active" : '' }}">

@@ -7,68 +7,45 @@ use Illuminate\Database\Eloquent\Model;
 
 class LocalizedObject implements CastsAttributes
 {
-    /**
-     * Cast the given value.
-     *
-     * @param Model $model
-     * @param string $key
-     * @param mixed $value
-     * @param array $attributes
-     * @return mixed
-     */
-    public function get($model,
-                        string $key,
-        $value,
-                        array $attributes): mixed
+    public function get($model, string $key, $value, array $attributes): object
     {
-        $value = json_decode($value);
+        // Decode JSON as object
+        $decoded = json_decode($value);
 
-        if (is_array($value) && !count($value)) {
-            $data = [];
-
-            foreach (config('app.locales') as $locale) {
-                $data[$locale] = "";
-            }
-
-            return json_decode(json_encode($data));
+        // If null or invalid, create empty object
+        if (!is_object($decoded)) {
+            $decoded = new \stdClass();
         }
 
+        // Ensure all locales exist
         foreach (config('app.locales') as $locale) {
-            if (!property_exists($value, $locale)) {
-                $value->$locale = "";
+            if (!property_exists($decoded, $locale)) {
+                $decoded->$locale = '';
             }
         }
 
-        return $value;
+        return $decoded;
     }
 
-    /**
-     * Prepare the given value for storage.
-     *
-     * @param Model $model
-     * @param string $key
-     * @param mixed $value
-     * @param array $attributes
-     * @return mixed
-     */
-    public function set($model, string $key, $value, array $attributes): mixed
+    public function set($model, string $key, $value, array $attributes): string
     {
-        if (is_array($value)) {
-            foreach (config('app.locales') as $locale) {
-                if (!array_key_exists($locale, $value)) {
-                    $value[$locale] = "";
-                }
-            }
-
-            return json_encode($value);
-        } else {
-            foreach (config('app.locales') as $locale) {
-                if (!property_exists($value, $locale)) {
-                    $value->$locale = "";
-                }
-            }
-
-            return json_encode($value);
+        // If null, create empty object
+        if (is_null($value)) {
+            $value = new \stdClass();
         }
+
+        // Convert array to object if necessary
+        if (is_array($value)) {
+            $value = (object) $value;
+        }
+
+        // Ensure all locales exist
+        foreach (config('app.locales') as $locale) {
+            if (!property_exists($value, $locale)) {
+                $value->$locale = '';
+            }
+        }
+
+        return json_encode($value);
     }
 }

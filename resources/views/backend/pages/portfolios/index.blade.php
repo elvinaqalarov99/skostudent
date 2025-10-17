@@ -9,13 +9,13 @@
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>Portfolios</h2>
+            <h2>Qalereya</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <strong>Portfolios</strong>
+                    <strong>Qalereya</strong>
                 </li>
             </ol>
         </div>
@@ -42,7 +42,7 @@
 
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <h5>Portfolios</h5>
+                                <h5>Qalereya</h5>
                             </div>
                             <div class="col-6 text-right">
                                 <a href="{{ route('admin.portfolios.create') }}" class="btn btn-w-m btn-primary">Yeni</a>
@@ -56,7 +56,7 @@
                             <thead>
                             <tr>
                                 <th>Başlıq</th>
-                                <th>Portfolio Type</th>
+                                <th>Qalereya Tipi</th>
                                 <th></th>
                             </tr>
                             </thead>
