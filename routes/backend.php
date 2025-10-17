@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\AboutUsController;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\PrivacyPolicyController;
 use App\Http\Controllers\Backend\ScholarshipController;
 use App\Http\Controllers\Backend\SettingsController;
 use App\Http\Controllers\Backend\BlogController;
@@ -101,6 +102,14 @@ Route::group([
         ], function () {
             Route::get('/edit', [AboutUsController::class, 'edit'])->name('edit');
             Route::put('/update', [AboutUsController::class, 'update'])->name('update');
+        });
+
+        Route::group([
+            'prefix' => 'privacy-policy',
+            'as'  => 'privacy-policy.'
+        ], function () {
+            Route::get('/edit', [PrivacyPolicyController::class, 'edit'])->name('edit');
+            Route::put('/update', [PrivacyPolicyController::class, 'update'])->name('update');
         });
 
         Route::group([

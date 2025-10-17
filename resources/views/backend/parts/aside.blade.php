@@ -79,6 +79,11 @@
                 <a href="{{ route('admin.admins.index') }}"><i class="fa fa-users"></i> <span class="nav-label">İdarəçilər</span></a>
             </li>
 
+            <li class="{{ url()->current() == route('admin.privacy-policy.edit') ? "active" : '' }}">
+                <a href="{{ route('admin.privacy-policy.edit') }}"><i class="fa fa-list-alt"></i>  <span
+                        class="nav-label">Privacy Policy</span></a>
+            </li>
+
             <li class="{{ url()->current() == route('admin.settings.index') ? "active" : '' }}">
                 <a href="{{ route('admin.settings.index') }}"><i class="fa fa-cog"></i> <span
                         class="nav-label">Tənzimləmələr</span></a>
