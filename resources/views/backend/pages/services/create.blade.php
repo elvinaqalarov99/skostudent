@@ -8,13 +8,13 @@
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>Services</h2>
+            <h2>Xidmətlərimiz</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{{ route('admin.services.index') }}">Services</a>
+                    <a href="{{ route('admin.services.index') }}">Xidmətlərimiz</a>
                 </li>
                 <li class="breadcrumb-item active">
                     <strong>Yeni</strong>

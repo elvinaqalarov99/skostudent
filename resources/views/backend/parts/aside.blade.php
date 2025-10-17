@@ -32,7 +32,7 @@
 
             <li class="{{ url()->current() == route('admin.services.index') ? "active" : '' }}">
                 <a href="{{ route('admin.services.index') }}"><i class="fa fa-list-alt"></i>  <span
-                        class="nav-label">Services</span></a>
+                        class="nav-label">Xidmətlərimiz</span></a>
             </li>
 
             <li class="{{ url()->current() == route('admin.portfolio_types.index') ? "active" : '' }}">
