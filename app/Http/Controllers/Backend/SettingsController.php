@@ -9,20 +9,20 @@ use Illuminate\Support\Facades\Cache;
 
 class SettingsController extends Controller
 {
-
-    public function index () {
-        $settings = Setting::orderBy('created_at', 'desc')->get();
+    public function index ()
+    {
+        $settings = Setting::orderBy('created_at')->get();
         return view('backend.pages.settings.index', compact('settings'));
     }
 
-    public function edit ($id) {
-
+    public function edit ($id)
+    {
         $setting = Setting::findOrFail($id);
         return view('backend.pages.settings.edit', compact('setting'));
     }
 
-    public function update (Request $request, $id) {
-
+    public function update (Request $request, $id)
+    {
         $rules = [
             'value' => ['required']
         ];
@@ -90,8 +90,8 @@ class SettingsController extends Controller
         return redirect()->route('admin.settings.index')->with(['success' => 'Yeniləndi']);
     }
 
-    public function delete ($id) {
-
+    public function delete ($id)
+    {
         $model = Setting::findOrFail($id);
         $model->clearMediaCollection('image');
         $model->delete();

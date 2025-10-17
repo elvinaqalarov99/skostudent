@@ -14,12 +14,12 @@ class SettingsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('settings')->delete();
-        
+
         \DB::table('settings')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'key' => 'favicon',
@@ -28,7 +28,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 20:12:22',
                 'updated_at' => '2023-08-22 20:12:22',
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 2,
                 'key' => 'logo',
@@ -37,7 +37,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 20:12:22',
                 'updated_at' => '2023-08-22 20:12:22',
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 3,
                 'key' => 'logo_dark',
@@ -46,7 +46,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 20:12:22',
                 'updated_at' => '2023-08-22 20:12:22',
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 4,
                 'key' => 'page_name_home',
@@ -55,7 +55,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:10:01',
                 'updated_at' => '2023-08-22 21:23:22',
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 5,
                 'key' => 'page_name_products',
@@ -64,7 +64,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:10:01',
                 'updated_at' => '2023-08-22 21:23:39',
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 7,
                 'key' => 'page_name_services',
@@ -73,7 +73,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:10:01',
                 'updated_at' => '2023-08-22 21:23:49',
             ),
-            6 => 
+            6 =>
             array (
                 'id' => 9,
                 'key' => 'page_name_portfolio',
@@ -82,7 +82,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:10:01',
                 'updated_at' => '2023-08-22 21:23:59',
             ),
-            7 => 
+            7 =>
             array (
                 'id' => 11,
                 'key' => 'page_name_blog',
@@ -91,7 +91,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:10:01',
                 'updated_at' => '2023-08-22 21:24:10',
             ),
-            8 => 
+            8 =>
             array (
                 'id' => 13,
                 'key' => 'page_name_contact',
@@ -100,7 +100,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:10:01',
                 'updated_at' => '2023-08-22 21:24:20',
             ),
-            9 => 
+            9 =>
             array (
                 'id' => 14,
                 'key' => 'page_name_about',
@@ -109,7 +109,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:10:01',
                 'updated_at' => '2023-08-22 21:24:32',
             ),
-            10 => 
+            10 =>
             array (
                 'id' => 15,
                 'key' => 'facebook_url',
@@ -118,7 +118,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:10:48',
                 'updated_at' => '2023-08-22 21:22:05',
             ),
-            11 => 
+            11 =>
             array (
                 'id' => 16,
                 'key' => 'twitter_url',
@@ -127,7 +127,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:10:48',
                 'updated_at' => '2023-08-22 21:21:59',
             ),
-            12 => 
+            12 =>
             array (
                 'id' => 17,
                 'key' => 'youtube_url',
@@ -136,7 +136,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:10:48',
                 'updated_at' => '2023-08-22 21:21:49',
             ),
-            13 => 
+            13 =>
             array (
                 'id' => 18,
                 'key' => 'linkedin_url',
@@ -145,7 +145,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:10:48',
                 'updated_at' => '2023-08-22 21:19:40',
             ),
-            14 => 
+            14 =>
             array (
                 'id' => 19,
                 'key' => 'instagram_url',
@@ -154,7 +154,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:21:42',
                 'updated_at' => '2023-08-22 21:24:38',
             ),
-            15 => 
+            15 =>
             array (
                 'id' => 20,
                 'key' => 'footer_description',
@@ -163,7 +163,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:29:51',
                 'updated_at' => '2023-08-22 21:31:13',
             ),
-            16 => 
+            16 =>
             array (
                 'id' => 21,
                 'key' => 'address_label',
@@ -172,7 +172,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:30:09',
                 'updated_at' => '2023-08-22 21:30:46',
             ),
-            17 => 
+            17 =>
             array (
                 'id' => 22,
                 'key' => 'say_hello_label',
@@ -181,7 +181,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:30:09',
                 'updated_at' => '2023-08-22 21:30:23',
             ),
-            18 => 
+            18 =>
             array (
                 'id' => 23,
                 'key' => 'address',
@@ -190,7 +190,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:31:59',
                 'updated_at' => '2023-08-22 21:32:10',
             ),
-            19 => 
+            19 =>
             array (
                 'id' => 24,
                 'key' => 'email',
@@ -199,7 +199,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:31:59',
                 'updated_at' => '2023-08-22 21:32:28',
             ),
-            20 => 
+            20 =>
             array (
                 'id' => 25,
                 'key' => 'phone',
@@ -208,7 +208,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:31:59',
                 'updated_at' => '2023-08-22 21:32:36',
             ),
-            21 => 
+            21 =>
             array (
                 'id' => 26,
                 'key' => 'main_page_banner_description',
@@ -217,7 +217,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:39:25',
                 'updated_at' => '2023-08-22 21:40:25',
             ),
-            22 => 
+            22 =>
             array (
                 'id' => 27,
                 'key' => 'main_page_banner_title',
@@ -226,7 +226,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:39:25',
                 'updated_at' => '2023-08-22 21:40:41',
             ),
-            23 => 
+            23 =>
             array (
                 'id' => 28,
                 'key' => 'main_page_banner_dynamic_words',
@@ -235,7 +235,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:39:25',
                 'updated_at' => '2023-08-22 21:46:06',
             ),
-            24 => 
+            24 =>
             array (
                 'id' => 29,
                 'key' => 'main_page_banner_image',
@@ -244,7 +244,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:39:46',
                 'updated_at' => '2023-08-22 21:39:46',
             ),
-            25 => 
+            25 =>
             array (
                 'id' => 30,
                 'key' => 'main_page_section_1_tab_1_content',
@@ -253,7 +253,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:52:24',
                 'updated_at' => '2023-08-22 21:54:29',
             ),
-            26 => 
+            26 =>
             array (
                 'id' => 31,
                 'key' => 'main_page_section_1_bg_title',
@@ -262,7 +262,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:00:01',
                 'updated_at' => '2023-08-22 22:01:57',
             ),
-            27 => 
+            27 =>
             array (
                 'id' => 32,
                 'key' => 'main_page_section_1_sub_title',
@@ -271,7 +271,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:00:01',
                 'updated_at' => '2023-08-22 22:02:06',
             ),
-            28 => 
+            28 =>
             array (
                 'id' => 33,
                 'key' => 'main_page_section_1_title',
@@ -280,7 +280,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:00:01',
                 'updated_at' => '2023-08-22 22:08:33',
             ),
-            29 => 
+            29 =>
             array (
                 'id' => 34,
                 'key' => 'main_page_section_1_tab_1_name',
@@ -289,7 +289,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:00:01',
                 'updated_at' => '2023-08-22 22:02:29',
             ),
-            30 => 
+            30 =>
             array (
                 'id' => 35,
                 'key' => 'main_page_section_1_tab_2_name',
@@ -298,7 +298,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:00:01',
                 'updated_at' => '2023-08-22 22:02:37',
             ),
-            31 => 
+            31 =>
             array (
                 'id' => 36,
                 'key' => 'main_page_section_1_tab_3_name',
@@ -307,7 +307,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:00:01',
                 'updated_at' => '2023-08-22 22:02:46',
             ),
-            32 => 
+            32 =>
             array (
                 'id' => 37,
                 'key' => 'main_page_section_1_tab_2_content',
@@ -316,7 +316,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:00:01',
                 'updated_at' => '2023-08-22 22:03:00',
             ),
-            33 => 
+            33 =>
             array (
                 'id' => 38,
                 'key' => 'main_page_section_1_tab_3_content',
@@ -325,7 +325,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:00:01',
                 'updated_at' => '2023-08-22 22:03:09',
             ),
-            34 => 
+            34 =>
             array (
                 'id' => 39,
                 'key' => 'main_page_section_1_image_1',
@@ -334,7 +334,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:03:39',
                 'updated_at' => '2023-08-22 22:03:39',
             ),
-            35 => 
+            35 =>
             array (
                 'id' => 40,
                 'key' => 'main_page_section_1_image_2',
@@ -343,7 +343,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:03:39',
                 'updated_at' => '2023-08-22 22:03:39',
             ),
-            36 => 
+            36 =>
             array (
                 'id' => 41,
                 'key' => 'main_page_section_2_title',
@@ -352,7 +352,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:12:21',
                 'updated_at' => '2023-08-22 22:12:29',
             ),
-            37 => 
+            37 =>
             array (
                 'id' => 42,
                 'key' => 'main_page_section_2_description',
@@ -361,7 +361,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:12:21',
                 'updated_at' => '2023-08-22 22:12:53',
             ),
-            38 => 
+            38 =>
             array (
                 'id' => 43,
                 'key' => 'main_page_section_2_number',
@@ -370,7 +370,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:12:21',
                 'updated_at' => '2023-08-22 22:13:00',
             ),
-            39 => 
+            39 =>
             array (
                 'id' => 44,
                 'key' => 'main_page_section_2_number_sub_title',
@@ -379,7 +379,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:12:21',
                 'updated_at' => '2023-08-22 22:13:08',
             ),
-            40 => 
+            40 =>
             array (
                 'id' => 45,
                 'key' => 'main_page_section_3_bg_title',
@@ -388,7 +388,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:14:48',
                 'updated_at' => '2023-08-22 22:15:10',
             ),
-            41 => 
+            41 =>
             array (
                 'id' => 46,
                 'key' => 'main_page_section_3_sub_title',
@@ -397,7 +397,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:14:48',
                 'updated_at' => '2023-08-22 22:15:23',
             ),
-            42 => 
+            42 =>
             array (
                 'id' => 47,
                 'key' => 'main_page_section_3_title',
@@ -406,7 +406,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:14:48',
                 'updated_at' => '2023-08-22 22:15:43',
             ),
-            43 => 
+            43 =>
             array (
                 'id' => 48,
                 'key' => 'learn_more',
@@ -415,7 +415,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:16:26',
                 'updated_at' => '2023-08-22 22:16:34',
             ),
-            44 => 
+            44 =>
             array (
                 'id' => 49,
                 'key' => 'main_page_section_4_image',
@@ -424,7 +424,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:17:12',
                 'updated_at' => '2023-08-22 22:17:12',
             ),
-            45 => 
+            45 =>
             array (
                 'id' => 50,
                 'key' => 'main_page_section_4_sub_title',
@@ -433,7 +433,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:18:27',
                 'updated_at' => '2023-08-22 22:18:35',
             ),
-            46 => 
+            46 =>
             array (
                 'id' => 51,
                 'key' => 'main_page_section_4_title',
@@ -442,7 +442,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:18:27',
                 'updated_at' => '2023-08-22 22:18:50',
             ),
-            47 => 
+            47 =>
             array (
                 'id' => 52,
                 'key' => 'main_page_section_5_bg_title',
@@ -451,7 +451,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:20:02',
                 'updated_at' => '2023-08-22 22:20:19',
             ),
-            48 => 
+            48 =>
             array (
                 'id' => 53,
                 'key' => 'main_page_section_5_sub_title',
@@ -460,7 +460,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:20:02',
                 'updated_at' => '2023-08-22 22:20:26',
             ),
-            49 => 
+            49 =>
             array (
                 'id' => 54,
                 'key' => 'main_page_section_5_title',
@@ -469,7 +469,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:20:02',
                 'updated_at' => '2023-08-22 22:20:33',
             ),
-            50 => 
+            50 =>
             array (
                 'id' => 55,
                 'key' => 'main_page_section_6_counter_1_icon',
@@ -478,7 +478,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:30:05',
                 'updated_at' => '2023-08-22 22:30:05',
             ),
-            51 => 
+            51 =>
             array (
                 'id' => 56,
                 'key' => 'main_page_section_6_counter_1_number',
@@ -487,7 +487,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:30:05',
                 'updated_at' => '2023-08-22 22:32:22',
             ),
-            52 => 
+            52 =>
             array (
                 'id' => 57,
                 'key' => 'main_page_section_6_counter_1_description',
@@ -496,7 +496,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:30:05',
                 'updated_at' => '2023-08-22 22:30:54',
             ),
-            53 => 
+            53 =>
             array (
                 'id' => 58,
                 'key' => 'main_page_section_6_counter_2_icon',
@@ -505,7 +505,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:30:05',
                 'updated_at' => '2023-08-22 22:30:05',
             ),
-            54 => 
+            54 =>
             array (
                 'id' => 59,
                 'key' => 'main_page_section_6_counter_2_number',
@@ -514,7 +514,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:30:05',
                 'updated_at' => '2023-08-22 22:32:13',
             ),
-            55 => 
+            55 =>
             array (
                 'id' => 60,
                 'key' => 'main_page_section_6_counter_2_description',
@@ -523,7 +523,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:30:05',
                 'updated_at' => '2023-08-22 22:30:48',
             ),
-            56 => 
+            56 =>
             array (
                 'id' => 61,
                 'key' => 'main_page_section_6_counter_3_icon',
@@ -532,7 +532,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:30:05',
                 'updated_at' => '2023-08-22 22:30:05',
             ),
-            57 => 
+            57 =>
             array (
                 'id' => 62,
                 'key' => 'main_page_section_6_counter_3_number',
@@ -541,7 +541,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:30:05',
                 'updated_at' => '2023-08-22 22:32:06',
             ),
-            58 => 
+            58 =>
             array (
                 'id' => 63,
                 'key' => 'main_page_section_6_counter_3_description',
@@ -550,7 +550,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:30:05',
                 'updated_at' => '2023-08-22 22:30:42',
             ),
-            59 => 
+            59 =>
             array (
                 'id' => 64,
                 'key' => 'main_page_section_6_counter_4_icon',
@@ -559,7 +559,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:30:05',
                 'updated_at' => '2023-08-22 22:30:05',
             ),
-            60 => 
+            60 =>
             array (
                 'id' => 65,
                 'key' => 'main_page_section_6_counter_4_number',
@@ -568,7 +568,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:30:05',
                 'updated_at' => '2023-08-22 22:31:55',
             ),
-            61 => 
+            61 =>
             array (
                 'id' => 66,
                 'key' => 'main_page_section_6_counter_4_description',
@@ -577,7 +577,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:30:05',
                 'updated_at' => '2023-08-22 22:30:37',
             ),
-            62 => 
+            62 =>
             array (
                 'id' => 67,
                 'key' => 'main_page_section_6_sub_title',
@@ -586,7 +586,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:30:05',
                 'updated_at' => '2023-08-22 22:30:26',
             ),
-            63 => 
+            63 =>
             array (
                 'id' => 68,
                 'key' => 'main_page_section_6_title',
@@ -595,7 +595,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 22:30:05',
                 'updated_at' => '2023-08-22 22:30:19',
             ),
-            64 => 
+            64 =>
             array (
                 'id' => 69,
                 'key' => 'main_page_section_7_bg_title',
@@ -604,7 +604,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:03:06',
                 'updated_at' => '2023-08-23 09:03:31',
             ),
-            65 => 
+            65 =>
             array (
                 'id' => 70,
                 'key' => 'main_page_section_7_sub_title',
@@ -613,7 +613,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:03:06',
                 'updated_at' => '2023-08-23 09:03:38',
             ),
-            66 => 
+            66 =>
             array (
                 'id' => 71,
                 'key' => 'main_page_section_7_title',
@@ -622,7 +622,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:03:06',
                 'updated_at' => '2023-08-23 09:03:44',
             ),
-            67 => 
+            67 =>
             array (
                 'id' => 72,
                 'key' => 'main_page_section_7_process_1_icon',
@@ -631,7 +631,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:03',
                 'updated_at' => '2023-08-23 09:06:03',
             ),
-            68 => 
+            68 =>
             array (
                 'id' => 73,
                 'key' => 'main_page_section_7_process_1_title',
@@ -640,7 +640,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:03',
                 'updated_at' => '2023-08-23 09:12:33',
             ),
-            69 => 
+            69 =>
             array (
                 'id' => 74,
                 'key' => 'main_page_section_7_process_1_description',
@@ -649,7 +649,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:03',
                 'updated_at' => '2023-08-23 09:12:41',
             ),
-            70 => 
+            70 =>
             array (
                 'id' => 75,
                 'key' => 'main_page_section_7_process_2_icon',
@@ -658,7 +658,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:03',
                 'updated_at' => '2023-08-23 09:06:03',
             ),
-            71 => 
+            71 =>
             array (
                 'id' => 76,
                 'key' => 'main_page_section_7_process_2_title',
@@ -667,7 +667,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:03',
                 'updated_at' => '2023-08-23 09:13:05',
             ),
-            72 => 
+            72 =>
             array (
                 'id' => 77,
                 'key' => 'main_page_section_7_process_2_description',
@@ -676,7 +676,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:03',
                 'updated_at' => '2023-08-23 09:12:45',
             ),
-            73 => 
+            73 =>
             array (
                 'id' => 78,
                 'key' => 'main_page_section_7_process_3_icon',
@@ -685,7 +685,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:03',
                 'updated_at' => '2023-08-23 09:06:03',
             ),
-            74 => 
+            74 =>
             array (
                 'id' => 79,
                 'key' => 'main_page_section_7_process_3_title',
@@ -694,7 +694,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:03',
                 'updated_at' => '2023-08-23 09:15:41',
             ),
-            75 => 
+            75 =>
             array (
                 'id' => 80,
                 'key' => 'main_page_section_7_process_3_description',
@@ -703,7 +703,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:03',
                 'updated_at' => '2023-08-23 09:12:50',
             ),
-            76 => 
+            76 =>
             array (
                 'id' => 81,
                 'key' => 'main_page_section_7_process_4_icon',
@@ -712,7 +712,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:03',
                 'updated_at' => '2023-08-23 09:06:03',
             ),
-            77 => 
+            77 =>
             array (
                 'id' => 82,
                 'key' => 'main_page_section_7_process_4_title',
@@ -721,7 +721,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:03',
                 'updated_at' => '2023-08-23 09:15:49',
             ),
-            78 => 
+            78 =>
             array (
                 'id' => 83,
                 'key' => 'main_page_section_7_process_4_description',
@@ -730,7 +730,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:03',
                 'updated_at' => '2023-08-23 09:12:54',
             ),
-            79 => 
+            79 =>
             array (
                 'id' => 84,
                 'key' => 'main_page_section_8_bg_title',
@@ -739,7 +739,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:18',
                 'updated_at' => '2023-08-23 09:17:32',
             ),
-            80 => 
+            80 =>
             array (
                 'id' => 85,
                 'key' => 'main_page_section_8_sub_title',
@@ -748,7 +748,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:18',
                 'updated_at' => '2023-08-23 09:17:39',
             ),
-            81 => 
+            81 =>
             array (
                 'id' => 86,
                 'key' => 'main_page_section_8_title',
@@ -757,7 +757,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 09:06:18',
                 'updated_at' => '2023-08-23 09:17:46',
             ),
-            82 => 
+            82 =>
             array (
                 'id' => 87,
                 'key' => 'view_service',
@@ -766,7 +766,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 14:29:21',
                 'updated_at' => '2023-08-23 14:29:33',
             ),
-            83 => 
+            83 =>
             array (
                 'id' => 88,
                 'key' => 'read_details',
@@ -775,7 +775,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 14:36:35',
                 'updated_at' => '2023-08-23 14:36:51',
             ),
-            84 => 
+            84 =>
             array (
                 'id' => 89,
                 'key' => 'related_products',
@@ -784,7 +784,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 15:21:59',
                 'updated_at' => '2023-08-23 15:22:08',
             ),
-            85 => 
+            85 =>
             array (
                 'id' => 90,
                 'key' => 'about_page_section_1_content',
@@ -793,7 +793,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:05:22',
                 'updated_at' => '2023-08-23 16:05:31',
             ),
-            86 => 
+            86 =>
             array (
                 'id' => 91,
                 'key' => 'about_page_section_1_sub_title',
@@ -802,7 +802,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:06:14',
                 'updated_at' => '2023-08-23 16:06:24',
             ),
-            87 => 
+            87 =>
             array (
                 'id' => 92,
                 'key' => 'about_page_section_1_title',
@@ -811,7 +811,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:06:14',
                 'updated_at' => '2023-08-23 16:06:37',
             ),
-            88 => 
+            88 =>
             array (
                 'id' => 93,
                 'key' => 'about_page_section_1_image_1',
@@ -820,7 +820,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:07:11',
                 'updated_at' => '2023-08-23 16:07:11',
             ),
-            89 => 
+            89 =>
             array (
                 'id' => 94,
                 'key' => 'about_page_section_1_image_2',
@@ -829,7 +829,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:07:11',
                 'updated_at' => '2023-08-23 16:07:11',
             ),
-            90 => 
+            90 =>
             array (
                 'id' => 95,
                 'key' => 'about_page_section_1_bg_title',
@@ -838,7 +838,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:08:19',
                 'updated_at' => '2023-08-23 16:08:37',
             ),
-            91 => 
+            91 =>
             array (
                 'id' => 96,
                 'key' => 'about_page_section_2_sub_title',
@@ -847,7 +847,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:09:57',
                 'updated_at' => '2023-08-23 16:10:11',
             ),
-            92 => 
+            92 =>
             array (
                 'id' => 97,
                 'key' => 'about_page_section_2_title',
@@ -856,7 +856,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:09:57',
                 'updated_at' => '2023-08-23 16:10:18',
             ),
-            93 => 
+            93 =>
             array (
                 'id' => 98,
                 'key' => 'about_page_section_2_image',
@@ -865,7 +865,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:09:57',
                 'updated_at' => '2023-08-23 16:09:57',
             ),
-            94 => 
+            94 =>
             array (
                 'id' => 99,
                 'key' => 'about_page_section_3_sub_title',
@@ -874,7 +874,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:11:18',
                 'updated_at' => '2023-08-23 16:11:29',
             ),
-            95 => 
+            95 =>
             array (
                 'id' => 100,
                 'key' => 'about_page_section_3_title',
@@ -883,7 +883,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:11:18',
                 'updated_at' => '2023-08-23 16:11:35',
             ),
-            96 => 
+            96 =>
             array (
                 'id' => 101,
                 'key' => 'about_page_section_2_video_id',
@@ -892,7 +892,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:13:33',
                 'updated_at' => '2023-08-23 16:16:04',
             ),
-            97 => 
+            97 =>
             array (
                 'id' => 102,
                 'key' => 'contact_page_section_box_image_1',
@@ -901,7 +901,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:20:15',
             ),
-            98 => 
+            98 =>
             array (
                 'id' => 103,
                 'key' => 'contact_page_section_box_image_2',
@@ -910,7 +910,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:20:15',
             ),
-            99 => 
+            99 =>
             array (
                 'id' => 104,
                 'key' => 'contact_page_section_box_image_3',
@@ -919,7 +919,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:20:15',
             ),
-            100 => 
+            100 =>
             array (
                 'id' => 105,
                 'key' => 'contact_page_section_box_icon_1',
@@ -928,7 +928,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:20:15',
             ),
-            101 => 
+            101 =>
             array (
                 'id' => 106,
                 'key' => 'contact_page_section_box_icon_2',
@@ -937,7 +937,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:20:15',
             ),
-            102 => 
+            102 =>
             array (
                 'id' => 107,
                 'key' => 'contact_page_section_box_icon_3',
@@ -946,7 +946,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:20:15',
             ),
-            103 => 
+            103 =>
             array (
                 'id' => 108,
                 'key' => 'contact_page_section_box_title_1',
@@ -955,7 +955,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:21:20',
             ),
-            104 => 
+            104 =>
             array (
                 'id' => 109,
                 'key' => 'contact_page_section_box_title_2',
@@ -964,7 +964,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:21:28',
             ),
-            105 => 
+            105 =>
             array (
                 'id' => 110,
                 'key' => 'contact_page_section_box_title_3',
@@ -973,7 +973,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:21:37',
             ),
-            106 => 
+            106 =>
             array (
                 'id' => 111,
                 'key' => 'contact_page_form_sub_title',
@@ -982,7 +982,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:21:47',
             ),
-            107 => 
+            107 =>
             array (
                 'id' => 112,
                 'key' => 'contact_page_form_title',
@@ -991,7 +991,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:21:56',
             ),
-            108 => 
+            108 =>
             array (
                 'id' => 113,
                 'key' => 'contact_page_name_label',
@@ -1000,7 +1000,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:22:07',
             ),
-            109 => 
+            109 =>
             array (
                 'id' => 114,
                 'key' => 'contact_page_email_label',
@@ -1009,7 +1009,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:22:16',
             ),
-            110 => 
+            110 =>
             array (
                 'id' => 115,
                 'key' => 'contact_page_subject_label',
@@ -1018,7 +1018,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:22:26',
             ),
-            111 => 
+            111 =>
             array (
                 'id' => 116,
                 'key' => 'contact_page_message_label',
@@ -1027,7 +1027,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:22:38',
             ),
-            112 => 
+            112 =>
             array (
                 'id' => 117,
                 'key' => 'contact_page_send_button',
@@ -1036,7 +1036,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:20:15',
                 'updated_at' => '2023-08-23 16:22:50',
             ),
-            113 => 
+            113 =>
             array (
                 'id' => 118,
                 'key' => 'form_send_success_message',
@@ -1045,7 +1045,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:44:10',
                 'updated_at' => '2023-08-23 16:44:54',
             ),
-            114 => 
+            114 =>
             array (
                 'id' => 119,
                 'key' => 'contact_form_send_to_email',
@@ -1054,7 +1054,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:44:10',
                 'updated_at' => '2023-08-23 16:45:00',
             ),
-            115 => 
+            115 =>
             array (
                 'id' => 120,
                 'key' => 'recent_posts',
@@ -1063,7 +1063,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:47:13',
                 'updated_at' => '2023-08-23 16:47:43',
             ),
-            116 => 
+            116 =>
             array (
                 'id' => 121,
                 'key' => 'enter_keyword',
@@ -1072,7 +1072,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:47:13',
                 'updated_at' => '2023-08-23 16:47:34',
             ),
-            117 => 
+            117 =>
             array (
                 'id' => 122,
                 'key' => 'search_hear',
@@ -1081,7 +1081,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-23 16:47:13',
                 'updated_at' => '2023-08-23 16:47:24',
             ),
-            118 => 
+            118 =>
             array (
                 'id' => 123,
                 'key' => 'contact_page_banner_image',
@@ -1090,7 +1090,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:21:00',
                 'updated_at' => '2023-08-24 10:21:00',
             ),
-            119 => 
+            119 =>
             array (
                 'id' => 124,
                 'key' => 'about_page_banner_image',
@@ -1099,7 +1099,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:21:00',
                 'updated_at' => '2023-08-24 10:21:00',
             ),
-            120 => 
+            120 =>
             array (
                 'id' => 125,
                 'key' => 'products_page_banner_image',
@@ -1108,7 +1108,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:21:00',
                 'updated_at' => '2023-08-24 10:21:00',
             ),
-            121 => 
+            121 =>
             array (
                 'id' => 126,
                 'key' => 'blogs_page_banner_image',
@@ -1117,7 +1117,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:21:00',
                 'updated_at' => '2023-08-24 10:21:00',
             ),
-            122 => 
+            122 =>
             array (
                 'id' => 127,
                 'key' => 'services_page_banner_image',
@@ -1126,7 +1126,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:21:00',
                 'updated_at' => '2023-08-24 10:21:00',
             ),
-            123 => 
+            123 =>
             array (
                 'id' => 128,
                 'key' => 'portfolio_page_banner_image',
@@ -1135,7 +1135,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:21:00',
                 'updated_at' => '2023-08-24 10:21:00',
             ),
-            124 => 
+            124 =>
             array (
                 'id' => 129,
                 'key' => 'service_detail_page_box_description_1',
@@ -1144,7 +1144,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:26:21',
                 'updated_at' => '2023-08-27 01:27:34',
             ),
-            125 => 
+            125 =>
             array (
                 'id' => 130,
                 'key' => 'service_detail_page_box_description_2',
@@ -1153,7 +1153,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:26:21',
                 'updated_at' => '2023-08-24 10:26:54',
             ),
-            126 => 
+            126 =>
             array (
                 'id' => 131,
                 'key' => 'service_detail_page_box_description_3',
@@ -1162,7 +1162,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:26:21',
                 'updated_at' => '2023-08-24 10:26:58',
             ),
-            127 => 
+            127 =>
             array (
                 'id' => 132,
                 'key' => 'service_detail_page_box_description_4',
@@ -1171,7 +1171,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:26:21',
                 'updated_at' => '2023-08-24 10:27:02',
             ),
-            128 => 
+            128 =>
             array (
                 'id' => 133,
                 'key' => 'service_detail_page_box_icon_1',
@@ -1180,7 +1180,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:26:21',
                 'updated_at' => '2023-08-24 10:26:21',
             ),
-            129 => 
+            129 =>
             array (
                 'id' => 134,
                 'key' => 'service_detail_page_box_icon_2',
@@ -1189,7 +1189,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:26:21',
                 'updated_at' => '2023-08-24 10:26:21',
             ),
-            130 => 
+            130 =>
             array (
                 'id' => 135,
                 'key' => 'service_detail_page_box_icon_3',
@@ -1198,7 +1198,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:26:21',
                 'updated_at' => '2023-08-24 10:26:21',
             ),
-            131 => 
+            131 =>
             array (
                 'id' => 136,
                 'key' => 'service_detail_page_box_icon_4',
@@ -1207,7 +1207,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:26:21',
                 'updated_at' => '2023-08-24 10:26:21',
             ),
-            132 => 
+            132 =>
             array (
                 'id' => 137,
                 'key' => 'service_detail_page_box_title_1',
@@ -1216,7 +1216,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:26:21',
                 'updated_at' => '2023-08-24 10:27:10',
             ),
-            133 => 
+            133 =>
             array (
                 'id' => 138,
                 'key' => 'service_detail_page_box_title_2',
@@ -1225,7 +1225,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:26:21',
                 'updated_at' => '2023-08-24 10:27:17',
             ),
-            134 => 
+            134 =>
             array (
                 'id' => 139,
                 'key' => 'service_detail_page_box_title_3',
@@ -1234,7 +1234,7 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:26:21',
                 'updated_at' => '2023-08-24 10:27:26',
             ),
-            135 => 
+            135 =>
             array (
                 'id' => 140,
                 'key' => 'service_detail_page_box_title_4',
@@ -1243,8 +1243,26 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-24 10:26:21',
                 'updated_at' => '2023-08-24 10:27:33',
             ),
+            136 =>
+                array (
+                    'id' => 141,
+                    'key' => 'contact_form_mobile',
+                    'type' => '1',
+                    'value' => '{"az": "+123 456 8900", "en": "+123 456 8900", "ru": "+123 456 8900"}',
+                    'created_at' => '2023-08-23 16:44:10',
+                    'updated_at' => '2023-08-23 16:45:00',
+                ),
+            137 =>
+                array (
+                    'id' => 141,
+                    'key' => 'contact_form_office',
+                    'type' => '1',
+                    'value' => '{"az": "Mountain Green Road 2389, NY, USA", "en": "Mountain Green Road 2389, NY, USA", "ru": "Mountain Green Road 2389, NY, USA"}',
+                    'created_at' => '2023-08-23 16:44:10',
+                    'updated_at' => '2023-08-23 16:45:00',
+                ),
         ));
-        
-        
+
+
     }
 }
