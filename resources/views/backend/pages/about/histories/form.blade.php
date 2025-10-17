@@ -70,7 +70,7 @@
                                             <label>Title ({{ strtoupper($locale) }})</label>
                                             <input type="text"
                                                    name="title[{{ $locale }}]"
-                                                   value="{{ old('title.' . $locale, $history->title->$locale ?? '') }}"
+                                                   value="{{ old('title.' . $locale, $history?->title?->$locale ?? '') }}"
                                                    class="form-control {{ $errors->has('title.' . $locale) ? 'is-invalid' : '' }}">
                                             @error('title.' . $locale)
                                             <small class="text-danger">{{ $message }}</small>
@@ -88,7 +88,7 @@
                                             <label>Description ({{ strtoupper($locale) }})</label>
                                             <textarea name="description[{{ $locale }}]"
                                                       class="form-control {{ $errors->has('description.' . $locale) ? 'is-invalid' : '' }}"
-                                                      rows="3">{{ old('description.' . $locale, $history->description->$locale ?? '') }}</textarea>
+                                                      rows="3">{{ old('description.' . $locale, $history?->description?->$locale ?? '') }}</textarea>
                                             @error('description.' . $locale)
                                             <small class="text-danger">{{ $message }}</small>
                                             @enderror

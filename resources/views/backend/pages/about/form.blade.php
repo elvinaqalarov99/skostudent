@@ -30,7 +30,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Short Info ({{ strtoupper($locale) }})</label>
-                                    <textarea name="short_info[{{ $locale }}]" class="form-control">{{ old('short_info.' . $locale, $about->short_info->$locale ?? '') }}</textarea>
+                                    <textarea name="short_info[{{ $locale }}]" class="form-control">{{ old('short_info.' . $locale, $about?->short_info?->$locale ?? '') }}</textarea>
                                 </div>
                             </div>
                         @endforeach
@@ -44,7 +44,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>{{ $label }} ({{ strtoupper($locale) }})</label>
-                                        <textarea name="{{ $field }}[{{ $locale }}]" class="form-control">{{ old("$field.$locale", $about->$field->$locale ?? '') }}</textarea>
+                                        <textarea name="{{ $field }}[{{ $locale }}]" class="form-control">{{ old("$field.$locale", $about?->$field?->$locale ?? '') }}</textarea>
                                     </div>
                                 </div>
                             @endforeach

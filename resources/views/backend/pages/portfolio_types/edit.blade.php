@@ -62,7 +62,7 @@
                                     <div class="form-group">
                                         <label for="">Başlıq {{ strtoupper($locale) }}</label>
                                         <input type="text"
-                                               value="{{ old('title.' . $locale, $portfolio_type->title?->$locale) }}" name="title[{{ $locale }}]"
+                                               value="{{ old('title.' . $locale, $portfolio_type?->title?->$locale) }}" name="title[{{ $locale }}]"
                                                class="form-control {{ $errors->first('title.' . $locale) ? 'is-invalid' : '' }}">
                                         @error('title.' . $locale)<small class="text-danger">{{ $message }}</small> @enderror
                                     </div>

@@ -62,7 +62,7 @@
                                     <div class="form-group">
                                         <label for="">Başlıq {{ strtoupper($locale) }}</label>
                                         <input type="text"
-                                               value="{{ old('title.' . $locale, $service->title?->$locale) }}" name="title[{{ $locale }}]"
+                                               value="{{ old('title.' . $locale, $service?->title?->$locale) }}" name="title[{{ $locale }}]"
                                                class="form-control {{ $errors->first('title.' . $locale) ? 'is-invalid' : '' }}">
                                         @error('title.' . $locale)<small class="text-danger">{{ $message }}</small> @enderror
 
@@ -100,7 +100,7 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="">Description {{ strtoupper($locale) }}</label>
-                                        <textarea name="description[{{ $locale }}]" class="form-control {{ $errors->first('description.' . $locale) ? 'is-invalid' : '' }}">{{ old('description.' . $locale, $service->description?->$locale) }}</textarea>
+                                        <textarea name="description[{{ $locale }}]" class="form-control {{ $errors->first('description.' . $locale) ? 'is-invalid' : '' }}">{{ old('description.' . $locale, $service?->description?->$locale) }}</textarea>
                                         @error('description.' . $locale)<small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
                                 </div>
@@ -113,7 +113,7 @@
                                     <div class="form-group">
                                         <label for="">Məzmun 1 {{ strtoupper($locale) }}</label>
                                         <textarea name="content_1[{{ $locale }}]"
-                                                  class="form-control summernote {{ $errors->first('content_1.' . $locale) ? 'is-invalid' : '' }}">{{ old('content_1.' . $locale, $service->content_1?->$locale) }}</textarea>
+                                                  class="form-control summernote {{ $errors->first('content_1.' . $locale) ? 'is-invalid' : '' }}">{{ old('content_1.' . $locale, $service?->content_1?->$locale) }}</textarea>
                                         @error('content_1.' . $locale)<small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
                                 </div>
@@ -126,7 +126,7 @@
                                     <div class="form-group">
                                         <label for="">Məzmun 2 {{ strtoupper($locale) }}</label>
                                         <textarea name="content_2[{{ $locale }}]"
-                                                  class="form-control summernote {{ $errors->first('content_2.' . $locale) ? 'is-invalid' : '' }}">{{ old('content_2.' . $locale, $service->content_2?->$locale) }}</textarea>
+                                                  class="form-control summernote {{ $errors->first('content_2.' . $locale) ? 'is-invalid' : '' }}">{{ old('content_2.' . $locale, $service?->content_2?->$locale) }}</textarea>
                                         @error('content_2.' . $locale)<small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
                                 </div>

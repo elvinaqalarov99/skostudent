@@ -62,7 +62,7 @@
                                         <div class="form-group">
                                             <label for="">Başlıq {{ strtoupper($locale) }}</label>
                                             <input type="text"
-                                                   value="{{ old('title.' . $locale, $faq->title?->$locale) }}" name="title[{{ $locale }}]"
+                                                   value="{{ old('title.' . $locale, $faq?->title?->$locale) }}" name="title[{{ $locale }}]"
                                                    class="form-control {{ $errors->first('title.' . $locale) ? 'is-invalid' : '' }}">
                                             @error('title.' . $locale)<small class="text-danger">{{ $message }}</small> @enderror
 
@@ -77,7 +77,7 @@
                                         <div class="form-group">
                                             <label for="">Məzmun {{ strtoupper($locale) }}</label>
                                             <textarea name="content[{{ $locale }}]"
-                                                      class="form-control {{ $errors->first('content.' . $locale) ? 'is-invalid' : '' }}">{{ old('content.' . $locale, $faq->content?->$locale) }}</textarea>
+                                                      class="form-control {{ $errors->first('content.' . $locale) ? 'is-invalid' : '' }}">{{ old('content.' . $locale, $faq?->content?->$locale) }}</textarea>
                                             @error('content.' . $locale)<small class="text-danger">{{ $message }}</small> @enderror
                                         </div>
                                     </div>

@@ -9,13 +9,13 @@
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>Products</h2>
+            <h2>Study Abroad</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <strong>Products</strong>
+                    <strong>Study Abroad</strong>
                 </li>
             </ol>
         </div>
@@ -42,7 +42,7 @@
 
                         <div class="row align-items-center">
                             <div class="col-6">
-                                <h5>Products</h5>
+                                <h5>Study Abroad</h5>
                             </div>
                             <div class="col-6 text-right">
                                 <a href="{{ route('admin.products.create') }}" class="btn btn-w-m btn-primary">Yeni</a>

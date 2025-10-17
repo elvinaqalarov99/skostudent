@@ -27,7 +27,7 @@
 
             <li class="{{ url()->current() == route('admin.products.index') ? "active" : '' }}">
                 <a href="{{ route('admin.products.index') }}"><i class="fa fa-list-alt"></i>  <span
-                        class="nav-label">Products</span></a>
+                        class="nav-label">Xaricdə Təhsil</span></a>
             </li>
 
             <li class="{{ url()->current() == route('admin.services.index') ? "active" : '' }}">

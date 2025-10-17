@@ -21,6 +21,7 @@ class Product extends Model implements HasMedia
 
     protected $casts = [
         'title' => LocalizedObject::class,
+//        'quote' => LocalizedObject::class,
         'content_1' => LocalizedObject::class,
         'content_2' => LocalizedObject::class,
     ];

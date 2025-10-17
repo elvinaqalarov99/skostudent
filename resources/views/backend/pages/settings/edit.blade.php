@@ -79,7 +79,7 @@
                                     <div class="form-group">
                                         <label for="">Dəyər {{ strtoupper($locale) }}</label>
                                         <input type="text"
-                                               value="{{ old('type', $setting->type) == 1 ? old('value.' . $locale, $setting->value?->$locale) : '' }}"
+                                               value="{{ old('type', $setting->type) == 1 ? old('value.' . $locale, $setting?->value?->$locale) : '' }}"
                                                {{ old('type', $setting->type) != 1 && old('type', $setting->type) ? 'disabled' : '' }} name="value[{{ $locale }}]"
                                                class="form-control {{ $errors->first('value.' . $locale) ? 'is-invalid' : '' }}">
                                         @error('value.' . $locale)<small class="text-danger">{{ $message }}</small> @enderror
@@ -95,7 +95,7 @@
                                         <label for="">Dəyər {{ strtoupper($locale) }}</label>
                                         <textarea
                                             {{ old('type', $setting->type) == 2  ? '' : 'disabled' }} name="value[{{ $locale }}]"
-                                            class="form-control {{ $errors->first('value.' . $locale) ? 'is-invalid' : '' }}">{{ old('type', $setting->type) == 2 ? old('value.' . $locale, $setting->value?->$locale) : '' }}</textarea>
+                                            class="form-control {{ $errors->first('value.' . $locale) ? 'is-invalid' : '' }}">{{ old('type', $setting->type) == 2 ? old('value.' . $locale, $setting?->value?->$locale) : '' }}</textarea>
                                         @error('value.' . $locale)<small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
                                 </div>
@@ -138,7 +138,7 @@
                                         <label for="">Dəyər {{ strtoupper($locale) }}</label>
                                         <textarea
                                             {{ old('type', $setting->type) == 4  ? '' : 'disabled' }} name="value[{{ $locale }}]"
-                                            class="form-control summernote {{ $errors->first('value.' . $locale) ? 'is-invalid' : '' }}">{{ old('type', $setting->type) == 4 ? old('value.' . $locale, $setting->value?->$locale) : '' }}</textarea>
+                                            class="form-control summernote {{ $errors->first('value.' . $locale) ? 'is-invalid' : '' }}">{{ old('type', $setting->type) == 4 ? old('value.' . $locale, $setting?->value?->$locale) : '' }}</textarea>
                                         @error('value.' . $locale)<small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
                                 </div>

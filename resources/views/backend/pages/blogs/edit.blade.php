@@ -62,7 +62,7 @@
                                     <div class="form-group">
                                         <label for="">Başlıq {{ strtoupper($locale) }}</label>
                                         <input type="text"
-                                               value="{{ old('title.' . $locale, $blog->title?->$locale) }}" name="title[{{ $locale }}]"
+                                               value="{{ old('title.' . $locale, $blog?->title?->$locale) }}" name="title[{{ $locale }}]"
                                                class="form-control {{ $errors->first('title.' . $locale) ? 'is-invalid' : '' }}">
                                         @error('title.' . $locale)<small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
@@ -100,7 +100,7 @@
                                     <div class="form-group">
                                         <label for="">Qısa məzmun {{ strtoupper($locale) }}</label>
                                         <textarea name="description[{{ $locale }}]"
-                                                  class="form-control {{ $errors->first('description.' . $locale) ? 'is-invalid' : '' }}">{{ old('description.' . $locale, $blog->description?->$locale) }}</textarea>
+                                                  class="form-control {{ $errors->first('description.' . $locale) ? 'is-invalid' : '' }}">{{ old('description.' . $locale, $blog?->description?->$locale) }}</textarea>
                                         @error('description.' . $locale)<small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
                                 </div>
@@ -113,7 +113,7 @@
                                     <div class="form-group">
                                         <label for="">Məzmun {{ strtoupper($locale) }}</label>
                                         <textarea name="content[{{ $locale }}]"
-                                                  class="form-control summernote {{ $errors->first('content.' . $locale) ? 'is-invalid' : '' }}">{{ old('content.' . $locale, $blog->content?->$locale) }}</textarea>
+                                                  class="form-control summernote {{ $errors->first('content.' . $locale) ? 'is-invalid' : '' }}">{{ old('content.' . $locale, $blog?->content?->$locale) }}</textarea>
                                         @error('content.' . $locale)<small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
                                 </div>

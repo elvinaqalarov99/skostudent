@@ -36,6 +36,12 @@ class ProductController extends Controller
             'content_2.*' => ['nullable', 'string'],
 
             'slug' => ['required', 'string'],
+
+//            'quote' => ['required', 'array'],
+//            'quote.*' => ['nullable', 'string'],
+
+            'university_count' => ['required', 'string'],
+
             'images' => ['required', 'array', 'min:1'],
             'images.*' => [
                 'file',
@@ -52,6 +58,10 @@ class ProductController extends Controller
         $model->title = collect($request->input('title'))->map(fn ($value) => preg_replace(['#<script(.*?)>(.*?)</script>#is', '/\bon\w+=\S+(?=.*>)/'], '', $value));
         $model->content_1 = collect($request->input('content_1'))->map(fn ($value) => preg_replace(['#<script(.*?)>(.*?)</script>#is', '/\bon\w+=\S+(?=.*>)/'], '', $value));
         $model->content_2 = collect($request->input('content_2'))->map(fn ($value) => preg_replace(['#<script(.*?)>(.*?)</script>#is', '/\bon\w+=\S+(?=.*>)/'], '', $value));
+
+//        $model->quote = collect($request->input('quote'))->map(fn ($value) => preg_replace(['#<script(.*?)>(.*?)</script>#is', '/\bon\w+=\S+(?=.*>)/'], '', $value));
+        $model->university_count = $request->input('university_count');
+
         // $model->slug =  $request->input('slug');
         $model->save();
 
@@ -82,6 +92,11 @@ class ProductController extends Controller
             'content_2' => ['required', 'array'],
             'content_2.*' => ['nullable', 'string'],
 
+//            'quote' => ['required', 'array'],
+//            'quote.*' => ['nullable', 'string'],
+
+            'university_count' => ['required', 'string'],
+
             'slug' => ['required', 'string'],
             'images' => ['sometimes', 'array'],
             'images.*' => ['file', 'sometimes', 'mimetypes:' . implode(',', Product::ALLOWED_FILE_MIMES)],
@@ -94,6 +109,9 @@ class ProductController extends Controller
         $model->title = collect($request->input('title'))->map(fn ($value) => preg_replace(['#<script(.*?)>(.*?)</script>#is', '/\bon\w+=\S+(?=.*>)/'], '', $value));
         $model->content_1 = collect($request->input('content_1'))->map(fn ($value) => preg_replace(['#<script(.*?)>(.*?)</script>#is', '/\bon\w+=\S+(?=.*>)/'], '', $value));
         $model->content_2 = collect($request->input('content_2'))->map(fn ($value) => preg_replace(['#<script(.*?)>(.*?)</script>#is', '/\bon\w+=\S+(?=.*>)/'], '', $value));
+//        $model->quote = collect($request->input('quote'))->map(fn ($value) => preg_replace(['#<script(.*?)>(.*?)</script>#is', '/\bon\w+=\S+(?=.*>)/'], '', $value));
+        $model->university_count = $request->input('university_count');
+
         // $model->slug =  $request->input('slug');
         $model->save();
 

@@ -53,7 +53,7 @@
                                             <label>Name {{ strtoupper($locale) }}</label>
                                             <input type="text"
                                                    name="name[{{ $locale }}]"
-                                                   value="{{ old('name.' . $locale, $team->name->$locale ?? '') }}"
+                                                   value="{{ old('name.' . $locale, $team?->name?->$locale ?? '') }}"
                                                    class="form-control {{ $errors->first('name.' . $locale) ? 'is-invalid' : '' }}">
                                             @error('name.' . $locale)
                                             <small class="text-danger">{{ $message }}</small>
@@ -69,7 +69,7 @@
                                             <label>Position {{ strtoupper($locale) }}</label>
                                             <input type="text"
                                                    name="position[{{ $locale }}]"
-                                                   value="{{ old('position.' . $locale, $team->position->$locale ?? '') }}"
+                                                   value="{{ old('position.' . $locale, $team?->position?->$locale ?? '') }}"
                                                    class="form-control {{ $errors->first('position.' . $locale) ? 'is-invalid' : '' }}">
                                             @error('position.' . $locale)
                                             <small class="text-danger">{{ $message }}</small>
