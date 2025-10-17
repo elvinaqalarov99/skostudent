@@ -36,7 +36,7 @@ class AdminController extends Controller
 
     public function index () {
 
-        $managers = Admin::orderBy('created_at')->get();
+        $managers = Admin::orderByDesc('created_at')->get();
         return view('backend.pages.admins.index', compact('managers'));
     }
 

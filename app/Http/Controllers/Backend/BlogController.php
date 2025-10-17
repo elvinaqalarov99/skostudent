@@ -13,7 +13,7 @@ class BlogController extends Controller
 {
     public function index () {
 
-        $blogs = Blog::orderBy('created_at')->get();
+        $blogs = Blog::orderByDesc('created_at')->get();
         return view('backend.pages.blogs.index', compact('blogs'));
     }
 

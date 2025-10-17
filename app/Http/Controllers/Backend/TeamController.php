@@ -10,7 +10,6 @@ use Illuminate\Support\Str;
 class TeamController extends Controller
 {
     public function index () {
-
         $teams = Team::orderBy('created_at')->get();
         return view('backend.pages.teams.index', compact('teams'));
     }

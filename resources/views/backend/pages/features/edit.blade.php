@@ -8,13 +8,13 @@
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>Features (About Page)</h2>
+            <h2>Partnyorlar</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{{ route('admin.features.index') }}">Features (About Page)</a>
+                    <a href="{{ route('admin.features.index') }}">Partnyorlar</a>
                 </li>
                 <li class="breadcrumb-item active">
                     <strong>Redaktə et</strong>
@@ -68,6 +68,13 @@
                                     </div>
                                 </div>
                                 @endforeach
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="">Link</label>
+                                        <input type="text" value="{{ old('link', $feature?->link) }}" name="link" class="form-control {{ $errors->first('link') ? 'is-invalid' : '' }}">
+                                        @error('link')<small class="text-danger">{{ $message }}</small> @enderror
+                                    </div>
+                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="">Şəkil</label>

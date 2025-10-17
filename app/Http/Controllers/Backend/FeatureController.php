@@ -11,7 +11,7 @@ class FeatureController extends Controller
 {
     public function index () {
 
-        $features = Feature::orderBy('created_at')->get();
+        $features = Feature::orderByDesc('created_at')->get();
         return view('backend.pages.features.index', compact('features'));
     }
 
@@ -25,6 +25,7 @@ class FeatureController extends Controller
             'title' => ['required', 'array'],
             'title.' . config('app.default_locale') => ['required', 'string', 'max:255'],
             'title.*' => ['nullable', 'string', 'max:255'],
+            'link' => ['required', 'string', 'url'],
             'image' => [
                 'file',
                 'required',
@@ -38,6 +39,7 @@ class FeatureController extends Controller
         $model = new Feature();
 
         $model->title = collect($request->input('title'))->map(fn ($value) => preg_replace(['#<script(.*?)>(.*?)</script>#is', '/\bon\w+=\S+(?=.*>)/'], '', $value));
+        $model->link = $request->input('link');
         $model->save();
 
         $model->addMedia($request->image)->toMediaCollection("file");
@@ -56,6 +58,7 @@ class FeatureController extends Controller
             'title' => ['required', 'array'],
             'title.' . config('app.default_locale') => ['required', 'string', 'max:255'],
             'title.*' => ['nullable', 'string', 'max:255'],
+            'link' => ['required', 'string', 'url'],
             'image' => ['file', 'sometimes', 'mimetypes:' . implode(',', Feature::ALLOWED_FILE_MIMES)],
         ];
 
@@ -64,6 +67,8 @@ class FeatureController extends Controller
         $model = Feature::findOrFail($id);
 
         $model->title = collect($request->input('title'))->map(fn ($value) => preg_replace(['#<script(.*?)>(.*?)</script>#is', '/\bon\w+=\S+(?=.*>)/'], '', $value));
+        $model->link = $request->input('link');
+
         $model->save();
 
         if ($request->hasFile('image')) {

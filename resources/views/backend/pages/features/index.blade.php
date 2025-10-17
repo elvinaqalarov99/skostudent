@@ -9,13 +9,13 @@
 
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-10">
-            <h2>Features (About Page)</h2>
+            <h2>Partnyorlar</h2>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <strong>Features (About Page)</strong>
+                    <strong>Partnyorlar</strong>
                 </li>
             </ol>
         </div>
@@ -56,6 +56,7 @@
                             <thead>
                             <tr>
                                 <th>Başlıq</th>
+                                <th>Link</th>
                                 <th></th>
                             </tr>
                             </thead>
@@ -64,6 +65,7 @@
                                 <tr class="gradeX">
 
                                     <td>{{ localized($data->title) }}</td>
+                                    <td>{{ $data->link }}</td>
 
                                     <td class="text-right">
                                         <a href="{{ route('admin.features.edit', $data->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-pencil-square-o"></i></a>

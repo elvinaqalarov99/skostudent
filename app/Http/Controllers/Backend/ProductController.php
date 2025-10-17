@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function index () {
 
-        $products = Product::orderBy('created_at')->get();
+        $products = Product::orderByDesc('created_at')->get();
         return view('backend.pages.products.index', compact('products'));
     }
 

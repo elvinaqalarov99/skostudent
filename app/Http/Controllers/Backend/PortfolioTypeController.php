@@ -11,7 +11,7 @@ class PortfolioTypeController extends Controller
 {
     public function index () {
 
-        $portfolio_types = PortfolioType::orderBy('created_at')->get();
+        $portfolio_types = PortfolioType::orderByDesc('created_at')->get();
         return view('backend.pages.portfolio_types.index', compact('portfolio_types'));
     }
 

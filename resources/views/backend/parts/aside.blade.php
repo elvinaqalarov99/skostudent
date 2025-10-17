@@ -67,7 +67,7 @@
 
             <li class="{{ url()->current() == route('admin.features.index') ? "active" : '' }}">
                 <a href="{{ route('admin.features.index') }}"><i class="fa fa-list-alt"></i>  <span
-                        class="nav-label">Features (About Page)</span></a>
+                        class="nav-label">Partnyorlar</span></a>
             </li>
 
             <li class="{{ url()->current() == route('admin.admins.index') ? "active" : '' }}">
