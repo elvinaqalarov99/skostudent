@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\AboutUs;
 use App\Models\Blog;
 use App\Models\Faq;
 use App\Models\Feature;
@@ -17,13 +18,14 @@ use App\Models\Team;
 class HomeController extends Controller
 {
     public function index () {
+        $about = AboutUs::first();
         $faqs = Faq::take(6)->get();
         $teams = Team::take(6)->get();
         $services = Service::take(6)->get();
         $portfolios = Portfolio::with('type')->take(6)->get();
         $blogs = Blog::take(3)->get();
         $products = Product::take(6)->get();
-        return view('frontend.pages.index', compact('faqs', 'teams', 'services', 'portfolios', 'blogs', 'products'));
+        return view('frontend.pages.index', compact('about', 'faqs', 'teams', 'services', 'portfolios', 'blogs', 'products'));
     }
 
     public function products () {
@@ -86,9 +88,10 @@ class HomeController extends Controller
     }
 
     public function about () {
+        $about = AboutUs::first();
         $features = Feature::take(6)->get();
         $services = Service::take(3)->get();
-        return view('frontend.pages.about', compact('features', 'services'));
+        return view('frontend.pages.about', compact('about', 'features', 'services'));
     }
 
     public function privacy () {

@@ -1,11 +1,11 @@
 @extends('frontend.layouts.skostudent')
 
-@section('title', 'Haqqımızda')
+@section('title', setting('page_name_about') !== 'page_name_about' ? setting('page_name_about') : 'Haqqımızda')
 
 @section('content')
 
 <!-- Start Page Title Area -->
-<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
+<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp" @if(setting('about_page_banner_image')) style="background-image: url('{{ setting('about_page_banner_image') }}'); background-size: cover; background-position: center;" @endif>
     <div class="container">
         <div class="page-title-content text-center">
             <h2>Haqqımızda</h2>
@@ -37,25 +37,56 @@
             <div class="col-lg-6">
                 <div class="about-image style-2" data-cue="slideInUp">
                     <div class="image-one text-end">
-                        <img src="{{ asset('assets/images/about1.jpg') }}" alt="about-image">
+                        <img src="{{ $about && $about->getMedia('file')->count() > 0 ? $about->getMedia('file')->first()->getUrl() : asset('assets/images/about1.jpg') }}" alt="about-image">
                     </div>
+                    @if($about && $about->getMedia('file')->count() > 1)
+                    <div class="image-two">
+                        <img src="{{ $about->getMedia('file')->skip(1)->first()->getUrl() }}" alt="about-image">
+                    </div>
+                    @else
                     <div class="image-two">
                         <img src="{{ asset('assets/images/about2.jpg') }}" alt="about-image">
                     </div>
+                    @endif
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="about-content style-2" data-cue="slideInUp">
                     <div class="section-title">
-                        <span class="d-inline-block sub-title">About Skostudent</span>
+                        <span class="d-inline-block sub-title">{{ $about && localized($about->short_info) ? \Illuminate\Support\Str::limit(localized($about->short_info), 30) : 'Skostudent Haqqında' }}</span>
                         <h2>
-                            Discover Our Vision for Digital 
-                            <span class="position-relative">
-                                Education
-                                <img src="{{ asset('assets/images/title-shape.svg') }}" alt="shape">
-                            </span>
+                            @if($about && localized($about->vision))
+                                {{ localized($about->vision) }}
+                            @else
+                                Discover Our Vision for Digital 
+                                <span class="position-relative">
+                                    Education
+                                    <img src="{{ asset('assets/images/title-shape.svg') }}" alt="shape">
+                                </span>
+                            @endif
                         </h2>
                     </div>
+                    @if($about && localized($about->short_info))
+                    <p class="mb-4">{{ localized($about->short_info) }}</p>
+                    @endif
+                    @if($about && localized($about->mission))
+                    <div class="mb-4">
+                        <h4>Missiyamız</h4>
+                        <p>{{ localized($about->mission) }}</p>
+                    </div>
+                    @endif
+                    @if($about && localized($about->vision))
+                    <div class="mb-4">
+                        <h4>Vizyonumuz</h4>
+                        <p>{{ localized($about->vision) }}</p>
+                    </div>
+                    @endif
+                    @if($about && localized($about->values))
+                    <div class="mb-4">
+                        <h4>Dəyərlərimiz</h4>
+                        <p>{{ localized($about->values) }}</p>
+                    </div>
+                    @endif
                     <div class="awards-info">
                         <div class="row">
                             <div class="col-lg-7 col-sm-7">
@@ -75,7 +106,7 @@
                                     <div class="icon">
                                         <img src="{{ asset('assets/images/black-logo.svg') }}" alt="logo">
                                     </div>
-                                    <h3>25+</h3>
+                                    <h3>{{ $about && $about->scholarship_count ? $about->scholarship_count . '+' : '25+' }}</h3>
                                     <p>Qazandığımız Mükafatlar</p>
                                 </div>
                             </div>
@@ -133,8 +164,10 @@
                         </div>
                         <div class="text">
                             <h3>
-                                <span class="counter">75K</span>
+                                <span class="counter" data-count="{{ $about && $about->student_count ? $about->student_count : 75000 }}">{{ $about && $about->student_count ? number_format($about->student_count) : '75K' }}</span>
+                                @if(!$about || !$about->student_count || $about->student_count < 1000)
                                 +
+                                @endif
                             </h3>
                             <p>Qeydiyyatdan Keçən Tələbələr</p>
                         </div>
@@ -152,10 +185,10 @@
                         </div>
                         <div class="text">
                             <h3>
-                                <span class="counter">324</span>
+                                <span class="counter" data-count="{{ $about && $about->university_count ? $about->university_count : 324 }}">{{ $about && $about->university_count ? $about->university_count : '324' }}</span>
                                 +
                             </h3>
-                            <p>Qeydiyyatdan Keçən Tələbələr</p>
+                            <p>Universitetlər</p>
                         </div>
                     </div>
                 </div>
@@ -171,10 +204,12 @@
                         </div>
                         <div class="text">
                             <h3>
-                                <span class="counter">22</span>
-                                K+
+                                <span class="counter" data-count="{{ $about && $about->scholarship_count ? $about->scholarship_count : 22000 }}">{{ $about && $about->scholarship_count ? number_format($about->scholarship_count) : '22K' }}</span>
+                                @if(!$about || !$about->scholarship_count || $about->scholarship_count < 1000)
+                                +
+                                @endif
                             </h3>
-                            <p>Sertifikatlaşdırılmış Tələbələr</p>
+                            <p>Təqaüdlər</p>
                         </div>
                     </div>
                 </div>
@@ -190,10 +225,10 @@
                         </div>
                         <div class="text">
                             <h3>
-                                <span class="counter">30</span>
+                                <span class="counter" data-count="{{ $about && $about->country_count ? $about->country_count : 30 }}">{{ $about && $about->country_count ? $about->country_count : '30' }}</span>
                                 +
                             </h3>
-                            <p>Bacarıqlı Müəllim</p>
+                            <p>Ölkələr</p>
                         </div>
                     </div>
                 </div>

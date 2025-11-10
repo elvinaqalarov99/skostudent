@@ -1,11 +1,11 @@
 @extends('frontend.layouts.skostudent')
 
-@section('title', 'Blog')
+@section('title', setting('page_name_blog') !== 'page_name_blog' ? setting('page_name_blog') : 'Blog')
 
 @section('content')
 
 <!-- Start Page Title Area -->
-<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
+<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp" @if(setting('blogs_page_banner_image')) style="background-image: url('{{ setting('blogs_page_banner_image') }}'); background-size: cover; background-position: center;" @endif>
     <div class="container">
         <div class="page-title-content text-center">
             <h2>Sağ Yan Panelli Bloq Grid</h2>

@@ -5,7 +5,7 @@
             <div class="mobile-responsive-menu">
                 <div class="logo">
                     <a href="{{ route('home') }}">
-                        <img src="{{ asset('assets/images/black-logo.svg') }}" alt="logo">
+                        <img src="{{ setting('logo') ?: asset('assets/images/black-logo.svg') }}" alt="logo">
                     </a>
                 </div>
             </div>
@@ -16,23 +16,23 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand me-0" href="{{ route('home') }}">
-                    <img src="{{ asset('assets/images/black-logo.svg') }}" alt="logo">
+                    <img src="{{ setting('logo') ?: asset('assets/images/black-logo.svg') }}" alt="logo">
                 </a>
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
                             <a href="{{ route('home') }}" class="dropdown-toggle nav-link {{ request()->routeIs('home') ? 'active' : '' }}">
-                                Ana səhifə
+                                {{ setting('page_name_home') !== 'page_name_home' ? setting('page_name_home') : 'Ana səhifə' }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('products') }}" class="dropdown-toggle nav-link {{ request()->routeIs('products*') ? 'active' : '' }}">
-                                Xaricdə Təhsil
+                                {{ setting('page_name_products') !== 'page_name_products' ? setting('page_name_products') : 'Xaricdə Təhsil' }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('services') }}" class="dropdown-toggle nav-link {{ request()->routeIs('services*') ? 'active' : '' }}">
-                                Xidmətlərimiz
+                                {{ setting('page_name_services') !== 'page_name_services' ? setting('page_name_services') : 'Xidmətlərimiz' }}
                             </a>
                             <ul class="dropdown-menu">
                                 @foreach(\App\Models\Service::take(3)->get() as $service)
@@ -51,24 +51,24 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('blog') }}" class="dropdown-toggle nav-link {{ request()->routeIs('blog*') ? 'active' : '' }}">
-                                Bloq
+                                {{ setting('page_name_blog') !== 'page_name_blog' ? setting('page_name_blog') : 'Bloq' }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('about') }}" class="dropdown-toggle nav-link {{ request()->routeIs('about*') ? 'active' : '' }}">
-                                Haqqımızda
+                                {{ setting('page_name_about') !== 'page_name_about' ? setting('page_name_about') : 'Haqqımızda' }}
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
                                     <a href="{{ route('portfolio') }}" class="nav-link">
-                                        Qalereya
+                                        {{ setting('page_name_portfolio') !== 'page_name_portfolio' ? setting('page_name_portfolio') : 'Qalereya' }}
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('contact') }}" class="dropdown-toggle nav-link {{ request()->routeIs('contact*') ? 'active' : '' }}">
-                                Əlaqə
+                                {{ setting('page_name_contact') !== 'page_name_contact' ? setting('page_name_contact') : 'Əlaqə' }}
                             </a>
                         </li>
                     </ul>

@@ -6,7 +6,7 @@
   <meta name="robots" content="index, follow">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>@yield('title', setting('site_name', 'Skostudent')) | {{ setting('site_tagline', 'Xaricdə Təhsil') }}</title>
+  <title>@yield('title', setting('site_name', 'Skostudent'))</title>
   <link rel="icon" type="image/svg+xml" href="{{ setting('favicon') ?: asset('assets/images/black-logo.svg') }}">
 
   <!-- Link of CSS files -->

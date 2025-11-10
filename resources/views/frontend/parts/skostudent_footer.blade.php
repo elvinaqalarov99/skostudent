@@ -6,38 +6,59 @@
                 <div class="single-footer-widget logo-info" data-cue="slideInUp">
                     <div class="logo">
                         <a href="{{ route('home') }}">
-                            <img src="{{ asset('assets/images/black-logo.svg') }}" alt="logo">
+                            <img src="{{ setting('logo') ?: asset('assets/images/black-logo.svg') }}" alt="logo">
                         </a>
                     </div>
+                    @if(setting('footer_description') && setting('footer_description') !== 'footer_description')
+                    <p>{!! setting('footer_description') !!}</p>
+                    @else
                     <p>
                         Lorem ipsum amet, consectetur adipiscing elit.
                         Suspendis varius enim eros elementum tristique.
                         Duis cursus.
                     </p>
-                    <a href="mailto:themeies3@gmail.com" class="email">
-                        support.skostudent@email.com
+                    @endif
+                    @if(setting('email') && setting('email') !== 'email')
+                    <a href="mailto:{{ setting('email') }}" class="email">
+                        {{ setting('email') }}
                     </a>
+                    @endif
                     <ul class="list-unstyled ps-0 mb-0 social-link">
+                        @if(setting('facebook_url') && setting('facebook_url') !== 'facebook_url')
                         <li class="d-inline-block">
-                            <a href="https://www.facebook.com/" target="_blank">
+                            <a href="{{ setting('facebook_url') }}" target="_blank">
                                 <i class="ri-facebook-fill"></i>
                             </a>
                         </li>
+                        @endif
+                        @if(setting('twitter_url') && setting('twitter_url') !== 'twitter_url')
                         <li class="d-inline-block">
-                            <a href="https://x.com/home" target="_blank">
+                            <a href="{{ setting('twitter_url') }}" target="_blank">
                                 <i class="ri-twitter-x-fill"></i>
                             </a>
                         </li>
+                        @endif
+                        @if(setting('linkedin_url') && setting('linkedin_url') !== 'linkedin_url')
                         <li class="d-inline-block">
-                            <a href="https://www.linkedin.com/" target="_blank">
+                            <a href="{{ setting('linkedin_url') }}" target="_blank">
                                 <i class="ri-linkedin-fill"></i>
                             </a>
                         </li>
+                        @endif
+                        @if(setting('youtube_url') && setting('youtube_url') !== 'youtube_url')
                         <li class="d-inline-block">
-                            <a href="https://www.google.com/" target="_blank">
-                                <i class="ri-google-fill"></i>
+                            <a href="{{ setting('youtube_url') }}" target="_blank">
+                                <i class="ri-youtube-fill"></i>
                             </a>
                         </li>
+                        @endif
+                        @if(setting('instagram_url') && setting('instagram_url') !== 'instagram_url')
+                        <li class="d-inline-block">
+                            <a href="{{ setting('instagram_url') }}" target="_blank">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                        </li>
+                        @endif
                     </ul>
                 </div>
             </div>

@@ -1,11 +1,11 @@
 @extends('frontend.layouts.skostudent')
 
-@section('title', 'Xaricdə Təhsil')
+@section('title', setting('page_name_products') !== 'page_name_products' ? setting('page_name_products') : 'Xaricdə Təhsil')
 
 @section('content')
 
 <!-- Start Page Title Area -->
-<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
+<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp" @if(setting('products_page_banner_image')) style="background-image: url('{{ setting('products_page_banner_image') }}'); background-size: cover; background-position: center;" @endif>
     <div class="container">
         <div class="page-title-content text-center">
             <h2>Kurslar Grid Görünüşü</h2>

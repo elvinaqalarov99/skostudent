@@ -1,11 +1,11 @@
 @extends('frontend.layouts.skostudent')
 
-@section('title', 'Xidmətlərimiz')
+@section('title', setting('page_name_services') !== 'page_name_services' ? setting('page_name_services') : 'Xidmətlərimiz')
 
 @section('content')
 
 <!-- Start Page Title Area -->
-<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
+<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp" @if(setting('services_page_banner_image')) style="background-image: url('{{ setting('services_page_banner_image') }}'); background-size: cover; background-position: center;" @endif>
     <div class="container">
         <div class="page-title-content text-center">
             <h2>Xidmətlər</h2>

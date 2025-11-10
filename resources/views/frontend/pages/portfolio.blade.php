@@ -1,11 +1,11 @@
 @extends('frontend.layouts.skostudent')
 
-@section('title', 'Qalereya')
+@section('title', setting('page_name_portfolio') !== 'page_name_portfolio' ? setting('page_name_portfolio') : 'Qalereya')
 
 @section('content')
 
 <!-- Start Page Title Area -->
-<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
+<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp" @if(setting('portfolio_page_banner_image')) style="background-image: url('{{ setting('portfolio_page_banner_image') }}'); background-size: cover; background-position: center;" @endif>
     <div class="container">
         <div class="page-title-content text-center">
             <h2>Qalereya</h2>

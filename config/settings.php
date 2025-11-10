@@ -10,6 +10,7 @@ return [
 
     'favicon' => Setting::TYPES['file'],
     'logo' => Setting::TYPES['file'],
+    'site_name' => Setting::TYPES['string'],
     'logo_dark' => Setting::TYPES['file'],
     'page_name_home' => Setting::TYPES['string'],
     'page_name_products' => Setting::TYPES['string'],

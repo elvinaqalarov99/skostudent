@@ -15,22 +15,25 @@
           <div class="banner-content" data-cue="slideInUp">
             <div class="title">
               <span class="sub-title d-inline-block">
-                Onlayn Təhsil Veb-saytı
+                {{ setting('main_page_banner_dynamic_words') !== 'main_page_banner_dynamic_words' ? setting('main_page_banner_dynamic_words') : 'Onlayn Təhsil Veb-saytı' }}
               </span>
               <h2>
-                Gələcəyinizi Gücləndirin, Rəqəmsal
-                <span class="position-relative">
-                  Bacarıqlar Öyrənin
-                  <img
-                    src="{{ asset('assets/images/title-shape.svg') }}"
-                    alt="shape"
-                    class="title-decoration"
-                  >
-                </span>
+                @if(setting('main_page_banner_title') && setting('main_page_banner_title') !== 'main_page_banner_title')
+                  {!! setting('main_page_banner_title') !!}
+                @else
+                  Gələcəyinizi Gücləndirin, Rəqəmsal
+                  <span class="position-relative">
+                    Bacarıqlar Öyrənin
+                    <img
+                      src="{{ asset('assets/images/title-shape.svg') }}"
+                      alt="shape"
+                      class="title-decoration"
+                    >
+                  </span>
+                @endif
               </h2>
               <p>
-                Rəqəmsal Kəşf Səyahətinə Başlayın:
-                Mütəxəssislər Tərəfindən Təqdim Olunan Kurslar
+                {!! setting('main_page_banner_description') !== 'main_page_banner_description' ? setting('main_page_banner_description') : 'Rəqəmsal Kəşf Səyahətinə Başlayın: Mütəxəssislər Tərəfindən Təqdim Olunan Kurslar' !!}
               </p>
             </div>
             <div class="button-list d-flex align-items-center">
@@ -52,7 +55,7 @@
             <!-- Main Banner Image -->
             <div class="image">
               <img
-                src="{{ asset('assets/images/banner1.png') }}"
+                src="{{ setting('main_page_banner_image') ?: asset('assets/images/banner1.png') }}"
                 alt="banner-image"
                 class="img-fluid"
               >
@@ -162,11 +165,20 @@
               <div class="col-lg-6 col-md-6">
                 <div class="image-1">
                   <img
-                    src="{{ asset('assets/images/about1.jpg') }}"
+                    src="{{ $about && $about->getMedia('file')->count() > 0 ? $about->getMedia('file')->first()->getUrl() : asset('assets/images/about1.jpg') }}"
                     alt="about-image-1"
                     class="img-fluid"
                   >
                 </div>
+                @if($about && $about->getMedia('file')->count() > 1)
+                <div class="image-2" data-cue="slideInUp">
+                  <img
+                    src="{{ $about->getMedia('file')->skip(1)->first()->getUrl() }}"
+                    alt="about-image-2"
+                    class="img-fluid"
+                  >
+                </div>
+                @else
                 <div class="image-2" data-cue="slideInUp">
                   <img
                     src="{{ asset('assets/images/about2.jpg') }}"
@@ -174,8 +186,18 @@
                     class="img-fluid"
                   >
                 </div>
+                @endif
               </div>
               <div class="col-lg-6 col-md-6">
+                @if($about && $about->getMedia('file')->count() > 2)
+                <div class="image-3" data-cue="slideInUp">
+                  <img
+                    src="{{ $about->getMedia('file')->skip(2)->first()->getUrl() }}"
+                    alt="about-image-3"
+                    class="img-fluid"
+                  >
+                </div>
+                @else
                 <div class="image-3" data-cue="slideInUp">
                   <img
                     src="{{ asset('assets/images/about3.jpg') }}"
@@ -183,10 +205,11 @@
                     class="img-fluid"
                   >
                 </div>
+                @endif
                 <div class="experience-info d-flex align-items-center justify-content-between" data-cue="slideInUp">
                   <div class="content">
                     <h3>
-                      <span class="counter" data-count="15">15</span>
+                      <span class="counter" data-count="{{ $about && $about->country_count ? $about->country_count : 15 }}">{{ $about && $about->country_count ? $about->country_count : 15 }}</span>
                     </h3>
                     <p>illik təcrübə</p>
                   </div>
@@ -212,24 +235,41 @@
         <div class="col-lg-6">
           <div class="about-content" data-cue="slideInUp">
             <div class="section-title">
-              <span class="d-inline-block sub-title">Skostudent Haqqında</span>
+              <span class="d-inline-block sub-title">{{ $about && localized($about->short_info) ? \Illuminate\Support\Str::limit(localized($about->short_info), 30) : 'Skostudent Haqqında' }}</span>
               <h2>
-                Rəqəmsal Təhsil üçün Vizyonumuzu
-                <span class="position-relative">
-                  Kəşf Edin
-                  <img
-                    src="{{ asset('assets/images/title-shape.svg') }}"
-                    alt="shape"
-                    class="title-decoration"
-                  >
-                </span>
+                @if($about && localized($about->vision))
+                  {{ localized($about->vision) }}
+                @else
+                  Rəqəmsal Təhsil üçün Vizyonumuzu
+                  <span class="position-relative">
+                    Kəşf Edin
+                    <img
+                      src="{{ asset('assets/images/title-shape.svg') }}"
+                      alt="shape"
+                      class="title-decoration"
+                    >
+                  </span>
+                @endif
               </h2>
             </div>
+            @if($about && localized($about->short_info))
+            <p>{{ localized($about->short_info) }}</p>
+            @else
             <p>
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor
               incididunt ut labore
             </p>
+            @endif
+            @if($about && (localized($about->mission) || localized($about->vision)))
+            <h4 class="mission">Missiyamız və vizyonumuz</h4>
+            @if($about && localized($about->mission))
+            <p>{{ localized($about->mission) }}</p>
+            @endif
+            @if($about && localized($about->vision))
+            <p>{{ localized($about->vision) }}</p>
+            @endif
+            @else
             <h4 class="mission">Missiyamız və vizyonumuz</h4>
             <p>
               Lorem ipsum dolor sit amet, consectetur
@@ -245,6 +285,7 @@
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit
             </p>
+            @endif
             <div class="about-list d-flex align-items-center">
               <a href="{{ route('about') }}" class="default-btn">
                 <img

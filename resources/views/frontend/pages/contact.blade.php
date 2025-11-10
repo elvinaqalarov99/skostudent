@@ -1,11 +1,11 @@
 @extends('frontend.layouts.skostudent')
 
-@section('title', 'Əlaqə')
+@section('title', setting('page_name_contact') !== 'page_name_contact' ? setting('page_name_contact') : 'Əlaqə')
 
 @section('content')
 
 <!-- Start Page Title Area -->
-<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
+<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp" @if(setting('contact_page_banner_image')) style="background-image: url('{{ setting('contact_page_banner_image') }}'); background-size: cover; background-position: center;" @endif>
     <div class="container">
         <div class="page-title-content text-center">
             <h2>Bizimlə Əlaqə</h2>
@@ -46,62 +46,76 @@
                             </span>
                         </h2>
                     </div>
+                    @if(setting('email') && setting('email') !== 'email')
                     <div class="contact-list d-flex align-items-center">
                         <div class="icon">
                             <img src="{{ asset('assets/images/inbox-icon.svg') }}" alt="icon">
                         </div>
                         <div class="content">
-                            <h3>E-poçt :</h3>
-                            <a href="mailto:{{ setting('email') !== 'email' ? setting('email') : 'info@skostudent.az' }}">
-                                {{ setting('email') !== 'email' ? setting('email') : 'info@skostudent.az' }}
+                            <h3>{{ setting('say_hello_label') !== 'say_hello_label' ? setting('say_hello_label') : 'E-poçt' }} :</h3>
+                            <a href="mailto:{{ setting('email') }}">
+                                {{ setting('email') }}
                             </a>
                         </div>
                     </div>
+                    @endif
+                    @if(setting('phone') && setting('phone') !== 'phone')
                     <div class="contact-list d-flex align-items-center">
                         <div class="icon bg-2">
                             <img src="{{ asset('assets/images/message-icon.svg') }}" alt="icon">
                         </div>
                         <div class="content">
                             <h3>Zəng Et :</h3>
-                            <a href="tel:{{ setting('phone') !== 'phone' ? setting('phone') : '+994123456789' }}">
-                                {{ setting('phone') !== 'phone' ? setting('phone') : '+994123456789' }}
+                            <a href="tel:{{ setting('phone') }}">
+                                {{ setting('phone') }}
                             </a>
                         </div>
                     </div>
+                    @endif
+                    @if(setting('address') && setting('address') !== 'address')
                     <div class="contact-list d-flex align-items-center">
                         <div class="icon">
                             <img src="{{ asset('assets/images/user-icon.svg') }}" alt="icon">
                         </div>
                         <div class="content">
-                            <h3>Ofis :</h3>
-                            <span>{{ setting('address') !== 'address' ? setting('address') : 'Bakı, Azərbaycan' }}</span>
+                            <h3>{{ setting('address_label') !== 'address_label' ? setting('address_label') : 'Ofis' }} :</h3>
+                            <span>{{ setting('address') }}</span>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
             <div class="col-lg-8">
                 <div class="single-contact-form style-2">
+                    @if(setting('contact_page_form_sub_title') && setting('contact_page_form_sub_title') !== 'contact_page_form_sub_title')
+                    <div class="section-title mb-4">
+                        <span class="d-inline-block sub-title">{{ setting('contact_page_form_sub_title') }}</span>
+                        @if(setting('contact_page_form_title') && setting('contact_page_form_title') !== 'contact_page_form_title')
+                        <h2>{{ setting('contact_page_form_title') }}</h2>
+                        @endif
+                    </div>
+                    @endif
                     <form method="POST" action="{{ route('send.contact.form') }}">
                         @csrf
                         <div class="row">
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="name" class="form-control" placeholder="Ad*" required>
+                                    <input type="text" name="name" class="form-control" placeholder="{{ setting('contact_page_name_label') !== 'contact_page_name_label' ? setting('contact_page_name_label') . '*' : 'Ad*' }}" required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="email" name="email" class="form-control" placeholder="E-poçt*" required>
+                                    <input type="email" name="email" class="form-control" placeholder="{{ setting('contact_page_email_label') !== 'contact_page_email_label' ? setting('contact_page_email_label') . '*' : 'E-poçt*' }}" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="subject" class="form-control" placeholder="Mövzu">
+                            <input type="text" name="subject" class="form-control" placeholder="{{ setting('contact_page_subject_label') !== 'contact_page_subject_label' ? setting('contact_page_subject_label') : 'Mövzu' }}">
                         </div>
                         <div class="form-group">
-                            <textarea name="message" class="form-control textarea" placeholder="Mesajınız*" required></textarea>
+                            <textarea name="message" class="form-control textarea" placeholder="{{ setting('contact_page_message_label') !== 'contact_page_message_label' ? setting('contact_page_message_label') . '*' : 'Mesajınız*' }}" required></textarea>
                         </div>
-                        <button type="submit" class="default-btn2 style-3 border-0">Mesaj Göndər</button>
+                        <button type="submit" class="default-btn2 style-3 border-0">{{ setting('contact_page_send_button') !== 'contact_page_send_button' ? setting('contact_page_send_button') : 'Mesaj Göndər' }}</button>
                     </form>
                 </div>
             </div>
