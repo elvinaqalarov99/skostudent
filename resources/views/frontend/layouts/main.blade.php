@@ -1,156 +1,61 @@
 <!DOCTYPE html>
-<html lang="az" dir="ltr">
+<html lang="{{ app()->getLocale() }}" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="robots" content="index, follow">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#6E91F3">
-    <meta name="msapplication-navbutton-color" content="#6E91F3">
-    <meta name="theme-color" content="#6E91F3">
-    <link rel="icon" type="image/svg+xml" href="{{ setting('favicon') }}">
-    <link rel="alternate icon" href="{{ setting('favicon') }}">
-    <link rel="mask-icon" href="{{ setting('favicon') }}">
-    <title>{{ config('app.name') }}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- fontawesome css -->
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/fontawesome-5.css') }}">
-    <!-- fontawesome css -->
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/aos.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/unicons.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/metismenu.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/hover-revel.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/timepickers.min.css') }}">
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}">
-    <!-- main css -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link href="{{ asset('backend/assets/css/plugins/toastr/toastr.min.css') }}" rel="stylesheet">
-    @stack('css')
+  <title>@yield('title', setting('site_name', 'Skostudent'))</title>
+  <link rel="icon" type="image/svg+xml" href="{{ setting('favicon') ?: asset('assets/images/black-logo.svg') }}">
+
+  <!-- Link of CSS files -->
+  <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/scrollCue.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/remixicon.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/custom-fixes.css') }}">
+  @stack('css')
 </head>
-<body class="@yield('bodyClass')">
 
-@include('frontend.parts.header')
+<body>
 
-@yield('content')
+  @include('frontend.parts.header')
 
-<!-- progress area start -->
-<div class="progress-wrap">
-    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
-    </svg>
-</div>
-
-<div id="anywhere-home" class="">
-</div>
-
-<!-- pre loader start -->
-<div id="elevate-load">
-    <div class="loader-wrapper">
-        <div class="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+  <!-- Preloader -->
+  <div class="preloader-area position-fixed start-0 top-0 end-0 bottom-0 text-center">
+    <div class="preloader">
+      <div class="waviy fw-bold">
+        @php
+          $siteName = setting('site_name');
+          $siteName = $siteName !== 'site_name' ? $siteName : 'SKOSTUDENT';
+          $letters = str_split(mb_strtoupper($siteName));
+        @endphp
+        @foreach($letters as $letter)
+          <span class="position-relative d-inline-block">{{ $letter }}</span>
+        @endforeach
+      </div>
     </div>
-</div>
-<!-- pre loader end -->
+  </div>
+  <!-- End Preloader -->
 
-@include('frontend.parts.footer')
+  @yield('content')
 
-<!-- jquery js -->
-<script src="{{ asset('assets/js/plugins/jquery.min.js') }}"></script>
-<!-- jquery ui -->
-<script src="{{ asset('assets/js/vendor/jqueryui.js') }}"></script>
-<!-- counter up -->
-<script src="{{ asset('assets/js/plugins/counter-up.js') }}"></script>
-<script src="{{ asset('assets/js/plugins/swiper.js') }}"></script>
-<!-- twinmax -->
-<script src="{{ asset('assets/js/vendor/twinmax.js') }}"></script>
-<!-- split text js -->
-<script src="{{ asset('assets/js/vendor/split-text.js') }}"></script>
-<!-- text plugins -->
-<script src="{{ asset('assets/js/plugins/text-plugins.js') }}"></script>
-<!-- metismenu js -->
-<script src="{{ asset('assets/js/plugins/metismenu.js') }}"></script>
-<!-- waypoint js -->
-<script src="{{ asset('assets/js/vendor/waypoint.js') }}"></script>
-<!-- waw -->
-<script src="{{ asset('assets/js/vendor/waw.js') }}"></script>
-<!-- aos js -->
-<script src="{{ asset('assets/js/plugins/aos.js') }}"></script>
-<!-- jquery ui js -->
-<script src="{{ asset('assets/js/plugins/jquery-ui.js') }}"></script>
-<!-- timepickers -->
-<script src="{{ asset('assets/js/plugins/jquery-timepicker.js') }}"></script>
-<!-- sal animation -->
-<script src="{{ asset('assets/js/vendor/sal.min.js') }}"></script>
-<!-- bootstrap JS -->
-<script src="{{ asset('assets/js/plugins/bootstrap.min.js') }}"></script>
-<!-- easing JS -->
-<script src="{{ asset('assets/js/plugins/jquery-slideNav.js') }}"></script>
-<!-- easing JS -->
-<script src="{{ asset('assets/js/plugins/hover-revel.js') }}"></script>
-<!-- contact form js -->
-<script src="{{ asset('assets/js/plugins/contact-form.js') }}"></script>
-<!-- main js -->
-<script src="{{ asset('assets/js/main.js') }}"></script>
-<!-- swip image -->
-<script src="{{ asset('assets/js/plugins/swip-img.js') }}"></script>
-<!-- header style two End -->
+  @include('frontend.parts.footer')
 
-<script src="{{ asset('backend/assets/js/plugins/toastr/toastr.min.js') }}"></script>
-<script>
-    toastr.options = {
-        "closeButton": false,
-        "newestOnTop": true,
-        "progressBar": true,
-        "preventDuplicates": true,
-        "onclick": null,
-        "showDuration": "600",
-        "hideDuration": "1000",
-        "timeOut": "10000",
-        "extendedTimeOut": "5000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
-    };
-
-    $(document).ready(function(){
-        @if(session()->has('modal'))
-        $('#{{session()->get('modal')}}').modal('show')
-        @endif
-
-        @if(session()->has('error'))
-        toastr.error("{{session()->get('error')}}");
-        @endif
-
-        @if(session()->has('success'))
-        toastr.success("{{session()->get('success')}}");
-        @endif
-
-        @if(session()->has('warning'))
-        toastr.warning("{{session()->get('warning')}}");
-        @endif
-
-        @if(session()->has('info'))
-        toastr.info("{{session()->get('info')}}");
-        @endif
-
-        @if (isset($errors) && count($errors) > 0)
-            @foreach ($errors->all() as $error)
-                toastr.error("{{ $error }}");
-            @endforeach
-        @endif
-
-    });
-</script>
-
-@stack('js')
-
+  <!-- Link of JS files -->
+  <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/js/meanmenu.min.js') }}"></script>
+  <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('assets/js/scrollCue.min.js') }}"></script>
+  <script src="{{ asset('assets/js/mixitup.min.js') }}"></script>
+  <script src="{{ asset('assets/js/main.js') }}"></script>
+  @stack('js')
 </body>
 
 </html>

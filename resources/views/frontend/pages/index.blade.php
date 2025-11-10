@@ -1,4 +1,4 @@
-@extends('frontend.layouts.skostudent')
+@extends('frontend.layouts.main')
 
 @section('title', setting('site_name', 'Skostudent'))
 

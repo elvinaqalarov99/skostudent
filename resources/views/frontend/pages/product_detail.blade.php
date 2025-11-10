@@ -1,4 +1,4 @@
-@extends('frontend.layouts.skostudent')
+@extends('frontend.layouts.main')
 
 @section('title', localized($product->title))
 

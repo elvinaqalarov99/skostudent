@@ -1,4 +1,4 @@
-@extends('frontend.layouts.skostudent')
+@extends('frontend.layouts.main')
 
 @section('title', setting('page_name_portfolio') !== 'page_name_portfolio' ? setting('page_name_portfolio') : 'Qalereya')
 

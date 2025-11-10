@@ -1,4 +1,4 @@
-@extends('frontend.layouts.skostudent')
+@extends('frontend.layouts.main')
 
 @section('title', setting('page_name_contact') !== 'page_name_contact' ? setting('page_name_contact') : 'Əlaqə')
 

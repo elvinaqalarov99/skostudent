@@ -1,4 +1,4 @@
-@extends('frontend.layouts.skostudent')
+@extends('frontend.layouts.main')
 
 @section('title', setting('page_name_products') !== 'page_name_products' ? setting('page_name_products') : 'Xaricdə Təhsil')
 

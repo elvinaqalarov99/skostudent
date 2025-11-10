@@ -1,4 +1,4 @@
-@extends('frontend.layouts.skostudent')
+@extends('frontend.layouts.main')
 
 @section('title', setting('page_name_services') !== 'page_name_services' ? setting('page_name_services') : 'Xidmətlərimiz')
 

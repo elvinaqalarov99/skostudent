@@ -1,4 +1,4 @@
-@extends('frontend.layouts.skostudent')
+@extends('frontend.layouts.main')
 
 @section('title', setting('page_name_blog') !== 'page_name_blog' ? setting('page_name_blog') : 'Blog')
 

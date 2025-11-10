@@ -1,4 +1,4 @@
-@extends('frontend.layouts.skostudent')
+@extends('frontend.layouts.main')
 
 @section('title', setting('page_name_about') !== 'page_name_about' ? setting('page_name_about') : 'Haqqımızda')
 
@@ -58,7 +58,7 @@
                             @if($about && localized($about->vision))
                                 {{ localized($about->vision) }}
                             @else
-                                Discover Our Vision for Digital 
+                                Discover Our Vision for Digital
                                 <span class="position-relative">
                                     Education
                                     <img src="{{ asset('assets/images/title-shape.svg') }}" alt="shape">
@@ -128,7 +128,7 @@
                     <div class="section-title">
                         <span class="d-inline-block sub-title">Niyə Bizi Seçməlisiniz</span>
                         <h2>
-                            Bir Platforma & Çoxlu  
+                            Bir Platforma & Çoxlu
                             <span class="position-relative">
                                 Kurslar
                                 <img src="{{ asset('assets/images/title-shape.svg') }}" alt="shape">
@@ -291,7 +291,7 @@
         <div class="section-title text-center mx-auto" data-cue="slideInUp">
             <span class="d-inline-block sub-title">Komanda Üzvləri</span>
             <h2>
-                Müəllimlərimizlə 
+                Müəllimlərimizlə
                 <span class="position-relative">
                     Tanış Olun
                     <img src="{{ asset('assets/images/title-shape.svg') }}" alt="shape">
