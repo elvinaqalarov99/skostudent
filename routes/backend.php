@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Backend\AboutHistoryController;
+use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Backend\AboutUsController;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\AdminController;
@@ -113,15 +113,15 @@ Route::group([
         });
 
         Route::group([
-            'prefix' => 'about.histories',
-            'as'  => 'about.histories.'
+            'prefix' => 'testimonials',
+            'as'  => 'testimonials.'
         ], function () {
-            Route::get('/', [AboutHistoryController::class, 'index'])->name('index');
-            Route::get('/create', [AboutHistoryController::class, 'create'])->name('create');
-            Route::post('/store', [AboutHistoryController::class, 'store'])->name('store');
-            Route::get('/edit/{history}', [AboutHistoryController::class, 'edit'])->name('edit');
-            Route::put('/update/{history}', [AboutHistoryController::class, 'update'])->name('update');
-            Route::get('/delete/{history}', [AboutHistoryController::class, 'delete'])->name('delete');
+            Route::get('/', [TestimonialController::class, 'index'])->name('index');
+            Route::get('/create', [TestimonialController::class, 'create'])->name('create');
+            Route::post('/store', [TestimonialController::class, 'store'])->name('store');
+            Route::get('/edit/{id}', [TestimonialController::class, 'edit'])->name('edit');
+            Route::put('/update/{id}', [TestimonialController::class, 'update'])->name('update');
+            Route::get('/delete/{id}', [TestimonialController::class, 'delete'])->name('delete');
         });
 
         Route::group([

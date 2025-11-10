@@ -93,7 +93,7 @@ h2:hover .title-decoration {
 
 /* Rating Star Enhancement */
 .rating-star {
-    color: #FFD700;
+    color: #ffd700;
     margin-left: 4px;
 }
 
@@ -203,13 +203,13 @@ html {
         position: relative;
         margin-top: 20px;
     }
-    
+
     .banner-image .user-info {
         position: relative;
         left: 0 !important;
         margin-top: 20px;
     }
-    
+
     .banner-image {
         min-height: auto;
     }
@@ -229,7 +229,7 @@ button:focus {
 
 /* Ensure rating stars display properly */
 .udemy-item h3 i.ri-star-s-fill {
-    color: #FFD700;
+    color: #ffd700;
     font-size: 18px;
 }
 
@@ -264,4 +264,3 @@ button:focus {
     border-bottom: 0;
     border-left: 0.3em solid transparent;
 }
-

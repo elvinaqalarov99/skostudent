@@ -24,23 +24,20 @@
 
 <body>
 
-  @include('frontend.parts.skostudent_header')
+  @include('frontend.parts.header')
 
   <!-- Preloader -->
   <div class="preloader-area position-fixed start-0 top-0 end-0 bottom-0 text-center">
     <div class="preloader">
-      <img src="{{ asset('assets/images/black-logo.svg') }}" alt="preloader">
       <div class="waviy fw-bold">
-        <span class="position-relative d-inline-block">S</span>
-        <span class="position-relative d-inline-block">K</span>
-        <span class="position-relative d-inline-block">O</span>
-        <span class="position-relative d-inline-block">S</span>
-        <span class="position-relative d-inline-block">T</span>
-        <span class="position-relative d-inline-block">U</span>
-        <span class="position-relative d-inline-block">D</span>
-        <span class="position-relative d-inline-block">E</span>
-        <span class="position-relative d-inline-block">N</span>
-        <span class="position-relative d-inline-block">T</span>
+        @php
+          $siteName = setting('site_name');
+          $siteName = $siteName !== 'site_name' ? $siteName : 'SKOSTUDENT';
+          $letters = str_split(mb_strtoupper($siteName));
+        @endphp
+        @foreach($letters as $letter)
+          <span class="position-relative d-inline-block">{{ $letter }}</span>
+        @endforeach
       </div>
     </div>
   </div>
@@ -48,7 +45,7 @@
 
   @yield('content')
 
-  @include('frontend.parts.skostudent_footer')
+  @include('frontend.parts.footer')
 
   <!-- Link of JS files -->
   <script src="{{ asset('assets/js/jquery.min.js') }}"></script>

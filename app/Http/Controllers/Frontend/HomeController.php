@@ -14,6 +14,7 @@ use App\Models\Product;
 use App\Models\Scholarship;
 use App\Models\Service;
 use App\Models\Team;
+use App\Models\Testimonial;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,8 @@ class HomeController extends Controller
         $portfolios = Portfolio::with('type')->take(6)->get();
         $blogs = Blog::take(3)->get();
         $products = Product::take(6)->get();
-        return view('frontend.pages.index', compact('about', 'faqs', 'teams', 'services', 'portfolios', 'blogs', 'products'));
+        $testimonials = Testimonial::with('media')->orderBy('created_at', 'desc')->get();
+        return view('frontend.pages.index', compact('about', 'faqs', 'teams', 'services', 'portfolios', 'blogs', 'products', 'testimonials'));
     }
 
     public function products () {

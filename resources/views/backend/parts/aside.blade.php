@@ -55,9 +55,9 @@
                         class="nav-label">About Us</span></a>
             </li>
 
-            <li class="{{ url()->current() == route('admin.about.histories.index') ? "active" : '' }}">
-                <a href="{{ route('admin.about.histories.index') }}"><i class="fa fa-list-alt"></i>  <span
-                        class="nav-label">Histories</span></a>
+            <li class="{{ url()->current() == route('admin.testimonials.index') ? "active" : '' }}">
+                <a href="{{ route('admin.testimonials.index') }}"><i class="fa fa-comments"></i>  <span
+                        class="nav-label">Testimonials</span></a>
             </li>
 
             <li class="{{ url()->current() == route('admin.teams.index') ? "active" : '' }}">

@@ -405,20 +405,32 @@
               >
               <img
                 class="main-image img-fluid"
-                src="{{ asset('assets/images/testimonial1.jpg') }}"
+                src="{{ $testimonials->count() > 0 && $testimonials->first()->getFirstMediaUrl('file') ? $testimonials->first()->getFirstMediaUrl('file') : asset('assets/images/testimonial1.jpg') }}"
                 alt="testimonial-main"
               >
             </div>
             <div class="user-image">
-              @for($i = 2; $i <= 5; $i++)
-              <div class="image{{ $i - 1 }}">
-                <img
-                  src="{{ asset('assets/images/testimonial' . $i . '.jpg') }}"
-                  alt="testimonial-user-{{ $i - 1 }}"
-                  class="testimonial-user-img"
-                >
-              </div>
-              @endfor
+              @if($testimonials->count() > 1)
+                @foreach($testimonials->skip(1)->take(4) as $index => $testimonial)
+                <div class="image{{ $index + 1 }}">
+                  <img
+                    src="{{ $testimonial->getFirstMediaUrl('file') ?: asset('assets/images/testimonial' . ($index + 2) . '.jpg') }}"
+                    alt="{{ localized($testimonial->name) }}"
+                    class="testimonial-user-img"
+                  >
+                </div>
+                @endforeach
+              @else
+                @for($i = 2; $i <= 5; $i++)
+                <div class="image{{ $i - 1 }}">
+                  <img
+                    src="{{ asset('assets/images/testimonial' . $i . '.jpg') }}"
+                    alt="testimonial-user-{{ $i - 1 }}"
+                    class="testimonial-user-img"
+                  >
+                </div>
+                @endfor
+              @endif
             </div>
           </div>
           <div class="testimonial-responsive-image d-md-none">
@@ -448,10 +460,29 @@
               </h2>
             </div>
             <div class="testimonial-slider-info owl-carousel owl-theme">
-              @for($i = 1; $i <= 3; $i++)
+              @forelse($testimonials as $testimonial)
               <div class="item">
                 <p>
-                  Enrolling in courses at Skostudent was the best decision I made for my career. The instructors were incredibly knowledgeable and supportive, guiding me through every step of the learning process. Thanks to their expert guidance, I was able to land a job in my desired field even before completing the course. I highly recommend [Institute Name] to anyone looking to upskill and advance their career in the digital world.
+                  {{ localized($testimonial->content) }}
+                </p>
+                <div class="users-info d-flex align-items-center">
+                  <div class="image">
+                    <img
+                      src="{{ $testimonial->getFirstMediaUrl('file') ?: asset('assets/images/testimonial6.jpg') }}"
+                      alt="{{ localized($testimonial->name) }}"
+                      class="testimonial-avatar"
+                    >
+                  </div>
+                  <div class="content">
+                    <h3>{{ localized($testimonial->name) }}</h3>
+                    <span>{{ localized($testimonial->position) ?: 'Student' }}</span>
+                  </div>
+                </div>
+              </div>
+              @empty
+              <div class="item">
+                <p>
+                  Enrolling in courses at Skostudent was the best decision I made for my career. The instructors were incredibly knowledgeable and supportive, guiding me through every step of the learning process. Thanks to their expert guidance, I was able to land a job in my desired field even before completing the course. I highly recommend Skostudent to anyone looking to upskill and advance their career in the digital world.
                 </p>
                 <div class="users-info d-flex align-items-center">
                   <div class="image">
@@ -467,7 +498,7 @@
                   </div>
                 </div>
               </div>
-              @endfor
+              @endforelse
             </div>
           </div>
         </div>
