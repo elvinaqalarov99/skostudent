@@ -28,6 +28,5 @@ class DatabaseSeeder extends Seeder
         $this->call(ServicesTableSeeder::class);
         $this->call(MediaTableSeeder::class);
         $this->call(SettingsTableSeeder::class);
-        $this->call(CustomSettingsTableSeeder::class);
     }
 }
