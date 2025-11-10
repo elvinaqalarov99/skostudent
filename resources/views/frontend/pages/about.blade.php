@@ -1,204 +1,294 @@
-@extends('frontend.layouts.main')
+@extends('frontend.layouts.skostudent')
+
+@section('title', 'Haqqımızda')
 
 @section('content')
 
-
-    <!-- Bread-Crumb style two -->
-    <!-- rts breadcrumba area start -->
-    <div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg-breadcrumb bg_image" style="background-image: url({{ setting('about_page_banner_image') }})">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- bread crumb inner wrapper -->
-                    <div class="breadcrumb-inner text-center">
-                        <h1 class="title">{{ setting('page_name_about') }}</h1>
-                        <div class="meta">
-                            <a href="{{ route('home') }}" class="prev">{{ setting('page_name_home') }} /</a>
-                            <a href="javascript:void(0)" class="next">{{ setting('page_name_about') }}</a>
-                        </div>
-                    </div>
-                    <!-- bread crumb inner wrapper end -->
-                </div>
-            </div>
+<!-- Start Page Title Area -->
+<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
+    <div class="container">
+        <div class="page-title-content text-center">
+            <h2>About Us</h2>
+            <ul class="list-unstyled ps-0 mb-0">
+                <li class="d-inline-block">
+                    <a href="{{ route('home') }}">
+                        Home
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    About Us
+                </li>
+            </ul>
         </div>
     </div>
-    <!-- rts breadcrumba area end -->
-    <!-- Bread-Crumb style two End -->
+    <div class="pages1">
+        <img src="{{ asset('assets/skostudent/images/shapes/pages1.png') }}" alt="shape">
+    </div>
+    <div class="pages2">
+        <img src="{{ asset('assets/skostudent/images/shapes/pages2.png') }}" alt="shape">
+    </div>
+    <div class="pages3">
+        <img src="{{ asset('assets/skostudent/images/shapes/pages3.png') }}" alt="shape">
+    </div>
+    <div class="pages4">
+        <img src="{{ asset('assets/skostudent/images/pages4.svg') }}" alt="shape">
+    </div>
+    <div class="pages5">
+        <img src="{{ asset('assets/skostudent/images/pages5.svg') }}" alt="shape">
+    </div>
+</div>
+<!-- End Page Title Area -->
 
-    <!-- rts about area start -->
-    <div class="rts-about-area-about rts-section-gap">
-        <div class="container pb--45 plr_sm--15">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="thumbnail-area-about">
-                        <img src="{{ setting('about_page_section_1_image_1') }}" alt="about-area">
-                        <img src="{{ setting('about_page_section_1_image_2') }}" alt="about-sm" class="small">
+<!-- Start About Area -->
+<div class="about-area style-2 pt-136 pb-110">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-image style-2" data-cue="slideInUp">
+                    <div class="image-one text-end">
+                        <img src="{{ asset('assets/skostudent/images/about/about5.jpg') }}" alt="about-image">
+                    </div>
+                    <div class="image-two">
+                        <img src="{{ asset('assets/skostudent/images/about/about6.jpg') }}" alt="about-image">
                     </div>
                 </div>
-                <div class="col-lg-7 about-a-p-cont">
-                    <div class="about-inner-wrapper-inner">
-                        <div class="title-three-left">
-                            <span class="pre-title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800" style="display: block;">
-                                {{ setting('about_page_section_1_sub_title') }}
+            </div>
+            <div class="col-lg-6">
+                <div class="about-content style-2" data-cue="slideInUp">
+                    <div class="section-title">
+                        <span class="d-inline-block sub-title">About Skostudent</span>
+                        <h2>
+                            Discover Our Vision for Digital 
+                            <span class="position-relative">
+                                Education
+                                <img src="{{ asset('assets/skostudent/images/title-shape.svg') }}" alt="shape">
                             </span>
-                            <h3 class="title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800">
-                                {!! setting('about_page_section_1_title') !!}
-                            </h3>
-                        </div>
-                        <div class="main-content-area-about-p">
-                            {!! setting('about_page_section_1_content') !!}
-
-                        </div>
+                        </h2>
                     </div>
-                </div>
-            </div>
-            <div class="bg-text">
-                <h2 class="title">{{ setting('about_page_section_1_bg_title') }}</h2>
-            </div>
-        </div>
-    </div>
-    <!-- rts about area end -->
-
-    <!-- rts service area start -->
-    <div class="service-abot-area rts-section-gap service-about-bg bg_image">
-        <div class="container-210">
-            <div class="row align-items-center">
-                <div class="col-xl-6 col-lg-12  plr-sm">
-                    <div class="thumbnail-service-about">
-                        <img src="{{ setting('about_page_section_2_image') }}" alt="service-image">
-                        <div class="vedio-icone">
-                            <a id="play-video" class="video-play-button" href="#" data-video-url="{{ setting('about_page_section_2_video_id') }}">
-                                <span></span>
-                            </a>
-                            <div id="video-overlay" class="video-overlay">
-                                <a class="video-overlay-close">×</a>
+                    <div class="awards-info">
+                        <div class="row">
+                            <div class="col-lg-7 col-sm-7">
+                                <div class="awards-list">
+                                    <ul class="list-unstyled ps-0 mb-0">
+                                        @foreach($features->take(5) as $feature)
+                                        <li>
+                                            {{ localized($feature->title) }}
+                                            <img src="{{ asset('assets/skostudent/images/about/check.svg') }}" alt="icon">
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-12 pading-controler">
-                    <div class="service-about-wrapper">
-                        <div class="title-three-left">
-                            <span class="pre-title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800" style="display: block;">
-                                {{ setting('about_page_section_2_sub_title') }}
-                            </span>
-                            <h3 class="title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800">
-                                {!! setting('about_page_section_2_title') !!}
-                            </h3>
-                        </div>
-                        <div class="row mt--15 g-24">
-                            @foreach($features as $feature)
-                                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                                    <div class="single-service-sm">
-                                        <div class="icon">
-                                            <img src="{{ $feature->getFirstMediaUrl('file') }}" alt="">
-                                        </div>
-                                        <p>{{ localized($feature->title) }}</p>
+                            <div class="col-lg-5 col-sm-5">
+                                <div class="awards-card text-center">
+                                    <div class="icon">
+                                        <img src="{{ asset('assets/skostudent/images/about/awards-logo.svg') }}" alt="logo">
                                     </div>
+                                    <h3>25+</h3>
+                                    <p>Winning Awards</p>
                                 </div>
-                            @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<!-- End About Area -->
 
-    <div class="rts-offer-provide-section rts-section-gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-mid-wrapper-home-two" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
-                        <span class="pre">{{ setting('about_page_section_3_sub_title') }}</span>
-                        <h2 class="title">{!! setting('about_page_section_3_title') !!}</h2>
+<!-- Start Choose Area -->
+<div class="choose-area position-relative z-1 pt-136">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="choose-content" data-cue="slideInUp">
+                    <div class="section-title">
+                        <span class="d-inline-block sub-title">Why Choose Us</span>
+                        <h2>
+                            One Platform & Many  
+                            <span class="position-relative">
+                                Courses
+                                <img src="{{ asset('assets/skostudent/images/title-shape.svg') }}" alt="shape">
+                            </span>
+                            For You
+                        </h2>
                     </div>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown </p>
                 </div>
             </div>
-            <div class="row mt--15 g-24">
-                @foreach($services as $service)
-                    <div class="col-lg-4">
-
-                        <div class="rts-single-offer">
-                            <a href="{{ route('services.detail', $service->slug) }}" class="thumbnail">
-                                <img src="{{ $service->getFirstMediaUrl('file') }}" alt="service">
-                            </a>
-                            <div class="content-wrapper">
-                                <a href="{{ route('services.detail', $service->slug) }}">
-                                    <h5 class="title">
-                                        {{ localized($service->title) }}
-                                    </h5>
-                                </a>
-                                <p class="disc">
-                                    {{ localized($service->description) }}
-                                </p>
-                                <a href="{{ route('services.detail', $service->slug) }}" class="rts-btn btn-transparent-service">{{ setting('view_services') }}<i class="fa-light fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-
-    <div class="rts-about-fun-facts rts-section-gap bg_about-f">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="about-fun-facts-wrapper">
-
-                        <div class="single-funfacts-about">
-                            <div class="top">
-                                <div class="icon">
-                                    <img src="{{ setting('main_page_section_6_counter_1_icon') }}" alt="fun-facts">
-                                </div>
-                                <h2 class="title"><span class="counter">{{ setting('main_page_section_6_counter_1_number') }}</span></h2>
-                            </div>
-                            <p class="disc">
-                                {{ setting('main_page_section_6_counter_1_description') }}
-                            </p>
-                        </div>
-
-                        <div class="single-funfacts-about">
-                            <div class="top">
-                                <div class="icon">
-                                    <img src="{{ setting('main_page_section_6_counter_2_icon') }}" alt="fun-facts">
-                                </div>
-                                <h2 class="title percent"><span class="counter">{{ setting('main_page_section_6_counter_2_number') }}</span></h2>
-                            </div>
-                            <p class="disc">
-                                {{ setting('main_page_section_6_counter_2_description') }}
-                            </p>
-                        </div>
-
-                        <div class="single-funfacts-about">
-                            <div class="top">
-                                <div class="icon">
-                                    <img src="{{ setting('main_page_section_6_counter_3_icon') }}" alt="fun-facts">
-                                </div>
-                                <h2 class="title plus"><span class="counter">{{ setting('main_page_section_6_counter_3_number') }}</span></h2>
-                            </div>
-                            <p class="disc">
-                                {{ setting('main_page_section_6_counter_3_description') }}
-                            </p>
-                        </div>
-
-                        <div class="single-funfacts-about">
-                            <div class="top">
-                                <div class="icon">
-                                    <img src="{{ setting('main_page_section_6_counter_4_icon') }}" alt="fun-facts">
-                                </div>
-                                <h2 class="title plus"><span class="counter">{{ setting('main_page_section_6_counter_4_number') }}</span></h2>
-                            </div>
-                            <p class="disc">
-                                {{ setting('main_page_section_6_counter_4_description') }}
-                            </p>
-                        </div>
-
-                    </div>
+            <div class="col-lg-6">
+                <div class="choose-image position-relative z-1" data-cue="slideInUp">
+                    <img src="{{ asset('assets/skostudent/images/choose/choose1.png') }}" alt="choose-image">
                 </div>
             </div>
         </div>
     </div>
+</div>
+<!-- End Choose Area -->
+
+<!-- Start Funfact Area -->
+<div class="funfact-area position-relative z-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="single-funfact-info">
+                    <div class="image">
+                        <img src="{{ asset('assets/skostudent/images/funfact/funfact1.jpg') }}" alt="funfact-image">
+                    </div>
+                    <div class="content d-flex align-items-center">
+                        <div class="icon">
+                            <img src="{{ asset('assets/skostudent/images/icon/funfact1.svg') }}" alt="icon">
+                        </div>
+                        <div class="text">
+                            <h3>
+                                <span class="counter">75K</span>
+                                +
+                            </h3>
+                            <p>Enrolled Students</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="single-funfact-info">
+                    <div class="image">
+                        <img src="{{ asset('assets/skostudent/images/funfact/funfact1.jpg') }}" alt="funfact-image">
+                    </div>
+                    <div class="content d-flex align-items-center">
+                        <div class="icon">
+                            <img src="{{ asset('assets/skostudent/images/icon/funfact2.svg') }}" alt="icon">
+                        </div>
+                        <div class="text">
+                            <h3>
+                                <span class="counter">324</span>
+                                +
+                            </h3>
+                            <p>Enrolled Students</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="single-funfact-info">
+                    <div class="image">
+                        <img src="{{ asset('assets/skostudent/images/funfact/funfact1.jpg') }}" alt="funfact-image">
+                    </div>
+                    <div class="content d-flex align-items-center">
+                        <div class="icon">
+                            <img src="{{ asset('assets/skostudent/images/icon/funfact3.svg') }}" alt="icon">
+                        </div>
+                        <div class="text">
+                            <h3>
+                                <span class="counter">22</span>
+                                K+
+                            </h3>
+                            <p>Certified Students</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="single-funfact-info">
+                    <div class="image">
+                        <img src="{{ asset('assets/skostudent/images/funfact/funfact1.jpg') }}" alt="funfact-image">
+                    </div>
+                    <div class="content d-flex align-items-center">
+                        <div class="icon">
+                            <img src="{{ asset('assets/skostudent/images/icon/funfact4.svg') }}" alt="icon">
+                        </div>
+                        <div class="text">
+                            <h3>
+                                <span class="counter">30</span>
+                                +
+                            </h3>
+                            <p>Skilled Instructor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Funfact Area -->
+
+<!-- Start Testimonials Area -->
+<div class="testimonial-area pt-136 pb-110">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="testimonial-image position-relative z-1" data-cue="slideInUp">
+                    <div class="image position-relative z-1">
+                        <img src="{{ asset('assets/skostudent/images/testimonial/bg-shape.svg') }}" alt="shape">
+                        <img class="main-image" src="{{ asset('assets/skostudent/images/testimonial/testimonial1.jpg') }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="testimonial-content" data-cue="slideInUp">
+                    <div class="section-title">
+                        <span class="d-inline-block sub-title">Testimonials</span>
+                        <h2>
+                            Voices of Success: Hear from Our
+                            <span class="position-relative">
+                                Students
+                                <img src="{{ asset('assets/skostudent/images/title-shape.svg') }}" alt="shape">
+                            </span>
+                        </h2>
+                    </div>
+                    <div class="testimonial-slider-info owl-carousel owl-theme">
+                        @for($i = 1; $i <= 3; $i++)
+                        <div class="item">
+                            <p>Enrolling in courses at Skostudent was the best decision I made for my career. The instructors were incredibly knowledgeable and supportive, guiding me through every step of the learning process.</p>
+                            <div class="users-info d-flex align-items-center">
+                                <div class="image">
+                                    <img src="{{ asset('assets/skostudent/images/testimonial/testimonial6.jpg') }}" alt="testimonial-image">
+                                </div>
+                                <div class="content">
+                                    <h3>Krystal France</h3>
+                                    <span>Ex-Student</span>
+                                </div>
+                            </div>
+                        </div>
+                        @endfor
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Testimonials Area -->
+
+<!-- Start Team Area -->
+<div class="team-area style-2 position-relative z-1 pt-136 pb-110">
+    <div class="container">
+        <div class="section-title text-center mx-auto" data-cue="slideInUp">
+            <span class="d-inline-block sub-title">Team Members</span>
+            <h2>
+                Meet Out 
+                <span class="position-relative">
+                    Instructors
+                    <img src="{{ asset('assets/skostudent/images/title-shape.svg') }}" alt="shape">
+                </span>
+            </h2>
+        </div>
+        <div class="row" data-cues="fadeIn">
+            @foreach($services->take(4) as $service)
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-team-info">
+                    <div class="content">
+                        <h3>{{ localized($service->title) }}</h3>
+                        <p>Service</p>
+                    </div>
+                    <div class="image position-relative">
+                        <img src="{{ $service->getFirstMediaUrl('file') ?: asset('assets/skostudent/images/team/team4.jpg') }}" alt="team-image">
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+<!-- End Team Area -->
 
 @endsection

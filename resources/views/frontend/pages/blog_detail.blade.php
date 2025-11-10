@@ -1,82 +1,116 @@
-@extends('frontend.layouts.main')
+@extends('frontend.layouts.skostudent')
+
+@section('title', localized($blog->title))
 
 @section('content')
 
-    <div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg-breadcrumb bg_image" style="background-image: url({{ $blog->getFirstMediaUrl('file') }})">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- bread crumb inner wrapper -->
-                    <div class="breadcrumb-inner text-center">
-                        <h1 class="title">{{ localized($blog->title) }}</h1>
-                        <div class="meta">
-                            <a href="{{ route('home') }}" class="prev">{{ setting('page_name_home') }} /</a>
-                            <a href="{{ route('blog') }}" class="prev">{{ setting('page_name_blog') }} /</a>
-                            <a href="javascript:void(0)" class="next">{{ localized($blog->title) }}</a>
-                        </div>
-                    </div>
-                    <!-- bread crumb inner wrapper end -->
-                </div>
-            </div>
+<!-- Start Page Title Area -->
+<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
+    <div class="container">
+        <div class="page-title-content text-center">
+            <h2>Blog Standard</h2>
+            <ul class="list-unstyled ps-0 mb-0">
+                <li class="d-inline-block">
+                    <a href="{{ route('home') }}">
+                        Home
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    Blog
+                </li>
+            </ul>
         </div>
     </div>
-    <!-- rts breadcrumba area end -->
-    <!-- Bread-Crumb style two End -->
+    <div class="pages1">
+        <img src="{{ asset('assets/skostudent/images/shapes/pages1.png') }}" alt="shape">
+    </div>
+    <div class="pages2">
+        <img src="{{ asset('assets/skostudent/images/shapes/pages2.png') }}" alt="shape">
+    </div>
+    <div class="pages3">
+        <img src="{{ asset('assets/skostudent/images/shapes/pages3.png') }}" alt="shape">
+    </div>
+    <div class="pages4">
+        <img src="{{ asset('assets/skostudent/images/pages4.svg') }}" alt="shape">
+    </div>
+    <div class="pages5">
+        <img src="{{ asset('assets/skostudent/images/pages5.svg') }}" alt="shape">
+    </div>
+</div>
+<!-- End Page Title Area -->
 
-
-    <!-- rts blog mlist area -->
-    <div class="rts-blog-list-area rts-section-gap">
-        <div class="container">
-            <div class="row g-5">
-                <!-- rts blo post area -->
-                <div class="col-xl-8 col-md-12 col-sm-12 col-12">
-                    <!-- single post -->
-                    <div class="blog-single-post-listing details mb--0">
-                        <div class="thumbnail">
-                            <img src="{{ $blog->getFirstMediaUrl('file') }}" alt="Construction Blog">
+<!-- Start Blog Grid Area -->
+<div class="blog-grid-area pt-136 pb-110">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="blog-grid-left-sidebar">
+                    <div class="blog-details-info">
+                        <div class="image">
+                            <img src="{{ $blog->getFirstMediaUrl('file') ?: asset('assets/skostudent/images/blog/blog9.jpg') }}" alt="blog-image">
                         </div>
-                        <div class="blog-listing-content">
- 
-                            <div class="disc editor-contents">
+                        <div class="content">
+                            <ul class="list-unstyled ps-0 list">
+                                <li class="d-inline-block position-relative">
+                                    {{ $blog->author ?: 'Admin' }}
+                                    <img src="{{ asset('assets/skostudent/images/icon/edugen.svg') }}" alt="icon">
+                                </li>
+                                <li class="d-inline-block position-relative">
+                                    {{ $blog->created_at->translatedFormat('d M, y') }}
+                                    <img src="{{ asset('assets/skostudent/images/icon/calendar2.svg') }}" alt="icon">
+                                </li>
+                                <li class="d-inline-block position-relative">
+                                    3 Min Read
+                                    <img src="{{ asset('assets/skostudent/images/icon/circle.svg') }}" alt="icon">
+                                </li>
+                            </ul>
+                            <h2>{{ localized($blog->title) }}</h2>
+                            <div class="editor-contents">
                                 {!! localized($blog->content) !!}
                             </div>
-
                         </div>
                     </div>
                 </div>
-
-                <div class="col-xl-4 col-md-12 col-sm-12 col-12  pd-control-bg--40">
-
-                    <div class="rts-single-wized Recent-post">
-                        <div class="wized-header">
-                            <h5 class="title">
-                                Recent Posts
-                            </h5>
-                        </div>
-                        <div class="wized-body">
-                            @foreach($other_blogs as $other_blog)
-                                <div class="recent-post-single">
-                                    <div class="thumbnail">
-                                        <a href="{{ route('blog.detail', $other_blog->slug) }}"><img src="{{ $other_blog->getFirstMediaUrl('file') }}" alt="Blog_post"></a>
-                                    </div>
-                                    <div class="content-area">
-                                        <div class="user">
-                                            <i class="fal fa-clock"></i>
-                                            <span>{{ $other_blog->created_at?->translatedFormat('d F, Y') }}</span>
-                                        </div>
-                                        <a class="post-title" href="{{ route('blog.detail', $other_blog->slug) }}">
-                                            <h6 class="title">{{ localized($other_blog->title) }}</h6>
-                                        </a>
-                                    </div>
-                                </div>
-                            @endforeach
-
-                        </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog-grid-right-sidebar">
+                    <div class="single-pages-widget form-info">
+                        <form method="GET" action="{{ route('blog') }}">
+                            <div class="form-group">
+                                <input type="text" name="wanted" class="form-control" placeholder="Search keyword..." value="{{ request('wanted') }}">
+                                <button type="submit">
+                                    <img src="{{ asset('assets/skostudent/images/icon/search.svg') }}" alt="icon">
+                                </button>
+                            </div>
+                        </form>
                     </div>
-
+                    <div class="single-pages-widget recent-blogs">
+                        <h3>Recent Blogs</h3>
+                        @foreach($other_blogs->take(3) as $other)
+                        <div class="items d-flex align-items-center">
+                            <div class="image">
+                                <a href="{{ route('blog.detail', $other->slug) }}">
+                                    <img src="{{ $other->getFirstMediaUrl('file') ?: asset('assets/skostudent/images/blog/blog17.jpg') }}" alt="image">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h4>
+                                    <a href="{{ route('blog.detail', $other->slug) }}">
+                                        {{ localized($other->title) }}
+                                    </a>
+                                </h4>
+                                <a class="read-more" href="{{ route('blog.detail', $other->slug) }}">
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<!-- End Blog Grid Area -->
 
 @endsection

@@ -8,7 +8,9 @@ use App\Models\Faq;
 use App\Models\Feature;
 use App\Models\Portfolio;
 use App\Models\PortfolioType;
+use App\Models\PrivacyPolicy;
 use App\Models\Product;
+use App\Models\Scholarship;
 use App\Models\Service;
 use App\Models\Team;
 
@@ -20,7 +22,8 @@ class HomeController extends Controller
         $services = Service::take(6)->get();
         $portfolios = Portfolio::with('type')->take(6)->get();
         $blogs = Blog::take(3)->get();
-        return view('frontend.pages.index', compact('faqs', 'teams', 'services', 'portfolios', 'blogs'));
+        $products = Product::take(6)->get();
+        return view('frontend.pages.index', compact('faqs', 'teams', 'services', 'portfolios', 'blogs', 'products'));
     }
 
     public function products () {
@@ -40,7 +43,6 @@ class HomeController extends Controller
     }
 
     public function serviceDetail ($slug) {
-
         $service = Service::where('slug', $slug)->firstOrFail();
         $other_services = Service::where('slug', '!=', $slug)->take(5)->get();
         return view('frontend.pages.service_detail', compact('service', 'other_services'));
@@ -87,6 +89,22 @@ class HomeController extends Controller
         $features = Feature::take(6)->get();
         $services = Service::take(3)->get();
         return view('frontend.pages.about', compact('features', 'services'));
+    }
+
+    public function privacy () {
+        $privacy = PrivacyPolicy::first();
+        return view('frontend.pages.privacy', compact('privacy'));
+    }
+
+    public function scholarship () {
+        $scholarships = Scholarship::orderBy('deadline', 'asc')->paginate(6);
+        return view('frontend.pages.scholarship', compact('scholarships'));
+    }
+
+    public function scholarshipDetail ($slug) {
+        $scholarship = Scholarship::where('slug', $slug)->firstOrFail();
+        $other_scholarships = Scholarship::where('slug', '!=', $slug)->take(5)->get();
+        return view('frontend.pages.scholarship_detail', compact('scholarship', 'other_scholarships'));
     }
 
 }

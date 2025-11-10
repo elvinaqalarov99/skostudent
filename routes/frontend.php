@@ -32,6 +32,9 @@ Route::group([
     Route::get('/blog/{slug}', [HomeController::class, 'blogDetail'])->name('blog.detail');
     Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
     Route::get('/about', [HomeController::class, 'about'])->name('about');
+    Route::get('/privacy', [HomeController::class, 'privacy'])->name('privacy');
+    Route::get('/scholarship', [HomeController::class, 'scholarship'])->name('scholarship');
+    Route::get('/scholarship/{slug}', [HomeController::class, 'scholarshipDetail'])->name('scholarship.detail');
 
     Route::post('/send-contact-form', [CommonController::class, 'sendMail'])->name('send.contact.form');
 

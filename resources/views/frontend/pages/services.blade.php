@@ -1,62 +1,85 @@
-@extends('frontend.layouts.main')
+@extends('frontend.layouts.skostudent')
+
+@section('title', 'Xidmətlərimiz')
 
 @section('content')
 
-    <div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg-breadcrumb bg_image" style="background-image: url({{ setting('services_page_banner_image') }})">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- bread crumb inner wrapper -->
-                    <div class="breadcrumb-inner text-center">
-                        <h1 class="title">{{ setting('page_name_services') }}</h1>
-                        <div class="meta">
-                            <a href="{{ route('home') }}" class="prev">{{ setting('page_name_home') }} /</a>
-                            <a href="javascript:void(0)" class="next">{{ setting('page_name_services') }}</a>
-                        </div>
-                    </div>
-                    <!-- bread crumb inner wrapper end -->
-                </div>
-            </div>
+<!-- Start Page Title Area -->
+<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
+    <div class="container">
+        <div class="page-title-content text-center">
+            <h2>Services</h2>
+            <ul class="list-unstyled ps-0 mb-0">
+                <li class="d-inline-block">
+                    <a href="{{ route('home') }}">
+                        Home
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    Services
+                </li>
+            </ul>
         </div>
+    </div> 
+    
+    <div class="pages5">
+        <img src="{{ asset('assets/skostudent/images/pages5.svg') }}" alt="shape">
     </div>
+    <div class="pages4">
+        <img src="{{ asset('assets/skostudent/images/pages4.svg') }}" alt="shape">
+    </div> 
+</div>
+<!-- End Page Title Area -->
 
-    <!-- what we offer start -->
-    <div class="rts-offer-provide-section rts-section-gap">
-        <div class="container">
-            <div class="row g-24">
-                @foreach($services as $service)
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                        <!-- single offer area sart -->
-                        <div class="rts-single-offer">
-                            <a href="{{ route('services.detail', $service->slug) }}" class="thumbnail">
-                                <img src="{{ $service->getFirstMediaUrl('file') }}" alt="service">
-                            </a>
-                            <div class="content-wrapper">
+<!-- Start Courses Grid Area -->
+<div class="courses-grid-area pt-136 pb-110">
+    <div class="container"> 
+        <div class="row process" data-cues="fadeIn">
+            @forelse($services as $service)
+            <div class="col-lg-4 col-md-6">
+                <div class="single-courses-card">
+                    <div class="image position-relative">
+                        <a href="{{ route('services.detail', $service->slug) }}">
+                            <img src="{{ $service->getFirstMediaUrl('file') ?: asset('assets/skostudent/images/courses1.jpg') }}" alt="service-image">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <h3>
+                            <a href="{{ route('services.detail', $service->slug) }}">{{ localized($service->title) }}</a>
+                        </h3>
+                        <div class="ratings-info d-flex align-items-center">
+                            <span>{{ Str::limit(strip_tags(localized($service->content)), 50) }}</span>
+                        </div>
+                        <div class="list-info d-flex align-items-center justify-content-between">
+                            <div class="title d-flex align-items-center">
+                                <div class="icon">
+                                    <img src="{{ asset('assets/skostudent/images/university.svg') }}" alt="icon">
+                                </div>
+                                <span>View Details</span>
+                            </div>
+                            <div class="button">
                                 <a href="{{ route('services.detail', $service->slug) }}">
-                                    <h5 class="title">
-                                        {{ localized($service->title) }}
-                                    </h5>
+                                    READ MORE
+                                    <i class="ph ph-arrow-right"></i>
                                 </a>
-                                <p class="disc">
-                                    {{ localized($service->description) }}
-                                </p>
-                                <a href="{{ route('services.detail', $service->slug) }}" class="rts-btn btn-transparent-service">{{ setting('view_service') }}<i class="fa-light fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
-                @endforeach
-            </div>
-
-            <div class="row mt--30">
-                <div class="col-lg-12">
-                    <div class="rts-elevate-pagination">
-                        {{ $services->links('vendor.paginations.pagination') }}
-                    </div>
                 </div>
             </div>
+            @empty
+            <div class="col-lg-12">
+                <p class="text-center">No services found.</p>
+            </div>
+            @endforelse
         </div>
+        @if($services->hasPages())
+        <div class="pagination-wrapper mt-4">
+            {{ $services->links() }}
+        </div>
+        @endif
     </div>
-    <!-- what we offer end -->
-
+</div>
+<!-- End Courses Grid Area -->
 
 @endsection

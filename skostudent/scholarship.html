@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Edugen -  HTML Template</title>
+        <link rel="icon" type="image/png" href="assets/images/favicon.svg">
+
+        <!-- Link of CSS files -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/fonts/regular/style.css">
+        <link rel="stylesheet" href="assets/fonts/fill/style.css">
+        <link rel="stylesheet" href="assets/fonts/bold/style.css">
+        <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+        <link rel="stylesheet" href="assets/css/scrollCue.css">
+        <link rel="stylesheet" href="assets/css/remixicon.css">
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/responsive.css">
+    </head>
+    <body>
+
+        <!-- Preloader -->
+        <div class="preloader-area position-fixed start-0 top-0 end-0 bottom-0 text-center">
+            <div class="preloader">
+                <img src="assets/images/black-logo.svg" alt="preloader">
+                <div class="waviy fw-bold">
+                    <span class="position-relative d-inline-block">E</span>
+                    <span class="position-relative d-inline-block">D</span>
+                    <span class="position-relative d-inline-block">U</span>
+                    <span class="position-relative d-inline-block">G</span>
+                    <span class="position-relative d-inline-block">E</span>
+                    <span class="position-relative d-inline-block">N</span>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+
+       <div id="header"></div>
+
+        <!-- Start Page Title Area -->
+        <div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
+            <div class="container">
+                <div class="page-title-content text-center">
+                    <h2>Təqaüdlər</h2>
+                    <ul class="list-unstyled ps-0 mb-0">
+                        <li class="d-inline-block">
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            Təqaüdlər
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+            <div class="pages5">
+                <img src="assets/images/pages5.svg" alt="shape">
+            </div>
+            <div class="pages4">
+                <img src="assets/images/pages4.svg" alt="shape">
+            </div>
+             
+        </div>
+        <!-- End Page Title Area -->
+
+        <!-- Start Courses Grid Area -->
+        <div class="courses-grid-area pt-136 pb-110">
+            <div class="container">
+                <div class="pages-grid-list-info">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-7">
+                            <div class="items" data-cue="slideInUp">
+                                search bar
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-5">
+                            <div class="items" data-cue="slideInUp">
+                                <select class="form-select ms-auto" aria-label="Default select example">
+                                    <option selected>Sort By: Popularity
+                                    </option>
+                                    <option value="1">Popularity One..</option>
+                                    <option value="2">Popularity Two..</option>
+                                    <option value="3">Popularity Three..</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row process" data-cues="fadeIn">
+                    <div class="col-lg-6">
+                        <div class="single-courses-info d-flex align-items-center position-relative z-1">
+                            <div class="image">
+                                <a href="courses-details.html">
+                                    <img src="assets/images/courses1.jpg" alt="courses-image">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <div class="star-icon d-flex align-items-center justify-content-between">
+                                    <span>Amount: Full-Tution</span> 
+                                </div>
+                                <h3>
+                                    <a href="courses-details.html">Basic Fundamentals of Interior</a>
+                                </h3>
+                                <ul class="list-unstyled ps-0 mb-0 list d-flex align-items-center justify-content-between">
+                                    <li>
+                                        Deadline: 30 sep 
+                                    </li>
+                                    <li>
+                                        <a>Read More</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+            </div>
+        </div>
+        <!-- End Courses Grid Area -->
+
+         
+  <div id="footer"></div>
+
+  <script>
+    // Header yüklə
+    fetch('/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+
+    // Footer yüklə
+    fetch('/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+
+  </script>
+
+        <!-- Link of JS files -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/meanmenu.min.js"></script>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="assets/js/scrollCue.min.js"></script>
+        <script src="assets/js/mixitup.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

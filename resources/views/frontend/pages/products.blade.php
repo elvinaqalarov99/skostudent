@@ -1,55 +1,85 @@
-@extends('frontend.layouts.main')
+@extends('frontend.layouts.skostudent')
+
+@section('title', 'Xaricdə Təhsil')
 
 @section('content')
 
-    <div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg-breadcrumb bg_image" style="background-image: url({{ setting('products_page_banner_image') }})">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- bread crumb inner wrapper -->
-                    <div class="breadcrumb-inner text-center">
-                        <h1 class="title">{{ setting('page_name_products') }}</h1>
-                        <div class="meta">
-                            <a href="{{ route('home') }}" class="prev">{{ setting('page_name_home') }} /</a>
-                            <a href="javascript:void(0)" class="next">{{ setting('page_name_products') }}</a>
-                        </div>
-                    </div>
-                    <!-- bread crumb inner wrapper end -->
-                </div>
-            </div>
+<!-- Start Page Title Area -->
+<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
+    <div class="container">
+        <div class="page-title-content text-center">
+            <h2>Courses Grid View</h2>
+            <ul class="list-unstyled ps-0 mb-0">
+                <li class="d-inline-block">
+                    <a href="{{ route('home') }}">
+                        Home
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    Courses Grid
+                </li>
+            </ul>
         </div>
+    </div> 
+    
+    <div class="pages5">
+        <img src="{{ asset('assets/skostudent/images/pages5.svg') }}" alt="shape">
     </div>
+    <div class="pages4">
+        <img src="{{ asset('assets/skostudent/images/pages4.svg') }}" alt="shape">
+    </div> 
+</div>
+<!-- End Page Title Area -->
 
-    <div class="rts-blog-grid-area rts-section-gap">
-        <div class="container">
-            <div class="row g-24">
-                @foreach($products as $product)
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                        <!-- single blog two -->
-                        <div class="blog-single-two-wrapper shop">
-                            <div class="image-area">
-                                <a href="{{ route('products.detail', $product->slug) }}" class="thumbnail">
-                                    <img src="{{ $product->getFirstMediaUrl('images') }}" alt="image">
+<!-- Start Courses Grid Area -->
+<div class="courses-grid-area pt-136 pb-110">
+    <div class="container"> 
+        <div class="row process" data-cues="fadeIn">
+            @forelse($products as $product)
+            <div class="col-lg-4 col-md-6">
+                <div class="single-courses-card">
+                    <div class="image position-relative">
+                        <a href="{{ route('products.detail', $product->slug) }}">
+                            <img src="{{ $product->getFirstMediaUrl('file') ?: asset('assets/skostudent/images/courses1.jpg') }}" alt="courses-image">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <h3>
+                            <a href="{{ route('products.detail', $product->slug) }}">{{ localized($product->title) }}</a>
+                        </h3>
+                        <div class="ratings-info d-flex align-items-center">
+                            <span>{{ Str::limit(strip_tags(localized($product->content_1)), 50) ?: 'descriptipon dexxdj djd asj djas jda s' }}</span>
+                        </div>
+                        <div class="list-info d-flex align-items-center justify-content-between">
+                            <div class="title d-flex align-items-center">
+                                <div class="icon">
+                                    <img src="{{ asset('assets/skostudent/images/university.svg') }}" alt="icon">
+                                </div>
+                                <span>70+ students</span>
+                            </div>
+                            <div class="button">
+                                <a href="{{ route('products.detail', $product->slug) }}">
+                                    ENROLL NOW
+                                    <i class="ph ph-arrow-right"></i>
                                 </a>
                             </div>
-                            {{-- <div class="inner">
-                                <a href="{{ route('products.detail', $product->slug) }}">
-                                    <h5 class="title">{{ localized($product->title) }}</h5>
-                                </a>
-                            </div> --}}
                         </div>
-                        <!-- single blog two end -->
-                    </div>
-                @endforeach
-            </div>
-
-            <div class="row mt--30">
-                <div class="col-lg-12">
-                    <div class="rts-elevate-pagination">
-                        {{ $products->links('vendor.paginations.pagination') }}
                     </div>
                 </div>
             </div>
+            @empty
+            <div class="col-lg-12">
+                <p class="text-center">No courses found.</p>
+            </div>
+            @endforelse
         </div>
+        @if($products->hasPages())
+        <div class="pagination-wrapper mt-4">
+            {{ $products->links() }}
+        </div>
+        @endif
     </div>
+</div>
+<!-- End Courses Grid Area -->
+
 @endsection

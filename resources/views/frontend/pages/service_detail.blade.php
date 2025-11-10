@@ -1,103 +1,106 @@
-@extends('frontend.layouts.main')
+@extends('frontend.layouts.skostudent')
+
+@section('title', localized($service->title))
 
 @section('content')
 
-    <div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg-breadcrumb bg_image" style="background-image: url({{ $service->getFirstMediaUrl('file') }})">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-inner text-center">
-                        <h1 class="title">{{ localized($service->title) }}</h1>
-                        <div class="meta">
-                            <a href="{{ route('home') }}" class="prev">{{ setting('page_name_home') }} /</a>
-                            <a href="{{ route('services') }}" class="prev">{{ setting('page_name_services') }} /</a>
-                            <a href="javascript:void(0)" class="next">{{ localized($service->title) }}</a>
+<!-- Start Page Title Area -->
+<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
+    <div class="container">
+        <div class="page-title-content text-center">
+            <h2>Course Details</h2>
+            <ul class="list-unstyled ps-0 mb-0">
+                <li class="d-inline-block">
+                    <a href="{{ route('home') }}">
+                        Home
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    Service Details
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pages1">
+        <img src="{{ asset('assets/skostudent/images/shapes/pages1.png') }}" alt="shape">
+    </div>
+    <div class="pages2">
+        <img src="{{ asset('assets/skostudent/images/shapes/pages2.png') }}" alt="shape">
+    </div>
+    <div class="pages3">
+        <img src="{{ asset('assets/skostudent/images/shapes/pages3.png') }}" alt="shape">
+    </div>
+    <div class="pages4">
+        <img src="{{ asset('assets/skostudent/images/pages4.svg') }}" alt="shape">
+    </div>
+    <div class="pages5">
+        <img src="{{ asset('assets/skostudent/images/pages5.svg') }}" alt="shape">
+    </div>
+</div>
+<!-- End Page Title Area -->
+
+<!-- Start Course Details Area -->
+<div class="course-details-area pt-136 pb-110">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="course-details-left-sidebar">
+                    <div class="course-details-card">
+                        <div class="image">
+                            <img src="{{ $service->getFirstMediaUrl('file') ?: asset('assets/skostudent/images/courses/courses29.jpg') }}" alt="service-image">
+                        </div>
+                        <span class="science d-inline-block">{{ localized($service->title) }}</span>
+                        <h3>{{ localized($service->title) }}</h3>
+                    </div>
+                    <div class="tab-info">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Overview</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                                <div class="overview-item">
+                                    <h3>Service Description</h3>
+                                    <div class="editor-contents">
+                                        {!! localized($service->content) !!}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-
-    <div class="rts-service-area rts-section-gap">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-xl-4 col-md-12 col-sm-12 col-12 sd-pad-r">
-                    <div class="rts-single-wized Categories">
-                        <div class="wized-header">
-                            <h5 class="title">
-                                {{ setting('page_name_services') }}
-                            </h5>
-                        </div>
-                        <div class="wized-body">
-                            @foreach($other_services as $other_service)
-                                <ul class="single-categories">
-                                    <li><a href="{{ route('services.detail', $other_service->slug) }}">{{ localized($other_service->title) }} <i class="far fa-long-arrow-right"></i></a></li>
-                                </ul>
-                            @endforeach
-                        </div>
+            <div class="col-lg-4">
+                <div class="course-details-right-sidebar">
+                    <div class="single-pages-widget free-info">
+                        <a href="{{ route('contact') }}" class="default-btn2 style-3"> 
+                            Contact Us
+                            <img src="{{ asset('assets/skostudent/images/left-small.svg') }}" alt="icon">
+                        </a>
                     </div>
-                </div>
-                <div class="col-xl-8 col-md-12 col-sm-12 col-12 plr_sm--20">
-                    <div class="service-detials-step-1">
-                        <div class="thumbnail">
-                            <img src="{{ $service->getFirstMediaUrl('file') }}" alt="elevate-area">
-                        </div>
-                        <h4 class="title">{{ localized($service->title) }}</h4>
-                        <div class="disc editor-contents">
-                            {!! localized($service->content_1) !!}
-                        </div>
-                        <div class="row g-5 mt--30 mb--40">
-                            <div class="col-lg-6">
-                                <!-- single service details card -->
-                                <div class="service-details-card">
-                                    <div class="thumbnail">
-                                        <img src="{{ setting('service_detail_page_box_icon_1') }}" alt="" class="icon">
-                                    </div>
-                                    <div class="details">
-                                        <h6 class="title">{!! setting('service_detail_page_box_title_1') !!}</h6> 
-                                    </div>
-                                </div>
+                    @if($other_services->count() > 0)
+                    <div class="single-pages-widget courses-info">
+                        <h3>Other Services</h3>
+                        @foreach($other_services->take(3) as $other)
+                        <div class="items d-flex align-items-center">
+                            <div class="image">
+                                <img src="{{ $other->getFirstMediaUrl('file') ?: asset('assets/skostudent/images/courses/courses32.jpg') }}" alt="service-image">
                             </div>
-                            <div class="col-lg-6">
-                                <div class="service-details-card">
-                                    <div class="thumbnail">
-                                        <img src="{{ setting('service_detail_page_box_icon_2') }}" alt="" class="icon">
-                                    </div>
-                                    <div class="details">
-                                        <h6 class="title">{!! setting('service_detail_page_box_title_2') !!}</h6> 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="service-details-card">
-                                    <div class="thumbnail">
-                                        <img src="{{ setting('service_detail_page_box_icon_3') }}" alt="" class="icon">
-                                    </div>
-                                    <div class="details">
-                                        <h6 class="title">{!! setting('service_detail_page_box_title_3') !!}</h6> 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="service-details-card">
-                                    <div class="thumbnail">
-                                        <img src="{{ setting('service_detail_page_box_icon_4') }}" alt="" class="icon">
-                                    </div>
-                                    <div class="details">
-                                        <h6 class="title">{!! setting('service_detail_page_box_title_4') !!}</h6> 
-                                    </div>
-                                </div>
+                            <div class="content">
+                                <h6>
+                                    <a href="{{ route('services.detail', $other->slug) }}">{{ localized($other->title) }}</a>
+                                </h6>
                             </div>
                         </div>
-                        <div class="disc editor-contents">
-                            {!! localized($service->content_2) !!}
-                        </div>
+                        @endforeach
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
+</div>
+<!-- End Course Details Area -->
 
 @endsection

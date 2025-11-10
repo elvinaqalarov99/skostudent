@@ -1,91 +1,112 @@
-@extends('frontend.layouts.main')
+@extends('frontend.layouts.skostudent')
+
+@section('title', localized($product->title))
 
 @section('content')
 
-    <div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg-breadcrumb bg_image" style="background-image: url({{ $product->getFirstMediaUrl('images') }})">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- bread crumb inner wrapper -->
-                    <div class="breadcrumb-inner text-center">
-                        <h1 class="title">{{ localized($product->title) }}</h1>
-                        <div class="meta">
-                            <a href="{{ route('home') }}" class="prev">{{ setting('page_name_home') }} /</a>
-                            <a href="{{ route('products') }}" class="prev">{{ setting('page_name_products') }} /</a>
-                            <a href="javascript:void(0)" class="next">{{ localized($product->title) }}</a>
+<!-- Start Page Title Area -->
+<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
+    <div class="container">
+        <div class="page-title-content text-center">
+            <h2>Course Details</h2>
+            <ul class="list-unstyled ps-0 mb-0">
+                <li class="d-inline-block">
+                    <a href="{{ route('home') }}">
+                        Home
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    Təqaüdlər
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pages1">
+        <img src="{{ asset('assets/skostudent/images/shapes/pages1.png') }}" alt="shape">
+    </div>
+    <div class="pages2">
+        <img src="{{ asset('assets/skostudent/images/shapes/pages2.png') }}" alt="shape">
+    </div>
+    <div class="pages3">
+        <img src="{{ asset('assets/skostudent/images/shapes/pages3.png') }}" alt="shape">
+    </div>
+    <div class="pages4">
+        <img src="{{ asset('assets/skostudent/images/pages4.svg') }}" alt="shape">
+    </div>
+    <div class="pages5">
+        <img src="{{ asset('assets/skostudent/images/pages5.svg') }}" alt="shape">
+    </div>
+</div>
+<!-- End Page Title Area -->
+
+<!-- Start Course Details Area -->
+<div class="course-details-area pt-136 pb-110">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="course-details-left-sidebar">
+                    <div class="course-details-card">
+                        <div class="image">
+                            <img src="{{ $product->getFirstMediaUrl('file') ?: asset('assets/skostudent/images/courses/courses29.jpg') }}" alt="courses-image">
+                        </div>
+                        <span class="science d-inline-block">{{ localized($product->title) }}</span>
+                        <h3>{{ localized($product->title) }}</h3>
+                    </div>
+                    <div class="tab-info">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Overview</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                                <div class="overview-item">
+                                    <h3>Course Description</h3>
+                                    <div class="editor-contents">
+                                        {!! localized($product->content_1) !!}
+                                    </div>
+                                    @if(localized($product->content_2))
+                                    <div class="editor-contents mt-4">
+                                        {!! localized($product->content_2) !!}
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- bread crumb inner wrapper end -->
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="course-details-right-sidebar">
+                    <div class="single-pages-widget free-info">
+                        <h2>Free</h2>
+                        <a href="{{ route('contact') }}" class="default-btn2 style-3"> 
+                            Enroll Now
+                            <img src="{{ asset('assets/skostudent/images/left-small.svg') }}" alt="icon">
+                        </a>
+                    </div>
+                    @if($related_products->count() > 0)
+                    <div class="single-pages-widget courses-info">
+                        <h3>Related Courses</h3>
+                        @foreach($related_products->take(3) as $related)
+                        <div class="items d-flex align-items-center">
+                            <div class="image">
+                                <img src="{{ $related->getFirstMediaUrl('file') ?: asset('assets/skostudent/images/courses/courses32.jpg') }}" alt="courses-image">
+                            </div>
+                            <div class="content">
+                                <h6>
+                                    <a href="{{ route('products.detail', $related->slug) }}">{{ localized($related->title) }}</a>
+                                </h6>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
-    <!-- rts breadcrumba area end -->
-    <!-- Bread-Crumb style two End -->
-
-
-    <main class="ms-main">
-        <div class="container">
-            <div id="primary" class="content-area single-product">
-                <div class="site-main">
-                    <div class="woocommerce-notices-wrapper"></div>
-                    <div id="product-470" class="ms-single-product product type-product post-470 status-publish first instock product_cat-run product_tag-life product_tag-move product_tag-sport product_tag-trainers has-post-thumbnail shipping-taxable purchasable product-type-simple">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="banner-horizental" data-sal="slide-up" data-sal-delay="150" data-sal-duration="900">
-                                    <div class="swiper swiper-container-h1">
-                                        <div class="swiper-wrapper">
-                                            @foreach($product->getMedia('images') as $media)
-                                                <div class="swiper-slide">
-                                                    <div class="slider-inner">
-                                                        <img src="{{ $media->getUrl() }}" alt="full_screen-image">
-                                                    </div>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="ms-single-product__content" data-sal="slide-up" data-sal-delay="350" data-sal-duration="900">
-                                    <h2 class="ms-single-product_title">{{ localized($product->title) }}</h2>
-
-                                    <div class="woocommerce-product-details__short-description editor-contents">
-                                        {!! localized($product->content_1) !!}
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-md-12 tab-area rts-section-gap pt-0 editor-contents">
-                                {!! localized($product->content_2) !!}
-                            </div>
-
-                            <section class="related products">
-                                <h2 data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">{{ setting('related_products') }}</h2>
-                                <div class="row ms-woo-feed" data-sal="slide-up" data-sal-delay="150" data-sal-duration="900">
-                                    @foreach($related_products as $related_product)
-                                        <div class="col-lg-3 col-md-6">
-                                            <div class="blog-single-two-wrapper shop">
-                                                <div class="image-area">
-                                                    <a href="{{ route('products.detail', $related_product->slug) }}" class="thumbnail">
-                                                        <img src="{{ $related_product->getFirstMediaUrl('images') }}" alt="blog-image">
-                                                    </a>
-                                                </div>
-                                                <div class="inner">
-                                                    <a href="{{ route('products.detail', $related_product->slug) }}">
-                                                        <h5 class="title"> {{ localized($related_product->title) }}</h5>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+</div>
+<!-- End Course Details Area -->
 
 @endsection
