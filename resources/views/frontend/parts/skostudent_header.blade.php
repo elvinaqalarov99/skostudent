@@ -5,7 +5,7 @@
             <div class="mobile-responsive-menu">
                 <div class="logo">
                     <a href="{{ route('home') }}">
-                        <img src="{{ asset('assets/skostudent/images/black-logo.svg') }}" alt="logo">
+                        <img src="{{ asset('assets/images/black-logo.svg') }}" alt="logo">
                     </a>
                 </div>
             </div>
@@ -16,7 +16,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand me-0" href="{{ route('home') }}">
-                    <img src="{{ asset('assets/skostudent/images/black-logo.svg') }}" alt="logo">
+                    <img src="{{ asset('assets/images/black-logo.svg') }}" alt="logo">
                 </a>
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
@@ -100,7 +100,7 @@
                         <div class="option-item">
                             <a href="{{ route('contact') }}" class="default-btn2">
                                 Müraciət Et
-                                <img src="{{ asset('assets/skostudent/images/left-small.svg') }}" alt="icon">
+                                <img src="{{ asset('assets/images/left-small.svg') }}" alt="icon">
                             </a>
                         </div>
                     </div>

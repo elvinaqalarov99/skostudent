@@ -1,54 +1,88 @@
-    @extends('frontend.layouts.main')
+@extends('frontend.layouts.skostudent')
+
+@section('title', localized($portfolio->title))
 
 @section('content')
 
-    <div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg-breadcrumb bg_image" style="background-image: url({{ $portfolio->getFirstMediaUrl('images') }})">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- bread crumb inner wrapper -->
-                    <div class="breadcrumb-inner text-center">
-                        <h1 class="title">{{ localized($portfolio->title) }}</h1>
-                        <div class="meta">
-                            <a href="{{ route('home') }}" class="prev">{{ setting('page_name_home') }} /</a>
-                            <a href="{{ route('portfolio') }}" class="prev">{{ setting('page_name_portfolio') }} /</a>
-                            <a href="javascript:void(0)" class="next">{{ localized($portfolio->title) }}</a>
+<!-- Start Page Title Area -->
+<div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
+    <div class="container">
+        <div class="page-title-content text-center">
+            <h2>{{ localized($portfolio->title) }}</h2>
+            <ul class="list-unstyled ps-0 mb-0">
+                <li class="d-inline-block">
+                    <a href="{{ route('home') }}">
+                        Ana səhifə
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    <a href="{{ route('portfolio') }}">
+                        Qalereya
+                    </a>
+                </li>
+                <li class="d-inline-block">
+                    {{ localized($portfolio->title) }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pages4">
+        <img src="{{ asset('assets/images/pages4.svg') }}" alt="shape">
+    </div>
+    <div class="pages5">
+        <img src="{{ asset('assets/images/pages5.svg') }}" alt="shape">
+    </div>
+</div>
+<!-- End Page Title Area -->
+
+<!-- Start Portfolio Details Area -->
+<div class="course-details-area pt-136 pb-110">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="course-details-left-sidebar">
+                    <div class="course-details-card">
+                        @if($portfolio->getFirstMediaUrl('images'))
+                        <div class="image">
+                            <img src="{{ $portfolio->getFirstMediaUrl('images') }}" alt="{{ localized($portfolio->title) }}">
+                        </div>
+                        @endif
+                        @if($portfolio->type)
+                        <span class="science d-inline-block">{{ localized($portfolio->type->title) }}</span>
+                        @endif
+                        <h3>{{ localized($portfolio->title) }}</h3>
+                    </div>
+                    
+                    @if($portfolio->getMedia('images')->count() > 1)
+                    <div class="portfolio-gallery mt-4">
+                        <h3 class="mb-4">Qalereya</h3>
+                        <div class="row" data-cues="fadeIn">
+                            @foreach($portfolio->getMedia('images')->skip(1) as $media)
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="portfolio-image-item">
+                                    <img src="{{ $media->getUrl() }}" alt="{{ localized($portfolio->title) }}" class="img-fluid">
+                                </div>
+                            </div>
+                            @endforeach
                         </div>
                     </div>
+                    @endif
+                    
+                    @if(localized($portfolio->content))
+                    <div class="tab-info mt-4">
+                        <div class="overview-item">
+                            <h3>Təsvir</h3>
+                            <div class="editor-contents">
+                                {!! localized($portfolio->content) !!}
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
-
-
-    <div class="rts-project-details-thumbnail rts-section-gapTop">
-        <div class="container">
-            <div class="row g-24 justify-content-center">
-                @foreach($portfolio->getMedia('images') as $media)
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <a href="#" class="thumbnail">
-                            <img src="{{ $media->getUrl() }}" alt="project-area">
-                        </a>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-
-    <div class="rts-project-details-area pb--100 pt--25">
-        <div class="container">
-            <div class="row mt--70 mb--50">
-                <div class="col-12">
-                    <div class="product-details-main-inner" data-sal="slide-up" data-sal-delay="150" data-sal-duration="900">
-                        <span>{{ localized($portfolio->type?->title) }}</span>
-                        <h3 class="title animated fadeIn">{{ localized($portfolio->title) }}</h3>
-                        <div class="disc editor-contents">
-                            {!! localized($portfolio->content) !!}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+<!-- End Portfolio Details Area -->
 
 @endsection

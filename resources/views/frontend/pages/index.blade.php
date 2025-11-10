@@ -15,32 +15,32 @@
           <div class="banner-content" data-cue="slideInUp">
             <div class="title">
               <span class="sub-title d-inline-block">
-                Online Education Website
+                Onlayn Təhsil Veb-saytı
               </span>
               <h2>
-                Empower Your Future, Learn Digital
+                Gələcəyinizi Gücləndirin, Rəqəmsal
                 <span class="position-relative">
-                  Skills
+                  Bacarıqlar Öyrənin
                   <img
-                    src="{{ asset('assets/skostudent/images/title-shape.svg') }}"
+                    src="{{ asset('assets/images/title-shape.svg') }}"
                     alt="shape"
                     class="title-decoration"
                   >
                 </span>
               </h2>
               <p>
-                Embark on a Journey of Digital Discovery:
-                Expert-Led Courses Designed to Equip
+                Rəqəmsal Kəşf Səyahətinə Başlayın:
+                Mütəxəssislər Tərəfindən Təqdim Olunan Kurslar
               </p>
             </div>
             <div class="button-list d-flex align-items-center">
               <a href="{{ route('about') }}" class="default-btn">
                 <img
-                  src="{{ asset('assets/skostudent/images/left-bold.svg') }}"
+                  src="{{ asset('assets/images/left-bold.svg') }}"
                   alt="icon"
                   class="btn-icon"
                 >
-                <span>Enroll Now</span>
+                <span>İndi Qeydiyyatdan Keç</span>
               </a>
             </div>
           </div>
@@ -52,7 +52,7 @@
             <!-- Main Banner Image -->
             <div class="image">
               <img
-                src="{{ asset('assets/skostudent/images/banner1.png') }}"
+                src="{{ asset('assets/images/banner1.png') }}"
                 alt="banner-image"
                 class="img-fluid"
               >
@@ -63,7 +63,7 @@
               <ul class="list-unstyled ps-0 mb-0">
                 <li class="d-inline-block">
                   <img
-                    src="{{ asset('assets/skostudent/images/udemy.svg') }}"
+                    src="{{ asset('assets/images/udemy.svg') }}"
                     alt="image"
                   >
                 </li>
@@ -80,11 +80,11 @@
             <div class="user-info text-center">
               <div class="icon">
                 <img
-                  src="{{ asset('assets/skostudent/images/user-icon.svg') }}"
+                  src="{{ asset('assets/images/user-icon.svg') }}"
                   alt="students-icon"
                 >
               </div>
-              <h2>Students</h2>
+              <h2>Tələbələr</h2>
               <h3>
                 <span class="counter" data-count="10">10</span>K+
               </h3>
@@ -92,7 +92,7 @@
                 @for($i = 1; $i <= 5; $i++)
                 <li class="d-inline-block">
                   <img
-                    src="{{ asset('assets/skostudent/images/user' . $i . '.jpg') }}"
+                    src="{{ asset('assets/images/user' . $i . '.jpg') }}"
                     alt="user-{{ $i }}"
                     class="user-avatar"
                   >
@@ -104,12 +104,12 @@
             <!-- Mentor Info Widget -->
             <div class="mentor-info d-flex align-items-center">
               <div class="content">
-                <h3>Chat with a mentor</h3>
-                <span>Find your mentor here</span>
+                <h3>Mentorla söhbət</h3>
+                <span>Mentorunuzu burada tapın</span>
               </div>
               <div class="icon">
                 <img
-                  src="{{ asset('assets/skostudent/images/message-icon.svg') }}"
+                  src="{{ asset('assets/images/message-icon.svg') }}"
                   alt="message-icon"
                 >
               </div>
@@ -121,28 +121,28 @@
 
     <!-- Decorative Background Shapes -->
     <div class="banner-shape1" aria-hidden="true">
-      <img src="{{ asset('assets/skostudent/images/banner-shape1.png') }}" alt="">
+      <img src="{{ asset('assets/images/banner-shape1.png') }}" alt="">
     </div>
     <div class="banner-shape2" aria-hidden="true">
-      <img src="{{ asset('assets/skostudent/images/banner-shape2.png') }}" alt="">
+      <img src="{{ asset('assets/images/banner-shape2.png') }}" alt="">
     </div>
     <div class="banner-shape3" aria-hidden="true">
-      <img src="{{ asset('assets/skostudent/images/banner-shape3.png') }}" alt="">
+      <img src="{{ asset('assets/images/banner-shape3.png') }}" alt="">
     </div>
     <div class="banner-shape4" aria-hidden="true">
-      <img src="{{ asset('assets/skostudent/images/banner-shape4.png') }}" alt="">
+      <img src="{{ asset('assets/images/banner-shape4.png') }}" alt="">
     </div>
     <div class="banner-shape5" aria-hidden="true">
-      <img src="{{ asset('assets/skostudent/images/banner-shape5.png') }}" alt="">
+      <img src="{{ asset('assets/images/banner-shape5.png') }}" alt="">
     </div>
     <div class="banner-shape6" aria-hidden="true">
-      <img src="{{ asset('assets/skostudent/images/banner-shape6.png') }}" alt="">
+      <img src="{{ asset('assets/images/banner-shape6.png') }}" alt="">
     </div>
     <div class="banner-shape7" aria-hidden="true">
-      <img src="{{ asset('assets/skostudent/images/banner-shape7.png') }}" alt="">
+      <img src="{{ asset('assets/images/banner-shape7.png') }}" alt="">
     </div>
     <div class="banner-shape8" aria-hidden="true">
-      <img src="{{ asset('assets/skostudent/images/banner-shape8.png') }}" alt="">
+      <img src="{{ asset('assets/images/banner-shape8.png') }}" alt="">
     </div>
   </div>
   <!-- ============================================
@@ -162,14 +162,14 @@
               <div class="col-lg-6 col-md-6">
                 <div class="image-1">
                   <img
-                    src="{{ asset('assets/skostudent/images/about1.jpg') }}"
+                    src="{{ asset('assets/images/about1.jpg') }}"
                     alt="about-image-1"
                     class="img-fluid"
                   >
                 </div>
                 <div class="image-2" data-cue="slideInUp">
                   <img
-                    src="{{ asset('assets/skostudent/images/about2.jpg') }}"
+                    src="{{ asset('assets/images/about2.jpg') }}"
                     alt="about-image-2"
                     class="img-fluid"
                   >
@@ -178,7 +178,7 @@
               <div class="col-lg-6 col-md-6">
                 <div class="image-3" data-cue="slideInUp">
                   <img
-                    src="{{ asset('assets/skostudent/images/about3.jpg') }}"
+                    src="{{ asset('assets/images/about3.jpg') }}"
                     alt="about-image-3"
                     class="img-fluid"
                   >
@@ -188,7 +188,7 @@
                     <h3>
                       <span class="counter" data-count="15">15</span>
                     </h3>
-                    <p>years experience</p>
+                    <p>illik təcrübə</p>
                   </div>
                   <a href="{{ route('about') }}" class="icon" aria-label="Learn more about us">
                     <i class="ph ph-arrow-up-right"></i>
@@ -199,10 +199,10 @@
             <!-- Decorative Shapes -->
             <div class="shape">
               <div class="shape1" aria-hidden="true">
-                <img src="{{ asset('assets/skostudent/images/shape1.svg') }}" alt="">
+                <img src="{{ asset('assets/images/shape1.svg') }}" alt="">
               </div>
               <div class="shape2" aria-hidden="true">
-                <img src="{{ asset('assets/skostudent/images/shape2.svg') }}" alt="">
+                <img src="{{ asset('assets/images/shape2.svg') }}" alt="">
               </div>
             </div>
           </div>
@@ -212,13 +212,13 @@
         <div class="col-lg-6">
           <div class="about-content" data-cue="slideInUp">
             <div class="section-title">
-              <span class="d-inline-block sub-title">About Skostudent</span>
+              <span class="d-inline-block sub-title">Skostudent Haqqında</span>
               <h2>
-                Discover Our Vision for Digital
+                Rəqəmsal Təhsil üçün Vizyonumuzu
                 <span class="position-relative">
-                  Education
+                  Kəşf Edin
                   <img
-                    src="{{ asset('assets/skostudent/images/title-shape.svg') }}"
+                    src="{{ asset('assets/images/title-shape.svg') }}"
                     alt="shape"
                     class="title-decoration"
                   >
@@ -230,7 +230,7 @@
               adipiscing elit, sed do eiusmod tempor
               incididunt ut labore
             </p>
-            <h4 class="mission">Our mission & vision</h4>
+            <h4 class="mission">Missiyamız və vizyonumuz</h4>
             <p>
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor
@@ -248,7 +248,7 @@
             <div class="about-list d-flex align-items-center">
               <a href="{{ route('about') }}" class="default-btn">
                 <img
-                  src="{{ asset('assets/skostudent/images/left-bold.svg') }}"
+                  src="{{ asset('assets/images/left-bold.svg') }}"
                   alt="icon"
                   class="btn-icon"
                 >
@@ -257,7 +257,7 @@
               <div class="user d-flex align-items-center">
                 <div class="image">
                   <img
-                    src="{{ asset('assets/skostudent/images/about4.jpg') }}"
+                    src="{{ asset('assets/images/about4.jpg') }}"
                     alt="CEO Jason S. Ellis"
                     class="ceo-image"
                   >
@@ -287,13 +287,13 @@
         <div class="row align-items-end">
           <div class="col-lg-6 col-md-7">
             <div class="section-title">
-              <span class="d-inline-block sub-title">Course Category</span>
+              <span class="d-inline-block sub-title">Kurs Kateqoriyası</span>
               <h2>
-                Explore Top
+                Ən Yaxşı
                 <span class="position-relative">
-                  Categories
+                  Kateqoriyaları Kəşf Edin
                   <img
-                    src="{{ asset('assets/skostudent/images/title-shape.svg') }}"
+                    src="{{ asset('assets/images/title-shape.svg') }}"
                     alt="shape"
                     class="title-decoration"
                   >
@@ -304,9 +304,9 @@
           <div class="col-lg-6 col-md-5">
             <div class="text-end">
               <a href="{{ route('services') }}" class="default-btn2">
-                <span>View All Categories</span>
+                <span>Bütün Kateqoriyaları Gör</span>
                 <img
-                  src="{{ asset('assets/skostudent/images/left-small.svg') }}"
+                  src="{{ asset('assets/images/left-small.svg') }}"
                   alt="icon"
                   class="btn-icon"
                 >
@@ -321,13 +321,13 @@
           <div class="single-categories-card text-center">
             <div class="icon mx-auto position-relative z-1">
               <img
-                src="{{ asset('assets/skostudent/images/categories-bg-shape.svg') }}"
+                src="{{ asset('assets/images/categories-bg-shape.svg') }}"
                 alt="category-background"
                 class="category-bg"
               >
               <img
                 class="bg-shape category-icon"
-                src="{{ $service->getFirstMediaUrl('file') ?: asset('assets/skostudent/images/categories1.svg') }}"
+                src="{{ $service->getFirstMediaUrl('file') ?: asset('assets/images/categories1.svg') }}"
                 alt="{{ localized($service->title) }}"
               >
             </div>
@@ -358,13 +358,13 @@
           <div class="testimonial-image position-relative z-1" data-cue="slideInUp">
             <div class="image position-relative z-1">
               <img
-                src="{{ asset('assets/skostudent/images/bg-shape.svg') }}"
+                src="{{ asset('assets/images/bg-shape.svg') }}"
                 alt="testimonial-background"
                 class="testimonial-bg"
               >
               <img
                 class="main-image img-fluid"
-                src="{{ asset('assets/skostudent/images/testimonial1.jpg') }}"
+                src="{{ asset('assets/images/testimonial1.jpg') }}"
                 alt="testimonial-main"
               >
             </div>
@@ -372,7 +372,7 @@
               @for($i = 2; $i <= 5; $i++)
               <div class="image{{ $i - 1 }}">
                 <img
-                  src="{{ asset('assets/skostudent/images/testimonial' . $i . '.jpg') }}"
+                  src="{{ asset('assets/images/testimonial' . $i . '.jpg') }}"
                   alt="testimonial-user-{{ $i - 1 }}"
                   class="testimonial-user-img"
                 >
@@ -382,7 +382,7 @@
           </div>
           <div class="testimonial-responsive-image d-md-none">
             <img
-              src="{{ asset('assets/skostudent/images/testimonial7.png') }}"
+              src="{{ asset('assets/images/testimonial7.png') }}"
               alt="testimonial-responsive"
               class="img-fluid"
             >
@@ -399,7 +399,7 @@
                 <span class="position-relative">
                   Students
                   <img
-                    src="{{ asset('assets/skostudent/images/title-shape.svg') }}"
+                    src="{{ asset('assets/images/title-shape.svg') }}"
                     alt="shape"
                     class="title-decoration"
                   >
@@ -415,7 +415,7 @@
                 <div class="users-info d-flex align-items-center">
                   <div class="image">
                     <img
-                      src="{{ asset('assets/skostudent/images/testimonial6.jpg') }}"
+                      src="{{ asset('assets/images/testimonial6.jpg') }}"
                       alt="Krystal France"
                       class="testimonial-avatar"
                     >
@@ -444,13 +444,13 @@
   <div class="courses-area pt-136 pb-110">
     <div class="container">
       <div class="section-title text-center" data-cue="slideInUp">
-        <span class="d-inline-block sub-title">Most Featured Courses</span>
+        <span class="d-inline-block sub-title">Ən Populyar Kurslar</span>
         <h2>
-          Choose Our Top
+          Ən Yaxşı
           <span class="position-relative">
-            Courses
+            Kurslarımızı Seçin
             <img
-              src="{{ asset('assets/skostudent/images/title-shape.svg') }}"
+              src="{{ asset('assets/images/title-shape.svg') }}"
               alt="shape"
               class="title-decoration"
             >
@@ -464,7 +464,7 @@
             <div class="image position-relative">
               <a href="{{ route('products.detail', $product->slug) }}">
                 <img
-                  src="{{ $product->getFirstMediaUrl('file') ?: asset('assets/skostudent/images/courses1.jpg') }}"
+                  src="{{ $product->getFirstMediaUrl('file') ?: asset('assets/images/courses1.jpg') }}"
                   alt="{{ localized($product->title) }}"
                   class="img-fluid"
                 >
@@ -485,15 +485,15 @@
                 <div class="title d-flex align-items-center">
                   <div class="icon">
                     <img
-                      src="{{ asset('assets/skostudent/images/university.svg') }}"
+                      src="{{ asset('assets/images/university.svg') }}"
                       alt="university-icon"
                     >
                   </div>
-                  <span>70+ students</span>
+                  <span>70+ tələbə</span>
                 </div>
                 <div class="button">
                   <a href="{{ route('products.detail', $product->slug) }}">
-                    <span>ENROLL NOW</span>
+                    <span>İNDİ QEYDİYYATDAN KEÇ</span>
                     <i class="ph ph-arrow-right"></i>
                   </a>
                 </div>
@@ -505,9 +505,9 @@
       </div>
       <div class="single-courses-button text-center" data-cue="slideInUp">
         <a href="{{ route('products') }}" class="default-btn2">
-          <span>View All Courses</span>
+          <span>Bütün Kursları Gör</span>
           <img
-            src="{{ asset('assets/skostudent/images/left-small.svg') }}"
+            src="{{ asset('assets/images/left-small.svg') }}"
             alt="icon"
             class="btn-icon"
           >
@@ -530,13 +530,13 @@
         <div class="row align-items-end">
           <div class="col-lg-6 col-sm-7">
             <div class="section-title">
-              <span class="d-inline-block sub-title">Our Blog</span>
+              <span class="d-inline-block sub-title">Bloqumuz</span>
               <h2>
-                Read Our Latest
+                Son
                 <span class="position-relative">
-                  Blog
+                  Bloglarımızı Oxuyun
                   <img
-                    src="{{ asset('assets/skostudent/images/title-shape.svg') }}"
+                    src="{{ asset('assets/images/title-shape.svg') }}"
                     alt="shape"
                     class="title-decoration"
                   >
@@ -547,9 +547,9 @@
           <div class="col-lg-6 col-sm-5">
             <div class="button text-end">
               <a href="{{ route('blog') }}" class="default-btn2">
-                <span>View All Blog</span>
+                <span>Bütün Blogları Gör</span>
                 <img
-                  src="{{ asset('assets/skostudent/images/left-small.svg') }}"
+                  src="{{ asset('assets/images/left-small.svg') }}"
                   alt="icon"
                   class="btn-icon"
                 >
@@ -565,7 +565,7 @@
             <div class="image">
               <a href="{{ route('blog.detail', $blog->slug) }}">
                 <img
-                  src="{{ $blog->getFirstMediaUrl('file') ?: asset('assets/skostudent/images/blog' . ($index + 1) . '.jpg') }}"
+                  src="{{ $blog->getFirstMediaUrl('file') ?: asset('assets/images/blog' . ($index + 1) . '.jpg') }}"
                   alt="{{ localized($blog->title) }}"
                   class="img-fluid"
                 >
@@ -578,7 +578,7 @@
                     <a href="{{ route('blog') }}">Xaricdə</a>
                   @else
                     <img
-                      src="{{ asset('assets/skostudent/images/user-icon3.svg') }}"
+                      src="{{ asset('assets/images/user-icon3.svg') }}"
                       alt="author-icon"
                     >
                     <a href="{{ route('blog') }}">Admin</a>
@@ -586,7 +586,7 @@
                 </li>
                 <li class="d-inline-block position-relative">
                   <img
-                    src="{{ asset('assets/skostudent/images/calendar-icon.svg') }}"
+                    src="{{ asset('assets/images/calendar-icon.svg') }}"
                     alt="calendar-icon"
                   >
                   <time datetime="{{ $blog->created_at?->toDateString() }}">

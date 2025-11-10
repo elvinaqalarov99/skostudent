@@ -8,33 +8,24 @@
 <div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
     <div class="container">
         <div class="page-title-content text-center">
-            <h2>About Us</h2>
+            <h2>Haqqımızda</h2>
             <ul class="list-unstyled ps-0 mb-0">
                 <li class="d-inline-block">
                     <a href="{{ route('home') }}">
-                        Home
+                        Ana səhifə
                     </a>
                 </li>
                 <li class="d-inline-block">
-                    About Us
+                    Haqqımızda
                 </li>
             </ul>
         </div>
     </div>
-    <div class="pages1">
-        <img src="{{ asset('assets/skostudent/images/shapes/pages1.png') }}" alt="shape">
-    </div>
-    <div class="pages2">
-        <img src="{{ asset('assets/skostudent/images/shapes/pages2.png') }}" alt="shape">
-    </div>
-    <div class="pages3">
-        <img src="{{ asset('assets/skostudent/images/shapes/pages3.png') }}" alt="shape">
-    </div>
     <div class="pages4">
-        <img src="{{ asset('assets/skostudent/images/pages4.svg') }}" alt="shape">
+        <img src="{{ asset('assets/images/pages4.svg') }}" alt="shape">
     </div>
     <div class="pages5">
-        <img src="{{ asset('assets/skostudent/images/pages5.svg') }}" alt="shape">
+        <img src="{{ asset('assets/images/pages5.svg') }}" alt="shape">
     </div>
 </div>
 <!-- End Page Title Area -->
@@ -46,10 +37,10 @@
             <div class="col-lg-6">
                 <div class="about-image style-2" data-cue="slideInUp">
                     <div class="image-one text-end">
-                        <img src="{{ asset('assets/skostudent/images/about/about5.jpg') }}" alt="about-image">
+                        <img src="{{ asset('assets/images/about1.jpg') }}" alt="about-image">
                     </div>
                     <div class="image-two">
-                        <img src="{{ asset('assets/skostudent/images/about/about6.jpg') }}" alt="about-image">
+                        <img src="{{ asset('assets/images/about2.jpg') }}" alt="about-image">
                     </div>
                 </div>
             </div>
@@ -61,7 +52,7 @@
                             Discover Our Vision for Digital 
                             <span class="position-relative">
                                 Education
-                                <img src="{{ asset('assets/skostudent/images/title-shape.svg') }}" alt="shape">
+                                <img src="{{ asset('assets/images/title-shape.svg') }}" alt="shape">
                             </span>
                         </h2>
                     </div>
@@ -73,7 +64,7 @@
                                         @foreach($features->take(5) as $feature)
                                         <li>
                                             {{ localized($feature->title) }}
-                                            <img src="{{ asset('assets/skostudent/images/about/check.svg') }}" alt="icon">
+                                            <img src="{{ asset('assets/images/title-shape.svg') }}" alt="icon">
                                         </li>
                                         @endforeach
                                     </ul>
@@ -82,10 +73,10 @@
                             <div class="col-lg-5 col-sm-5">
                                 <div class="awards-card text-center">
                                     <div class="icon">
-                                        <img src="{{ asset('assets/skostudent/images/about/awards-logo.svg') }}" alt="logo">
+                                        <img src="{{ asset('assets/images/black-logo.svg') }}" alt="logo">
                                     </div>
                                     <h3>25+</h3>
-                                    <p>Winning Awards</p>
+                                    <p>Qazandığımız Mükafatlar</p>
                                 </div>
                             </div>
                         </div>
@@ -104,14 +95,14 @@
             <div class="col-lg-6">
                 <div class="choose-content" data-cue="slideInUp">
                     <div class="section-title">
-                        <span class="d-inline-block sub-title">Why Choose Us</span>
+                        <span class="d-inline-block sub-title">Niyə Bizi Seçməlisiniz</span>
                         <h2>
-                            One Platform & Many  
+                            Bir Platforma & Çoxlu  
                             <span class="position-relative">
-                                Courses
-                                <img src="{{ asset('assets/skostudent/images/title-shape.svg') }}" alt="shape">
+                                Kurslar
+                                <img src="{{ asset('assets/images/title-shape.svg') }}" alt="shape">
                             </span>
-                            For You
+                            Sizin Üçün
                         </h2>
                     </div>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown </p>
@@ -119,7 +110,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="choose-image position-relative z-1" data-cue="slideInUp">
-                    <img src="{{ asset('assets/skostudent/images/choose/choose1.png') }}" alt="choose-image">
+                    <img src="{{ asset('assets/images/choose1.png') }}" alt="choose-image">
                 </div>
             </div>
         </div>
@@ -134,18 +125,18 @@
             <div class="col-lg-3">
                 <div class="single-funfact-info">
                     <div class="image">
-                        <img src="{{ asset('assets/skostudent/images/funfact/funfact1.jpg') }}" alt="funfact-image">
+                        <img src="{{ asset('assets/images/testimonial1.jpg') }}" alt="funfact-image">
                     </div>
                     <div class="content d-flex align-items-center">
                         <div class="icon">
-                            <img src="{{ asset('assets/skostudent/images/icon/funfact1.svg') }}" alt="icon">
+                            <img src="{{ asset('assets/images/user-icon.svg') }}" alt="icon">
                         </div>
                         <div class="text">
                             <h3>
                                 <span class="counter">75K</span>
                                 +
                             </h3>
-                            <p>Enrolled Students</p>
+                            <p>Qeydiyyatdan Keçən Tələbələr</p>
                         </div>
                     </div>
                 </div>
@@ -153,18 +144,18 @@
             <div class="col-lg-3">
                 <div class="single-funfact-info">
                     <div class="image">
-                        <img src="{{ asset('assets/skostudent/images/funfact/funfact1.jpg') }}" alt="funfact-image">
+                        <img src="{{ asset('assets/images/testimonial2.jpg') }}" alt="funfact-image">
                     </div>
                     <div class="content d-flex align-items-center">
                         <div class="icon">
-                            <img src="{{ asset('assets/skostudent/images/icon/funfact2.svg') }}" alt="icon">
+                            <img src="{{ asset('assets/images/user-icon2.svg') }}" alt="icon">
                         </div>
                         <div class="text">
                             <h3>
                                 <span class="counter">324</span>
                                 +
                             </h3>
-                            <p>Enrolled Students</p>
+                            <p>Qeydiyyatdan Keçən Tələbələr</p>
                         </div>
                     </div>
                 </div>
@@ -172,18 +163,18 @@
             <div class="col-lg-3">
                 <div class="single-funfact-info">
                     <div class="image">
-                        <img src="{{ asset('assets/skostudent/images/funfact/funfact1.jpg') }}" alt="funfact-image">
+                        <img src="{{ asset('assets/images/testimonial3.jpg') }}" alt="funfact-image">
                     </div>
                     <div class="content d-flex align-items-center">
                         <div class="icon">
-                            <img src="{{ asset('assets/skostudent/images/icon/funfact3.svg') }}" alt="icon">
+                            <img src="{{ asset('assets/images/user-icon3.svg') }}" alt="icon">
                         </div>
                         <div class="text">
                             <h3>
                                 <span class="counter">22</span>
                                 K+
                             </h3>
-                            <p>Certified Students</p>
+                            <p>Sertifikatlaşdırılmış Tələbələr</p>
                         </div>
                     </div>
                 </div>
@@ -191,18 +182,18 @@
             <div class="col-lg-3">
                 <div class="single-funfact-info">
                     <div class="image">
-                        <img src="{{ asset('assets/skostudent/images/funfact/funfact1.jpg') }}" alt="funfact-image">
+                        <img src="{{ asset('assets/images/testimonial4.jpg') }}" alt="funfact-image">
                     </div>
                     <div class="content d-flex align-items-center">
                         <div class="icon">
-                            <img src="{{ asset('assets/skostudent/images/icon/funfact4.svg') }}" alt="icon">
+                            <img src="{{ asset('assets/images/user-icon.svg') }}" alt="icon">
                         </div>
                         <div class="text">
                             <h3>
                                 <span class="counter">30</span>
                                 +
                             </h3>
-                            <p>Skilled Instructor</p>
+                            <p>Bacarıqlı Müəllim</p>
                         </div>
                     </div>
                 </div>
@@ -219,34 +210,34 @@
             <div class="col-lg-6">
                 <div class="testimonial-image position-relative z-1" data-cue="slideInUp">
                     <div class="image position-relative z-1">
-                        <img src="{{ asset('assets/skostudent/images/testimonial/bg-shape.svg') }}" alt="shape">
-                        <img class="main-image" src="{{ asset('assets/skostudent/images/testimonial/testimonial1.jpg') }}" alt="">
+                        <img src="{{ asset('assets/images/bg-shape.svg') }}" alt="shape">
+                        <img class="main-image" src="{{ asset('assets/images/testimonial1.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="testimonial-content" data-cue="slideInUp">
                     <div class="section-title">
-                        <span class="d-inline-block sub-title">Testimonials</span>
+                        <span class="d-inline-block sub-title">Rəylər</span>
                         <h2>
-                            Voices of Success: Hear from Our
+                            Uğurun Səsləri: Tələbələrimizdən
                             <span class="position-relative">
-                                Students
-                                <img src="{{ asset('assets/skostudent/images/title-shape.svg') }}" alt="shape">
+                                Eşidin
+                                <img src="{{ asset('assets/images/title-shape.svg') }}" alt="shape">
                             </span>
                         </h2>
                     </div>
                     <div class="testimonial-slider-info owl-carousel owl-theme">
                         @for($i = 1; $i <= 3; $i++)
                         <div class="item">
-                            <p>Enrolling in courses at Skostudent was the best decision I made for my career. The instructors were incredibly knowledgeable and supportive, guiding me through every step of the learning process.</p>
+                            <p>Skostudent-də kurslara qeydiyyatdan keçmək karyeram üçün verdiyim ən yaxşı qərardır. Müəllimlər inanılmaz dərəcədə bilikli və dəstəkçi idilər, məni öyrənmə prosesinin hər addımında rəhbərlik edirdilər.</p>
                             <div class="users-info d-flex align-items-center">
                                 <div class="image">
-                                    <img src="{{ asset('assets/skostudent/images/testimonial/testimonial6.jpg') }}" alt="testimonial-image">
+                                    <img src="{{ asset('assets/images/testimonial6.jpg') }}" alt="testimonial-image">
                                 </div>
                                 <div class="content">
                                     <h3>Krystal France</h3>
-                                    <span>Ex-Student</span>
+                                    <span>Keçmiş Tələbə</span>
                                 </div>
                             </div>
                         </div>
@@ -263,12 +254,12 @@
 <div class="team-area style-2 position-relative z-1 pt-136 pb-110">
     <div class="container">
         <div class="section-title text-center mx-auto" data-cue="slideInUp">
-            <span class="d-inline-block sub-title">Team Members</span>
+            <span class="d-inline-block sub-title">Komanda Üzvləri</span>
             <h2>
-                Meet Out 
+                Müəllimlərimizlə 
                 <span class="position-relative">
-                    Instructors
-                    <img src="{{ asset('assets/skostudent/images/title-shape.svg') }}" alt="shape">
+                    Tanış Olun
+                    <img src="{{ asset('assets/images/title-shape.svg') }}" alt="shape">
                 </span>
             </h2>
         </div>
@@ -278,10 +269,10 @@
                 <div class="single-team-info">
                     <div class="content">
                         <h3>{{ localized($service->title) }}</h3>
-                        <p>Service</p>
+                        <p>Xidmət</p>
                     </div>
                     <div class="image position-relative">
-                        <img src="{{ $service->getFirstMediaUrl('file') ?: asset('assets/skostudent/images/team/team4.jpg') }}" alt="team-image">
+                        <img src="{{ $service->getFirstMediaUrl('file') ?: asset('assets/images/team1.jpg') }}" alt="team-image">
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@
                 <div class="single-footer-widget logo-info" data-cue="slideInUp">
                     <div class="logo">
                         <a href="{{ route('home') }}">
-                            <img src="{{ asset('assets/skostudent/images/black-logo.svg') }}" alt="logo">
+                            <img src="{{ asset('assets/images/black-logo.svg') }}" alt="logo">
                         </a>
                     </div>
                     <p>
@@ -43,61 +43,61 @@
             </div>
             <div class="col-lg-2 col-sm-6 col-md-3">
                 <div class="single-footer-widget links-info" data-cue="slideInUp">
-                    <h3>Links</h3>
+                    <h3>Keçidlər</h3>
                     <ul class="list-unstyled ps-0 mb-0">
                         <li>
-                            <a href="{{ route('home') }}"> Home </a>
+                            <a href="{{ route('home') }}"> Ana səhifə </a>
                         </li>
                         <li>
-                            <a href="{{ route('about') }}"> About Us </a>
+                            <a href="{{ route('about') }}"> Haqqımızda </a>
                         </li>
                         <li>
-                            <a href="{{ route('products') }}"> Courses </a>
+                            <a href="{{ route('products') }}"> Kurslar </a>
                         </li>
                         <li>
-                            <a href="{{ route('products') }}"> Courses Details </a>
+                            <a href="{{ route('products') }}"> Kurs Təfərrüatları </a>
                         </li>
                         <li>
-                            <a href="{{ route('contact') }}"> Contact Us </a>
+                            <a href="{{ route('contact') }}"> Bizimlə Əlaqə </a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6 col-md-3">
                 <div class="single-footer-widget links-info" data-cue="slideInUp">
-                    <h3>Legal</h3>
+                    <h3>Hüquqi</h3>
                     <ul class="list-unstyled ps-0 mb-0">
                         <li>
-                            <a href="{{ route('blog') }}"> Trems of Use </a>
+                            <a href="{{ route('blog') }}"> İstifadə Şərtləri </a>
                         </li>
                         <li>
-                            <a href="{{ route('about') }}"> Tearm & Condition </a>
+                            <a href="{{ route('about') }}"> Şərtlər və Qaydalar </a>
                         </li>
                         <li>
-                            <a href="{{ route('products') }}"> Payment Method </a>
+                            <a href="{{ route('products') }}"> Ödəniş Metodu </a>
                         </li>
                         <li>
-                            <a href="{{ route('privacy') }}"> Privacy Policy </a>
+                            <a href="{{ route('privacy') }}"> Məxfilik Siyasəti </a>
                         </li>
                         <li>
-                            <a href="{{ route('blog') }}"> Licensencing </a>
+                            <a href="{{ route('blog') }}"> Lisenziya </a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="single-footer-widget app-info" data-cue="slideInUp">
-                    <h3>Install Our App</h3>
-                    <span>From App Store Or Google Play</span>
+                    <h3>Tətbiqimizi Yükləyin</h3>
+                    <span>App Store və ya Google Play-dən</span>
                     <ul class="list-unstyled ps-0 mb-0">
                         <li class="d-inline-block">
                             <a href="https://play.google.com/store/games?device=windows&pli=1" target="_blank">
-                                <img src="{{ asset('assets/skostudent/images/google.svg') }}" alt="google">
+                                <img src="{{ asset('assets/images/google.svg') }}" alt="google">
                             </a>
                         </li>
                         <li class="d-inline-block">
                             <a href="https://www.apple.com/app-store/" target="_blank">
-                                <img src="{{ asset('assets/skostudent/images/app-store.svg') }}" alt="app-store">
+                                <img src="{{ asset('assets/images/app-store.svg') }}" alt="app-store">
                             </a>
                         </li>
                     </ul>
@@ -107,13 +107,13 @@
     </div>
     <div class="shapes">
         <div class="shape12">
-            <img src="{{ asset('assets/skostudent/images/shape12.svg') }}" alt="shape">
+            <img src="{{ asset('assets/images/shape12.svg') }}" alt="shape">
         </div>
         <div class="shape13">
-            <img src="{{ asset('assets/skostudent/images/shape13.svg') }}" alt="shape">
+            <img src="{{ asset('assets/images/shape13.svg') }}" alt="shape">
         </div>
         <div class="shape14">
-            <img src="{{ asset('assets/skostudent/images/shape14.svg') }}" alt="shape">
+            <img src="{{ asset('assets/images/shape14.svg') }}" alt="shape">
         </div>
     </div>
 </footer>
@@ -124,7 +124,7 @@
             <div class="col-lg-6 col-md-5">
                 <div class="copyright-content" data-cue="slideInUp">
                     <p>
-                        © Copyright 2024 | Skostudent Template | All Rights Reserved
+                        © Copyright 2025 | Skostudent.az | All Rights Reserved
                     </p>
                 </div>
             </div>
@@ -133,19 +133,19 @@
                     <ul class="list-unstyled ps-0 mb-0">
                         <li class="d-inline-block">
                             <a href="{{ route('about') }}" class="active">
-                                Company
+                                Şirkət
                             </a>
                         </li>
                         <li class="d-inline-block">
                             <a href="mailto:{{ setting('email') !== 'email' ? setting('email') : 'themeies3@gmail.com' }}">
-                                Support
+                                Dəstək
                             </a>
                         </li>
                         <li class="d-inline-block">
-                            <a href="{{ route('privacy') }}"> Privacy </a>
+                            <a href="{{ route('privacy') }}"> Məxfilik </a>
                         </li>
                         <li class="d-inline-block">
-                            <a href="{{ route('contact') }}"> Contact </a>
+                            <a href="{{ route('contact') }}"> Əlaqə </a>
                         </li>
                     </ul>
                 </div>
@@ -154,7 +154,7 @@
     </div>
     <div class="icon-info">
         <a href="#banner">
-            <img src="{{ asset('assets/skostudent/images/up-icon.svg') }}" alt="icon">
+            <img src="{{ asset('assets/images/up-icon.svg') }}" alt="icon">
         </a>
     </div>
     </div>

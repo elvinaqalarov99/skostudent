@@ -8,25 +8,25 @@
 <div id="banner" class="page-title-area position-relative z-1" data-cue="slideInUp">
     <div class="container">
         <div class="page-title-content text-center">
-            <h2>Courses Grid View</h2>
+            <h2>Kurslar Grid Görünüşü</h2>
             <ul class="list-unstyled ps-0 mb-0">
                 <li class="d-inline-block">
                     <a href="{{ route('home') }}">
-                        Home
+                        Ana səhifə
                     </a>
                 </li>
                 <li class="d-inline-block">
-                    Courses Grid
+                    Kurslar Grid
                 </li>
             </ul>
         </div>
     </div> 
     
     <div class="pages5">
-        <img src="{{ asset('assets/skostudent/images/pages5.svg') }}" alt="shape">
+        <img src="{{ asset('assets/images/pages5.svg') }}" alt="shape">
     </div>
     <div class="pages4">
-        <img src="{{ asset('assets/skostudent/images/pages4.svg') }}" alt="shape">
+        <img src="{{ asset('assets/images/pages4.svg') }}" alt="shape">
     </div> 
 </div>
 <!-- End Page Title Area -->
@@ -40,7 +40,7 @@
                 <div class="single-courses-card">
                     <div class="image position-relative">
                         <a href="{{ route('products.detail', $product->slug) }}">
-                            <img src="{{ $product->getFirstMediaUrl('file') ?: asset('assets/skostudent/images/courses1.jpg') }}" alt="courses-image">
+                            <img src="{{ $product->getFirstMediaUrl('file') ?: asset('assets/images/courses1.jpg') }}" alt="courses-image">
                         </a>
                     </div>
                     <div class="content">
@@ -53,13 +53,13 @@
                         <div class="list-info d-flex align-items-center justify-content-between">
                             <div class="title d-flex align-items-center">
                                 <div class="icon">
-                                    <img src="{{ asset('assets/skostudent/images/university.svg') }}" alt="icon">
+                                    <img src="{{ asset('assets/images/university.svg') }}" alt="icon">
                                 </div>
-                                <span>70+ students</span>
+                                <span>70+ tələbə</span>
                             </div>
                             <div class="button">
                                 <a href="{{ route('products.detail', $product->slug) }}">
-                                    ENROLL NOW
+                                    İNDİ QEYDİYYATDAN KEÇ
                                     <i class="ph ph-arrow-right"></i>
                                 </a>
                             </div>
@@ -69,7 +69,7 @@
             </div>
             @empty
             <div class="col-lg-12">
-                <p class="text-center">No courses found.</p>
+                <p class="text-center">Kurs tapılmadı.</p>
             </div>
             @endforelse
         </div>

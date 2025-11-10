@@ -12,7 +12,7 @@
             <ul class="list-unstyled ps-0 mb-0">
                 <li class="d-inline-block">
                     <a href="{{ route('home') }}">
-                        Home
+                        Ana səhifə
                     </a>
                 </li>
                 <li class="d-inline-block">
@@ -22,10 +22,10 @@
         </div>
     </div>
     <div class="pages5">
-        <img src="{{ asset('assets/skostudent/images/pages5.svg') }}" alt="shape">
+        <img src="{{ asset('assets/images/pages5.svg') }}" alt="shape">
     </div>
     <div class="pages4">
-        <img src="{{ asset('assets/skostudent/images/pages4.svg') }}" alt="shape">
+        <img src="{{ asset('assets/images/pages4.svg') }}" alt="shape">
     </div>
 </div>
 <!-- End Page Title Area -->
@@ -39,7 +39,7 @@
                 <div class="single-team-card position-relative">
                     <div class="image">
                         <a href="{{ route('portfolio.detail', $portfolio->slug) }}">
-                            <img src="{{ $portfolio->getFirstMediaUrl('images') ?: asset('assets/skostudent/images/team1.jpg') }}" alt="portfolio-image">
+                            <img src="{{ $portfolio->getFirstMediaUrl('images') ?: asset('assets/images/team1.jpg') }}" alt="portfolio-image">
                         </a>
                     </div>
                     <div class="content text-center">
@@ -53,7 +53,7 @@
             </div>
             @empty
             <div class="col-lg-12">
-                <p class="text-center">No portfolio items found.</p>
+                <p class="text-center">Portfolio elementi tapılmadı.</p>
             </div>
             @endforelse
         </div>
