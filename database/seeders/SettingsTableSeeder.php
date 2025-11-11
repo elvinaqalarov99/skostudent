@@ -244,6 +244,15 @@ class SettingsTableSeeder extends Seeder
                 'created_at' => '2023-08-22 21:39:46',
                 'updated_at' => '2023-08-22 21:39:46',
             ),
+            25 =>
+            array (
+                'id' => 30,
+                'key' => 'page_name_partners',
+                'type' => '1',
+                'value' => '{"az": "Partners", "en": "Partners", "ru": "Partners"}',
+                'created_at' => '2025-11-12 10:00:00',
+                'updated_at' => '2025-11-12 10:00:00',
+            ),
         ));
 
 

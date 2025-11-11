@@ -15,6 +15,7 @@ return [
     'page_name_home' => Setting::TYPES['string'],
     'page_name_products' => Setting::TYPES['string'],
     'page_name_services' => Setting::TYPES['string'],
+    'page_name_partners' => Setting::TYPES['string'],
     'page_name_portfolio' => Setting::TYPES['string'],
     'page_name_blog' => Setting::TYPES['string'],
     'page_name_contact' => Setting::TYPES['string'],
