@@ -396,7 +396,7 @@ Header Area CSS
 }
 .desktop-nav .navbar .navbar-nav .nav-item a.dropdown-toggle::after {
   display: none;
-}  
+}
 .desktop-nav .navbar .navbar-nav .nav-item a i {
   font-size: 18px;
   line-height: 0;
@@ -870,10 +870,6 @@ Banner Area CSS
 .banner-area {
   padding-top: 165px;
   padding-bottom: 40px;
-  background-image: url(../images/banner/banner-bg.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .banner-area .banner-shape1 {
   top: 135px;
@@ -1192,7 +1188,7 @@ Banner Area CSS
   border-radius: 10px;
   padding-top: 32px;
   padding-bottom: 190px;
-  background-image: url(../images/banner/banner-warp-bg.jpg);
+  background-image: url(../images/banner/banner-warp-bg.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -27,35 +27,35 @@
                     <ul class="list-unstyled ps-0 mb-0 social-link d-flex align-items-center" style="gap: 10px;">
                         @if(setting('facebook_url') && setting('facebook_url') !== 'facebook_url')
                         <li class="d-inline-block">
-                            <a href="{{ setting('facebook_url') }}" target="_blank" style="width: 40px; height: 40px; border-radius: 50%; background-color: #1877F2; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none;">
-                                <i class="ri-facebook-fill"></i>
+                            <a href="{{ setting('facebook_url') }}" target="_blank" rel="noopener noreferrer" style="width: 40px; height: 40px; border-radius: 50%; background-color: #1877F2; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: transform 0.3s;">
+                                <i class="ri-facebook-fill" style="font-size: 20px;"></i>
                             </a>
                         </li>
                         @endif
                         @if(setting('instagram_url') && setting('instagram_url') !== 'instagram_url')
                         <li class="d-inline-block">
-                            <a href="{{ setting('instagram_url') }}" target="_blank" style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none;">
-                                <i class="ri-instagram-fill"></i>
+                            <a href="{{ setting('instagram_url') }}" target="_blank" rel="noopener noreferrer" style="width: 40px; height: 40px; border-radius: 8px; background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: transform 0.3s;">
+                                <i class="ri-instagram-fill" style="font-size: 20px;"></i>
                             </a>
                         </li>
                         @endif
                         @if(setting('whatsapp_url') && setting('whatsapp_url') !== 'whatsapp_url')
                         <li class="d-inline-block">
-                            <a href="{{ setting('whatsapp_url') }}" target="_blank" style="width: 40px; height: 40px; border-radius: 50%; background-color: #25D366; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none;">
-                                <i class="ri-whatsapp-fill"></i>
+                            <a href="{{ setting('whatsapp_url') }}" target="_blank" rel="noopener noreferrer" style="width: 40px; height: 40px; border-radius: 50%; background-color: #25D366; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: transform 0.3s;">
+                                <i class="ri-whatsapp-fill" style="font-size: 20px;"></i>
                             </a>
                         </li>
                         @elseif(setting('phone') && setting('phone') !== 'phone')
                         <li class="d-inline-block">
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('phone')) }}" target="_blank" style="width: 40px; height: 40px; border-radius: 50%; background-color: #25D366; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none;">
-                                <i class="ri-whatsapp-fill"></i>
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('phone')) }}" target="_blank" rel="noopener noreferrer" style="width: 40px; height: 40px; border-radius: 50%; background-color: #25D366; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: transform 0.3s;">
+                                <i class="ri-whatsapp-fill" style="font-size: 20px;"></i>
                             </a>
                         </li>
                         @endif
                         @if(setting('youtube_url') && setting('youtube_url') !== 'youtube_url')
                         <li class="d-inline-block">
-                            <a href="{{ setting('youtube_url') }}" target="_blank" style="width: 40px; height: 40px; border-radius: 4px; background-color: #FF0000; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none;">
-                                <i class="ri-youtube-fill"></i>
+                            <a href="{{ setting('youtube_url') }}" target="_blank" rel="noopener noreferrer" style="width: 40px; height: 40px; border-radius: 4px; background-color: #FF0000; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: transform 0.3s;">
+                                <i class="ri-youtube-fill" style="font-size: 20px;"></i>
                             </a>
                         </li>
                         @endif
@@ -183,12 +183,12 @@
     </footer>
 
     <!-- Copyright Area -->
-    <div class="copyright-area position-relative z-1" style="background-color: var(--whiteColor); border-top: 1px solid #e0e0e0; padding-top: 20px; padding-bottom: 20px;">
+    <div class="copyright-area position-relative z-1" style="background-color: var(--whiteColor); border-top: 1px solid #e0e0e0;">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 text-center">
+            <div class="">
+                <div class="">
                     <div class="copyright-content" data-cue="slideInUp">
-                        <p style="color: #555; font-size: 16px; margin: 0;">
+                        <p style="color: #555; font-size: 14px; margin: 0;">
                             Copyright Skostudent 2025 | Bütün Hüquqları Qorunur
                         </p>
                     </div>

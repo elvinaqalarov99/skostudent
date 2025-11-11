@@ -427,7 +427,7 @@ img:not(.img-fluid) {
     .partner-slider .single-partner-logo img {
         max-width: 80%;
     }
-    
+
     .partner-area .section-title h2,
     .partner-area .section-title .sub-title {
         color: var(--blackColor);
@@ -552,6 +552,18 @@ img:not(.img-fluid) {
 
 .copyright-content p {
     color: #555 !important;
+}
+
+/* Social Media Icons Styling */
+.footer-area .social-link i {
+    font-size: 20px !important;
+    line-height: 1 !important;
+    display: inline-block !important;
+}
+
+.footer-area .social-link a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 991px) {
