@@ -359,7 +359,7 @@
       <div class="row" data-cues="fadeIn">
         @foreach($services->take(6) as $service)
         <div class="col-lg-4 col-sm-6">
-          <div class="single-categories-card text-center">
+          <a href="{{ route('services.detail', $service->slug) }}" class="single-categories-card text-center category-card-link">
             <div class="icon mx-auto position-relative z-1">
               <img
                 src="{{ asset('assets/images/categories-bg-shape.svg') }}"
@@ -373,11 +373,9 @@
               >
             </div>
             <h3>
-              <a href="{{ route('services.detail', $service->slug) }}">
-                {{ localized($service->title) }}
-              </a>
+              {{ localized($service->title) }}
             </h3>
-          </div>
+          </a>
         </div>
         @endforeach
       </div>

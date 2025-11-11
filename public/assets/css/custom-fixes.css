@@ -59,6 +59,199 @@
     height: auto;
 }
 
+/* ============================================
+   Consistent Image Sizing by Category
+   ============================================= */
+
+/* Products & Services Cards - Same Size for All */
+.single-courses-card .image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 200px;
+    max-height: 250px;
+}
+
+.single-courses-card .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.single-courses-card .image:hover img {
+    transform: scale(1.05);
+}
+
+/* Blog Cards - Same Size for All */
+.single-blog-card .image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 200px;
+    max-height: 250px;
+}
+
+.single-blog-card .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.single-blog-card .image:hover img {
+    transform: scale(1.05);
+}
+
+/* Partners/Features Cards (Categories) - Same Size for All */
+.single-categories-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.single-categories-card .icon {
+    width: 120px !important;
+    height: 120px !important;
+    min-width: 120px;
+    min-height: 120px;
+    max-width: 120px;
+    max-height: 120px;
+    margin: 0 auto 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.single-categories-card .icon img.category-icon,
+.single-categories-card .icon img.bg-shape {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+.single-categories-card .icon .category-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
+.single-categories-card .icon .category-icon {
+    position: relative;
+    z-index: 1;
+}
+
+/* Partner Logos - Same Size for All */
+.single-partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 200px;
+    max-height: 250px;
+    padding: 40px;
+    transition: opacity 0.3s ease;
+}
+
+.single-partner-logo img {
+    max-width: 100%;
+    max-height: 180px;
+    min-height: 160px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%);
+    display: block;
+}
+
+.single-partner-logo:hover img {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.single-partner-logo a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .single-courses-card .image,
+    .single-blog-card .image {
+        min-height: 180px;
+        max-height: 220px;
+    }
+
+    .single-categories-card .icon {
+        width: 100px !important;
+        height: 100px !important;
+        min-width: 100px;
+        min-height: 100px;
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    .single-partner-logo {
+        min-height: 160px;
+        max-height: 200px;
+        padding: 30px;
+    }
+
+    .single-partner-logo img {
+        max-height: 140px;
+        min-height: 120px;
+    }
+}
+
+@media (max-width: 767px) {
+    .single-courses-card .image,
+    .single-blog-card .image {
+        min-height: 160px;
+        max-height: 200px;
+    }
+
+    .single-categories-card .icon {
+        width: 80px !important;
+        height: 80px !important;
+        min-width: 80px;
+        min-height: 80px;
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    .single-partner-logo {
+        min-height: 140px;
+        max-height: 160px;
+        padding: 20px;
+    }
+
+    .single-partner-logo img {
+        max-height: 120px;
+        min-height: 100px;
+    }
+}
+
 /* Button Icon Spacing */
 .btn-icon {
     transition: transform 0.3s ease;
@@ -115,12 +308,39 @@ h2:hover .title-decoration {
 
 /* Category Card Hover Effects */
 .single-categories-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease !important;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    transform: none !important;
 }
 
 .single-categories-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    background-color: #f0f0f0;
+    text-decoration: none;
+    color: inherit;
+    transform: none !important;
+}
+
+.single-categories-card.category-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.single-categories-card.category-card-link:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.single-categories-card.category-card-link h3 {
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.single-categories-card.category-card-link:hover h3 {
+    color: var(--mainColor);
 }
 
 .category-icon {
@@ -128,7 +348,7 @@ h2:hover .title-decoration {
 }
 
 .single-categories-card:hover .category-icon {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.05);
 }
 
 /* Course Card Enhancements */
@@ -142,19 +362,6 @@ h2:hover .title-decoration {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.single-courses-card .image {
-    overflow: hidden;
-    border-radius: 8px 8px 0 0;
-}
-
-.single-courses-card .image img {
-    transition: transform 0.5s ease;
-}
-
-.single-courses-card:hover .image img {
-    transform: scale(1.1);
-}
-
 /* Blog Card Enhancements */
 .single-blog-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -164,19 +371,6 @@ h2:hover .title-decoration {
 .single-blog-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.single-blog-card .image {
-    overflow: hidden;
-    border-radius: 8px 8px 0 0;
-}
-
-.single-blog-card .image img {
-    transition: transform 0.5s ease;
-}
-
-.single-blog-card:hover .image img {
-    transform: scale(1.1);
 }
 
 /* CEO Image Styling */
@@ -351,38 +545,6 @@ img:not(.img-fluid) {
     background-color: var(--whiteColor);
 }
 
-.single-partner-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100px;
-    padding: 20px;
-    transition: opacity 0.3s ease;
-}
-
-.single-partner-logo:hover {
-    opacity: 0.8;
-}
-
-.single-partner-logo img {
-    max-width: 100%;
-    height: auto;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-    filter: grayscale(100%);
-}
-
-.single-partner-logo:hover img {
-    opacity: 1;
-    filter: grayscale(0%);
-}
-
-.single-partner-logo a {
-    display: block;
-    width: 100%;
-    text-align: center;
-}
-
 /* Responsive Image Fixes */
 @media (max-width: 991px) {
     .page-title-area {
@@ -398,11 +560,6 @@ img:not(.img-fluid) {
     .banner-image {
         margin-top: 30px;
     }
-
-    .single-partner-logo {
-        min-height: 80px;
-        padding: 15px;
-    }
 }
 
 @media (max-width: 767px) {
@@ -417,11 +574,6 @@ img:not(.img-fluid) {
 
     .section-title h2 {
         font-size: 24px !important;
-    }
-
-    .single-partner-logo {
-        min-height: 60px;
-        padding: 10px;
     }
 
     .partner-slider .single-partner-logo img {
