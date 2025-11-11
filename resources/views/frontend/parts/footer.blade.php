@@ -178,6 +178,5 @@
             <img src="{{ asset('assets/images/up-icon.svg') }}" alt="icon">
         </a>
     </div>
-    </div>
 </div>
 

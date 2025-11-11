@@ -64,6 +64,11 @@
                                         {{ setting('page_name_portfolio') !== 'page_name_portfolio' ? setting('page_name_portfolio') : 'Qalereya' }}
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('partners') }}" class="nav-link">
+                                        {{ setting('page_name_partners') !== 'page_name_partners' ? (setting('page_name_partners') ?: 'Tərəfdaşlarımız') : 'Tərəfdaşlarımız' }}
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">

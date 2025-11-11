@@ -40,7 +40,7 @@
                 <div class="single-courses-card">
                     <div class="image position-relative">
                         <a href="{{ route('products.detail', $product->slug) }}">
-                            <img src="{{ $product->getFirstMediaUrl('file') ?: asset('assets/images/courses1.jpg') }}" alt="courses-image">
+                            <img src="{{ $product->getFirstMediaUrl('file') ?: asset('assets/images/courses1.jpg') }}" alt="{{ localized($product->title) }}" class="img-fluid">
                         </a>
                     </div>
                     <div class="content">

@@ -27,7 +27,8 @@ class HomeController extends Controller
         $blogs = Blog::take(3)->get();
         $products = Product::take(6)->get();
         $testimonials = Testimonial::with('media')->orderBy('created_at', 'desc')->get();
-        return view('frontend.pages.index', compact('about', 'faqs', 'teams', 'services', 'portfolios', 'blogs', 'products', 'testimonials'));
+        $partners = Feature::with('media')->orderBy('created_at', 'desc')->get();
+        return view('frontend.pages.index', compact('about', 'faqs', 'teams', 'services', 'portfolios', 'blogs', 'products', 'testimonials', 'partners'));
     }
 
     public function products () {
@@ -110,6 +111,11 @@ class HomeController extends Controller
         $scholarship = Scholarship::where('slug', $slug)->firstOrFail();
         $other_scholarships = Scholarship::where('slug', '!=', $slug)->take(5)->get();
         return view('frontend.pages.scholarship_detail', compact('scholarship', 'other_scholarships'));
+    }
+
+    public function partners () {
+        $partners = Feature::with('media')->orderBy('created_at', 'desc')->paginate(12);
+        return view('frontend.pages.partners', compact('partners'));
     }
 
 }

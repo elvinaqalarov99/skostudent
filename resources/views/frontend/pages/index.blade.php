@@ -689,5 +689,63 @@
       End Blog Area
       ============================================= -->
 
+  <!-- ============================================
+      Start Partner Area
+      ============================================= -->
+  @if(isset($partners) && $partners->count() > 0)
+  <div class="partner-area pt-136 pb-110">
+    <div class="container">
+      <div class="section-title text-center" data-cue="slideInUp">
+        <span class="d-inline-block sub-title">Tərəfdaşlarımız</span>
+        <h2>
+          Bizim
+          <span class="position-relative">
+            Tərəfdaşlarımız
+            <img
+              src="{{ asset('assets/images/title-shape.svg') }}"
+              alt="shape"
+              class="title-decoration"
+            >
+          </span>
+        </h2>
+      </div>
+      <div class="partner-slider owl-carousel owl-theme" data-cues="fadeIn">
+        @foreach($partners as $partner)
+        <div class="single-partner-logo text-center">
+          @if($partner->link)
+          <a href="{{ $partner->link }}" target="_blank" rel="noopener noreferrer">
+            <img
+              src="{{ $partner->getFirstMediaUrl('file') ?: asset('assets/images/partner1.png') }}"
+              alt="{{ localized($partner->title) }}"
+              class="img-fluid"
+            >
+          </a>
+          @else
+          <img
+            src="{{ $partner->getFirstMediaUrl('file') ?: asset('assets/images/partner1.png') }}"
+            alt="{{ localized($partner->title) }}"
+            class="img-fluid"
+          >
+          @endif
+        </div>
+        @endforeach
+      </div>
+      <div class="partner-button text-center mt-5" data-cue="slideInUp">
+        <a href="{{ route('partners') }}" class="default-btn2">
+          <span>Bütün Tərəfdaşları Gör</span>
+          <img
+            src="{{ asset('assets/images/left-small.svg') }}"
+            alt="icon"
+            class="btn-icon"
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+  @endif
+  <!-- ============================================
+      End Partner Area
+      ============================================= -->
+
 @endsection
 

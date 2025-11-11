@@ -39,7 +39,7 @@
                 <div class="single-team-card position-relative">
                     <div class="image">
                         <a href="{{ route('portfolio.detail', $portfolio->slug) }}">
-                            <img src="{{ $portfolio->getFirstMediaUrl('images') ?: asset('assets/images/team1.jpg') }}" alt="portfolio-image">
+                            <img src="{{ $portfolio->getFirstMediaUrl('images') ?: asset('assets/images/team1.jpg') }}" alt="{{ localized($portfolio->title) }}" class="img-fluid">
                         </a>
                     </div>
                     <div class="content text-center">

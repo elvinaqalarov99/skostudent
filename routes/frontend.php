@@ -35,6 +35,7 @@ Route::group([
     Route::get('/privacy', [HomeController::class, 'privacy'])->name('privacy');
     Route::get('/scholarship', [HomeController::class, 'scholarship'])->name('scholarship');
     Route::get('/scholarship/{slug}', [HomeController::class, 'scholarshipDetail'])->name('scholarship.detail');
+    Route::get('/partners', [HomeController::class, 'partners'])->name('partners');
 
     Route::post('/send-contact-form', [CommonController::class, 'sendMail'])->name('send.contact.form');
 

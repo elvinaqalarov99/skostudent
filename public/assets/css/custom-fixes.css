@@ -264,3 +264,329 @@ button:focus {
     border-bottom: 0;
     border-left: 0.3em solid transparent;
 }
+
+/* ============================================
+   Template Design Consistency Fixes
+   ============================================= */
+
+/* Ensure all images have proper responsive behavior */
+img:not(.img-fluid) {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Page Title Area Consistency */
+.page-title-area {
+    position: relative;
+    overflow: hidden;
+}
+
+.page-title-area .pages4,
+.page-title-area .pages5 {
+    pointer-events: none;
+}
+
+.page-title-area .pages4 img,
+.page-title-area .pages5 img {
+    max-width: none;
+    width: auto;
+    height: auto;
+}
+
+/* Section Spacing Consistency */
+.pt-136 {
+    padding-top: 136px;
+}
+
+.pb-110 {
+    padding-bottom: 110px;
+}
+
+.ptb-110 {
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+
+/* Button Consistency */
+.default-btn,
+.default-btn2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.default-btn img,
+.default-btn2 img {
+    flex-shrink: 0;
+}
+
+/* Card Structure Consistency */
+.single-courses-card,
+.single-blog-card,
+.single-categories-card,
+.single-team-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.single-courses-card .content,
+.single-blog-card .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.single-courses-card .content .list-info,
+.single-blog-card .content {
+    margin-top: auto;
+}
+
+/* Image Alt Text - Ensure all images have proper alt */
+/* Note: In production, ensure all images have descriptive alt attributes for accessibility */
+
+/* Partner Area Responsive Fixes */
+.partner-area {
+    background-color: var(--whiteColor);
+}
+
+.single-partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    padding: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.single-partner-logo:hover {
+    opacity: 0.8;
+}
+
+.single-partner-logo img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.single-partner-logo:hover img {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.single-partner-logo a {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* Responsive Image Fixes */
+@media (max-width: 991px) {
+    .page-title-area {
+        padding-top: 150px;
+        padding-bottom: 100px;
+    }
+
+    .page-title-area .pages4,
+    .page-title-area .pages5 {
+        display: none;
+    }
+
+    .banner-image {
+        margin-top: 30px;
+    }
+
+    .single-partner-logo {
+        min-height: 80px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-title-area {
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+
+    .page-title-content h2 {
+        font-size: 28px !important;
+    }
+
+    .section-title h2 {
+        font-size: 24px !important;
+    }
+
+    .single-partner-logo {
+        min-height: 60px;
+        padding: 10px;
+    }
+
+    .partner-slider .single-partner-logo img {
+        max-width: 80%;
+    }
+    
+    .partner-area .section-title h2,
+    .partner-area .section-title .sub-title {
+        color: var(--blackColor);
+    }
+}
+
+/* Form Input Consistency */
+.form-control {
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--mainColor);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(159, 43, 44, 0.1);
+}
+
+/* Pagination Consistency */
+.pagination-wrapper {
+    margin-top: 40px;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.pagination .page-link {
+    color: var(--blackColor);
+    border-color: #e0e0e0;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
+    color: var(--whiteColor);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--mainColor);
+    border-color: var(--mainColor);
+    color: var(--whiteColor);
+}
+
+/* Empty State Consistency */
+.text-center p {
+    color: var(--bodyColor);
+    font-size: 18px;
+    padding: 40px 0;
+}
+
+/* Breadcrumb Consistency */
+.page-title-content ul li::after {
+    content: "/";
+    margin-left: 13px;
+    color: var(--bodyColor);
+}
+
+.page-title-content ul li:last-child::after {
+    display: none;
+}
+
+/* Card Link Hover Effects */
+.single-courses-card a,
+.single-blog-card a,
+.single-categories-card a {
+    transition: color 0.3s ease;
+}
+
+.single-courses-card a:hover,
+.single-blog-card a:hover,
+.single-categories-card a:hover {
+    color: var(--mainColor);
+}
+
+/* Testimonial Slider Responsive */
+@media (max-width: 767px) {
+    .testimonial-slider-info {
+        margin-top: 30px;
+    }
+
+    .testimonial-image {
+        margin-bottom: 30px;
+    }
+}
+
+/* Footer Responsive Fixes */
+@media (max-width: 991px) {
+    .footer-area .shapes {
+        display: none;
+    }
+
+    .single-footer-widget {
+        margin-bottom: 40px;
+    }
+}
+
+/* Header Mobile Menu Fixes */
+@media (max-width: 991px) {
+    .navbar-nav {
+        padding-top: 20px;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown-menu {
+        position: static !important;
+        float: none;
+        width: 100%;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none;
+    }
+}
+
+/* Ensure proper z-index stacking */
+.banner-area {
+    z-index: 1;
+}
+
+.page-title-area {
+    z-index: 1;
+}
+
+/* Loading State for Images */
+img {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+img[data-src] {
+    opacity: 0;
+}
+
+/* Accessibility Improvements */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--mainColor);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .navbar-area,
+    .footer-area,
+    .copyright-area,
+    .preloader-area {
+        display: none !important;
+    }
+}

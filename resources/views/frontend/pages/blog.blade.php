@@ -43,7 +43,7 @@
                             <div class="single-blog-card text-center">
                                 <div class="image">
                                     <a href="{{ route('blog.detail', $blog->slug) }}">
-                                        <img src="{{ $blog->getFirstMediaUrl('file') ?: asset('assets/images/blog1.jpg') }}" alt="blog-image">
+                                        <img src="{{ $blog->getFirstMediaUrl('file') ?: asset('assets/images/blog1.jpg') }}" alt="{{ localized($blog->title) }}" class="img-fluid">
                                     </a>
                                 </div>
                                 <div class="list mx-auto">
@@ -103,7 +103,7 @@
                         <div class="items d-flex align-items-center">
                             <div class="image">
                                 <a href="{{ route('blog.detail', $recent->slug) }}">
-                                    <img src="{{ $recent->getFirstMediaUrl('file') ?: asset('assets/images/blog1.jpg') }}" alt="image">
+                                    <img src="{{ $recent->getFirstMediaUrl('file') ?: asset('assets/images/blog1.jpg') }}" alt="{{ localized($recent->title) }}" class="img-fluid">
                                 </a>
                             </div>
                             <div class="content">
