@@ -36,7 +36,7 @@ class Product extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this
-            ->addMediaCollection('file')
+            ->addMediaCollection('image')
             ->acceptsMimeTypes(Setting::ALLOWED_FILE_MIMES)
             ->acceptsFile(fn (File $file) => $file->size <= 10 * 1024 * 1024)
             ->registerMediaConversions(function (Media $media) {

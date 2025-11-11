@@ -536,7 +536,7 @@
             <div class="image position-relative">
               <a href="{{ route('products.detail', $product->slug) }}">
                 <img
-                  src="{{ $product->getFirstMediaUrl('file') ?: asset('assets/images/courses1.jpg') }}"
+                  src="{{ $product->getFirstMediaUrl('image') ?: asset('assets/images/courses1.jpg') }}"
                   alt="{{ localized($product->title) }}"
                   class="img-fluid"
                 >
@@ -561,11 +561,11 @@
                       alt="university-icon"
                     >
                   </div>
-                  <span>70+ tələbə</span>
+                  <span>{{ $product->university_count ? $product->university_count . '+' : '70+' }} universitet</span>
                 </div>
                 <div class="button">
                   <a href="{{ route('products.detail', $product->slug) }}">
-                    <span>İNDİ QEYDİYYATDAN KEÇ</span>
+                    <span>Qeydiyyatdan Keç</span>
                     <i class="ph ph-arrow-right"></i>
                   </a>
                 </div>

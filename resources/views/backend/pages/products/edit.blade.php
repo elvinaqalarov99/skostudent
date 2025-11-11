@@ -71,21 +71,26 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="">Şəkil</label>
-                                        <input type="file" name="images[]" multiple
-                                               class="form-control {{ $errors->first('images') ? 'is-invalid' : '' }}">
-                                        @error('images')<small class="text-danger">{{ $message }}</small> @enderror
+                                        <input type="file" name="image"
+                                               class="form-control {{ $errors->first('image') ? 'is-invalid' : '' }}">
+                                        @error('image')<small class="text-danger">{{ $message }}</small> @enderror
 
                                         <div>
                                             <br>
-                                            @if(count($product?->getMedia('images') ?? []))
-                                                <ul class="list-group" style="flex-direction: row">
-                                                    @foreach($product?->getMedia('images') as $media)
-                                                        <li class="list-group-item" data-media-parent>
-                                                            <a href="{{ $media->getUrl() }}" target="_blank">{{ $media->file_name }}</a>
-                                                            <span class="badge badge-danger remove-media" data-route="{{ route('admin.remove-media', ['id' => $media->id]) }}" style="cursor: pointer;"><i class="fa fa-close"></i></span>
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
+                                            @if($product->getFirstMediaUrl('image'))
+                                                <div>
+                                                    <label>Mövcud Şəkil:</label>
+                                                    <div style="margin-top: 10px;">
+                                                        <img src="{{ $product->getFirstMediaUrl('image') }}" alt="current-image" style="max-width: 200px; max-height: 200px; border: 1px solid #ddd; border-radius: 5px; padding: 5px;">
+                                                        <br>
+                                                        <a href="{{ $product->getFirstMediaUrl('image') }}" target="_blank" style="margin-top: 10px; display: inline-block;">Şəkli böyüt</a>
+                                                        @if($product->getMedia('image')->first())
+                                                        <span class="badge badge-danger remove-media" data-route="{{ route('admin.remove-media', ['id' => $product->getMedia('image')->first()->id]) }}" style="cursor: pointer; margin-left: 10px;"><i class="fa fa-close"></i> Sil</span>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            @else
+                                                <p class="text-muted">Hələ şəkil yoxdur.</p>
                                             @endif
                                         </div>
                                     </div>

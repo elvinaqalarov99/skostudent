@@ -66,9 +66,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="">Şəkil</label>
-                                        <input type="file" name="images[]" multiple
-                                               class="form-control {{ $errors->first('images') ? 'is-invalid' : '' }}">
-                                        @error('images')<small class="text-danger">{{ $message }}</small> @enderror
+                                        <input type="file" name="image"
+                                               class="form-control {{ $errors->first('image') ? 'is-invalid' : '' }}">
+                                        @error('image')<small class="text-danger">{{ $message }}</small> @enderror
                                     </div>
                                 </div>
 

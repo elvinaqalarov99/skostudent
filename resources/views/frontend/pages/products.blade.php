@@ -20,27 +20,27 @@
                 </li>
             </ul>
         </div>
-    </div> 
-    
+    </div>
+
     <div class="pages5">
         <img src="{{ asset('assets/images/pages5.svg') }}" alt="shape">
     </div>
     <div class="pages4">
         <img src="{{ asset('assets/images/pages4.svg') }}" alt="shape">
-    </div> 
+    </div>
 </div>
 <!-- End Page Title Area -->
 
 <!-- Start Courses Grid Area -->
 <div class="courses-grid-area pt-136 pb-110">
-    <div class="container"> 
+    <div class="container">
         <div class="row process" data-cues="fadeIn">
             @forelse($products as $product)
             <div class="col-lg-4 col-md-6">
                 <div class="single-courses-card">
                     <div class="image position-relative">
                         <a href="{{ route('products.detail', $product->slug) }}">
-                            <img src="{{ $product->getFirstMediaUrl('file') ?: asset('assets/images/courses1.jpg') }}" alt="{{ localized($product->title) }}" class="img-fluid">
+                            <img src="{{ $product->getFirstMediaUrl('image') ?: asset('assets/images/courses1.jpg') }}" alt="{{ localized($product->title) }}" class="img-fluid">
                         </a>
                     </div>
                     <div class="content">
@@ -55,11 +55,11 @@
                                 <div class="icon">
                                     <img src="{{ asset('assets/images/university.svg') }}" alt="icon">
                                 </div>
-                                <span>70+ tələbə</span>
+                                <span>{{ $product->university_count ? $product->university_count . '+' : '70+' }} universitet</span>
                             </div>
                             <div class="button">
                                 <a href="{{ route('products.detail', $product->slug) }}">
-                                    İNDİ QEYDİYYATDAN KEÇ
+                                    Qeydiyyatdan Keç
                                     <i class="ph ph-arrow-right"></i>
                                 </a>
                             </div>

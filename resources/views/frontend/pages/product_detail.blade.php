@@ -38,11 +38,12 @@
                 <div class="course-details-left-sidebar">
                     <div class="course-details-card">
                         <div class="image">
-                            <img src="{{ $product->getFirstMediaUrl('file') ?: asset('assets/images/courses1.jpg') }}" alt="courses-image">
+                            <img src="{{ $product->getFirstMediaUrl('image') ?: asset('assets/images/courses1.jpg') }}" alt="courses-image">
                         </div>
                         <span class="science d-inline-block">{{ localized($product->title) }}</span>
                         <h3>{{ localized($product->title) }}</h3>
                     </div>
+                    
                     <div class="tab-info">
                         <ul class="nav nav-pills" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
@@ -82,7 +83,7 @@
                         @foreach($related_products->take(3) as $related)
                         <div class="items d-flex align-items-center">
                             <div class="image">
-                                <img src="{{ $related->getFirstMediaUrl('file') ?: asset('assets/images/courses1.jpg') }}" alt="courses-image">
+                                <img src="{{ $related->getFirstMediaUrl('image') ?: asset('assets/images/courses1.jpg') }}" alt="courses-image">
                             </div>
                             <div class="content">
                                 <h6>

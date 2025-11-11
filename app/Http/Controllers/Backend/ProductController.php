@@ -42,8 +42,7 @@ class ProductController extends Controller
 
             'university_count' => ['required', 'string'],
 
-            'images' => ['required', 'array', 'min:1'],
-            'images.*' => [
+            'image' => [
                 'file',
                 'required',
                 'mimetypes:' . implode(',', Product::ALLOWED_FILE_MIMES),
@@ -51,7 +50,7 @@ class ProductController extends Controller
             ],
         ];
 
-        $request->validate($rules);
+        $validated = $request->validate($rules);
 
         $model = new Product();
 
@@ -65,8 +64,8 @@ class ProductController extends Controller
         // $model->slug =  $request->input('slug');
         $model->save();
 
-        foreach ($request->images as $image) {
-            $model->addMedia($image)->toMediaCollection("images");
+        if ($request->hasFile('image')) {
+            $model->addMedia($request->file('image'))->toMediaCollection("image");
         }
 
         return redirect()->route('admin.products.index')->with(['success' => 'Kaydedildi']);
@@ -98,11 +97,10 @@ class ProductController extends Controller
             'university_count' => ['required', 'string'],
 
             'slug' => ['required', 'string'],
-            'images' => ['sometimes', 'array'],
-            'images.*' => ['file', 'sometimes', 'mimetypes:' . implode(',', Product::ALLOWED_FILE_MIMES)],
+            'image' => ['file', 'sometimes', 'mimetypes:' . implode(',', Product::ALLOWED_FILE_MIMES)],
         ];
 
-        $request->validate($rules);
+        $validated = $request->validate($rules);
 
         $model = Product::findOrFail($id);
 
@@ -115,8 +113,12 @@ class ProductController extends Controller
         // $model->slug =  $request->input('slug');
         $model->save();
 
-        foreach ($request->images ?? [] as $image) {
-            $model->addMedia($image)->toMediaCollection("images");
+        if ($request->hasFile('image')) {
+            $oldImage = $model->getMedia('image')->first();
+            if ($oldImage) {
+                $oldImage->delete();
+            }
+            $model->addMedia($request->file('image'))->toMediaCollection("image");
         }
 
         return redirect()->route('admin.products.index')->with(['success' => 'Yenilendi']);
@@ -125,7 +127,7 @@ class ProductController extends Controller
     public function delete ($id) {
 
         $model = Product::findOrFail($id);
-        $model->clearMediaCollection('images');
+        $model->clearMediaCollection('image');
         $model->delete();
 
         return redirect()->route('admin.products.index')->with(['success' => 'Silindi']);
